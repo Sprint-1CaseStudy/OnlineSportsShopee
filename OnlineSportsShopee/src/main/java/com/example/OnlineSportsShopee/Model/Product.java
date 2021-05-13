@@ -1,37 +1,34 @@
 package com.example.OnlineSportsShopee.Model;
 
-import javax.persistence.*;
+
 
 import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
-@Table(name = "Products")
+
+
 public class Product {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "product_id")
+
 	private long productId;
-	@Column(name = "product_name")
+
 	private String productName;
-	@Column(name = "product_category")
+
 	private String category;
-	@Column(name = "product_description")
+
 	private String description;
-	@Column(name = "product_brand")
+	
 	private String brand;
-	@Column(name = "product_colour")
+	
 	private String colour;
-	@Column(name = "product_size")
+	
 	private String size;
-	@Column(name = "product_mrp")
+	
 	private double mrp;
-	@Column(name = "product_discount")
+	
 	private double priceAfterDiscount;
-	@Column(name = "in_stock")
+	
 	private boolean inStock;
-	@Column(name = "expected_delivery")
+
 	private LocalDate expectedDelivery;
 	public long getProductId() {
 		return productId;
