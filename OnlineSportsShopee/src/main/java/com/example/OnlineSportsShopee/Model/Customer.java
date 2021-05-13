@@ -49,7 +49,6 @@ public class Customer
 		this.contactNo = contactNo;
 	}
 	public LocalDate getDoB() {
-		
 		return doB;
 	}
 	public void setDoB(LocalDate doB) {
