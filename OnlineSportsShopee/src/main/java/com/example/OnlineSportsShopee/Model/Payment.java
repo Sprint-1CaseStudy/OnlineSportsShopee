@@ -1,5 +1,7 @@
 package com.example.OnlineSportsShopee.Model;
 
+
+
 public class Payment {
 
 	private long paymentId;
@@ -42,7 +44,10 @@ public class Payment {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Payment [paymentId=" + paymentId + ", type=" + type + ", status=" + status + "]";
+	}	
+	
 }

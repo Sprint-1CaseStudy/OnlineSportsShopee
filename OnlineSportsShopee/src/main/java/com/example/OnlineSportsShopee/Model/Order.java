@@ -63,4 +63,12 @@ public class Order {
 		this.paymentMethod = paymentMethod;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate + ", customer="
+				+ customer + ", paymentMethod=" + paymentMethod + "]";
+	}
+	
+	
+
 }
