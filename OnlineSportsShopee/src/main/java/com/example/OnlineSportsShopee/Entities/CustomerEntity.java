@@ -1,18 +1,29 @@
-package com.example.OnlineSportsShopee.Model;
+package com.example.OnlineSportsShopee.Entities;
 
-import com.example.OnlineSportsShopee.Model.Address;
 import java.time.LocalDate;
+import com.example.OnlineSportsShopee.Model.Address;
+import javax.persistence.*;
 
-public class Customer 
+@Entity
+@Table(name = "Customer")
+public class CustomerEntity 
 {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "user_id")
 	private String userID;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "contactno")
 	private String contactNo;
+	@Column(name = "DateOfBirth")
 	private LocalDate doB;
+	@Column(name = "address")
 	private Address address;
 	
-	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
+	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
 	{
 		super();
 		this.userID = userID;
@@ -59,5 +70,4 @@ public class Customer
 		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
 				+ ", doB=" + doB + ", address=" + address + "]";
 	}
-	
 }

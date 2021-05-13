@@ -1,15 +1,26 @@
-package com.example.OnlineSportsShopee.Model;
+package com.example.OnlineSportsShopee.Entities;
 
-public class Address 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "address")
+public class AddressEntity 
 {
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "doorNo")
 	private String doorNo;
+	@Column(name = "street")
 	private String street;
+	@Column(name = "area")
 	private String area;
+	@Column(name = "city")
 	private String city;
+	@Column(name = "state")
 	private String state;
+	@Column(name = "pincode")
 	private int pincode;
 	
-	public Address(String doorNo, String street, String area, String city, String state, int pincode) {
+	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode) {
 		super();
 		this.doorNo = doorNo;
 		this.street = street;
@@ -59,6 +70,4 @@ public class Address
 		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
 				+ state + ", pincode=" + pincode + "]";
 	}
-	
-	
 }
