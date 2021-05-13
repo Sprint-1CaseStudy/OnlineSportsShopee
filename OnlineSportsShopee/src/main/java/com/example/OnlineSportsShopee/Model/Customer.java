@@ -1,7 +1,6 @@
 package com.example.OnlineSportsShopee.Model;
 
 import com.example.OnlineSportsShopee.Model.Address;
-
 import java.time.LocalDate;
 
 public class Customer 
@@ -53,6 +52,12 @@ public class Customer
 	}
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+				+ ", doB=" + doB + ", address=" + address + "]";
 	}
 	
 }
