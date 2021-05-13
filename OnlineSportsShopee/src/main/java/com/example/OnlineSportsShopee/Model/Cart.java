@@ -8,6 +8,11 @@ double price;
 double total;
 
 
+
+public Cart() {
+	super();
+}
+
 public Cart(String imgageName, String productName, int quantity, double price, double total) {
 	super();
 	this.imgageName = imgageName;
