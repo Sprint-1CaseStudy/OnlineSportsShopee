@@ -1,18 +1,18 @@
 package com.example.OnlineSportsShopee.Entities;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name="Cart")
-
-public class CartEntity {
-	
-
+public class CartEntity 
+{
 	@Column(name = "ImageName")
 	private String imageName;
 	@Column(name = "ProductName")
 	private String productName;
-	@Column(name="Quantity")
+	@Column(name = "Quantity")
 	private int quantity;
-	@Column(name="Price")
+	@Column(name = "Price")
 	private double price;
 	@Column(name="ToatlBill")
 	private double total;
