@@ -1,9 +1,11 @@
 package com.example.OnlineSportsShopee.Entities;
 
+import javax.persistence.*;
+
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import javax.persistance.Entity;
 
 @Entity
 @Table(name="Card")

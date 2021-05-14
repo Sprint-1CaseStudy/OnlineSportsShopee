@@ -14,13 +14,13 @@ public class PaymentEntity {
 	@Column(name = "status")
 	private String status;
 	@Column(name = "card")
-	Card card;
-	
+	CardEntity card;
+
 	public PaymentEntity() {
 		super();
 	}
 	
-	public PaymentEntity(long paymentId, String type, String status, Card card) {
+	public PaymentEntity(long paymentId, String type, String status, CardEntity card) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
@@ -50,6 +50,14 @@ public class PaymentEntity {
 	
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public CardEntity getCard() {
+		return card;
+	}
+
+	public void setCard(CardEntity card) {
+		this.card = card;
 	}
 
 	@Override

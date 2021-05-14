@@ -1,5 +1,7 @@
 package com.example.OnlineSportsShopee.Entities;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name="Cart")
 

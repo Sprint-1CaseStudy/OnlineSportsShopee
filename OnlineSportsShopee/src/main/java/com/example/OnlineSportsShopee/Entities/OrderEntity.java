@@ -1,6 +1,8 @@
 package com.example.OnlineSportsShopee.Entities;
 
+
 import java.time.LocalDate;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,7 +10,7 @@ import javax.persistence.*;
 
 public class OrderEntity {
 
-	@Generated(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "orderID")
 	private long orderID;
 	@Column(name = "amount")
@@ -24,7 +26,7 @@ public class OrderEntity {
 		super();
 	}
 
-	public OrderEntity(long orderID, double amount, LocalDate billingDate, Customer customer, String paymentMethod) {
+	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customer, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
