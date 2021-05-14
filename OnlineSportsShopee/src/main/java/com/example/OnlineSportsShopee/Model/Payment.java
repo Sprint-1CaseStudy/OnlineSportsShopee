@@ -8,7 +8,7 @@ public class Payment {
 	private String type;
 	private String status;
 	Card card;
-	
+
 	public Payment() {
 		super();
 	}
@@ -43,6 +43,14 @@ public class Payment {
 	
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	@Override

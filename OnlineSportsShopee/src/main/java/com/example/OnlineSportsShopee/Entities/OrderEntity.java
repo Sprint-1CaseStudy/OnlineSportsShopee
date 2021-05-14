@@ -1,6 +1,8 @@
 package com.example.OnlineSportsShopee.Entities;
 
+
 import java.time.LocalDate;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,7 +26,7 @@ public class OrderEntity {
 		super();
 	}
 
-	public OrderEntity(long orderID, double amount, LocalDate billingDate, Customer customer, String paymentMethod) {
+	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customer, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
