@@ -1,21 +1,25 @@
 package com.example.OnlineSportsShopee.util;
 
-import antlr.collections.List;
+import java.util.ArrayList;
+import java.util.List;
+import com.example.OnlineSportsShopee.Entities.OrderEntity;
+import com.example.OnlineSportsShopee.Model.Order;
+
 
 public class OrderUtils {
 private OrderUtils() {
 		
 	}
 	
-	public static List<OrderDTO> convertToTenantDtoList(List<Tenant> list){
-		List<TenantDTO> dtolist = new ArrayList<>();
-		for(Tenant tenant : list) 
-			dtolist.add(convertToTenantDto(tenant));
+	public static List<Order> convertToOrderDtoList(List<Order> list){
+		List<Order> dtolist = new ArrayList<>();
+		for(Order order : list) 
+			dtolist.add(convertToOrderDto(order));
 		return dtolist;
 	}
 	
-	public static Order convertToOrder(OrderDTO dto) {
-		Tenant tenant = new Tenant();
+	public static OrderEntity convertToOrder(Order dto) {
+		Order order = new Order();
 		tenant.setTenantId(dto.getTenantId());
 		tenant.setTenantName(dto.getTenantName());
 		tenant.setTenantAge(dto.getTenantAge());
@@ -23,12 +27,16 @@ private OrderUtils() {
 		return tenant;
 	}		
 	
-	public static OrderDTO convertToTenantDto(Order order) {
-		TenantDTO dto = new TenantDTO();
-		dto.setTenantId(tenant.getTenantId());
-		dto.setTenantName(tenant.getTenantName());
-		dto.setTenantAge(tenant.getTenantAge());
-		dto.setTenantAddress(tenant.getTenantAddress());
+	public static OrderEntity convertToOrderDto(Order order) {
+		OrderEntity dto = new OrderEntity();
+		dto.setOrderID(order.getOrderID());
+		dto.setAmount(order.getAmount());
+		dto.setBillingDate(order.getBillingDate());
+		dto.setCustomer(order.getCustomer());
+		dto.setPaymentMethod(order.getPaymentMethod());
+		
+
+		
 		return dto;
 	}
 }
