@@ -2,6 +2,8 @@ package com.example.OnlineSportsShopee.Model;
 
 import java.time.LocalDate;
 
+import com.example.OnlineSportsShopee.Entities.CustomerEntity;
+
 public class Order {
 
 	private long orderID;
@@ -68,6 +70,7 @@ public class Order {
 		return "Order [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate + ", customer="
 				+ customer + ", paymentMethod=" + paymentMethod + "]";
 	}
+
 	
 	
 

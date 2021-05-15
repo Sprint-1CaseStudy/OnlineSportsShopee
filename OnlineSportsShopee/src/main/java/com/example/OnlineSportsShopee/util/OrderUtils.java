@@ -17,12 +17,12 @@ private OrderUtils() {
         return dtolist;
     }
     
-    public static OrderEntity convertToOrderEntity(Order dto) {
+    public static OrderEntity convertToOrderEntity(OrderEntity dto) {
         OrderEntity order = new OrderEntity();
         order.setOrderID(dto.getOrderID());
         order.setAmount(dto.getAmount());
         order.setBillingDate(dto.getBillingDate());
-        order.setCustomer(dto.getCustomer());
+        order.setCustomerEntity(dto.getCustomerEntity());
         order.setPaymentMethod(dto.getPaymentMethod());
         return order;
     }        
@@ -34,11 +34,6 @@ private OrderUtils() {
         dto.setBillingDate(order.getBillingDate());
         dto.setCustomer(order.getCustomer());
         dto.setPaymentMethod(order.getPaymentMethod());
-        
-
- 
-
-        
         return dto;
     }
 }

@@ -18,7 +18,7 @@ public class OrderEntity {
 	@Column(name = "billingDate")
 	private LocalDate billingDate;
 	@Column(name = "customer")
-	private CustomerEntity customer;
+	private CustomerEntity customerEntity;
 	@Column(name = "paymentMethod")
 	private String paymentMethod;
 	
@@ -26,12 +26,12 @@ public class OrderEntity {
 		super();
 	}
 
-	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customer, String paymentMethod) {
+	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customerEntity, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
 		this.billingDate = billingDate;
-		this.customer = customer;
+		this.customerEntity = customerEntity;
 		this.paymentMethod = paymentMethod;
 	}
 	
@@ -59,12 +59,12 @@ public class OrderEntity {
 		this.billingDate = billingDate;
 	}
 	
-	public CustomerEntity getCustomer() {
-		return customer;
+	public CustomerEntity getCustomerEntity() {
+		return customerEntity;
 	}
 	
-	public void setCustomer(CustomerEntity customer) {
-		this.customer = customer;
+	public void setCustomerEntity(CustomerEntity customerEntity) {
+		this.customerEntity = customerEntity;
 	}
 	
 	public String getPaymentMethod() {
@@ -78,6 +78,6 @@ public class OrderEntity {
 	@Override
 	public String toString() {
 		return "Order [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate + ", customer="
-				+ customer + ", paymentMethod=" + paymentMethod + "]";
+				+ customerEntity + ", paymentMethod=" + paymentMethod + "]";
 	}
 }
