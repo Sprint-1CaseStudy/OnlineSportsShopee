@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.OnlineSportsShopee.Model.Product;
 
 
-public interface ProductService {
+public interface IProductService {
 	
 	public List<Product> getProductsByName();
 	public List<Product> getProductsBySize(); 

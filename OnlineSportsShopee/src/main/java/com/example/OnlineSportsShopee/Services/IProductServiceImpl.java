@@ -7,12 +7,12 @@ import com.example.OnlineSportsShopee.Model.Product;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class IProductServiceImpl implements IProductService {
 	
 	@Override
 	public List<Product> getProductsByName()
 	{
-		return list;
+		
 		
 	}
 	
