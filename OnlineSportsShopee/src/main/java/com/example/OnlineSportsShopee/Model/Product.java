@@ -98,6 +98,23 @@ public class Product {
 	}
 	
 	
+	
+	public Product(long productId, String productName, String category, String description, String brand, String colour,
+			String size, double mrp, double priceAfterDiscount, boolean inStock, LocalDate expectedDelivery) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.category = category;
+		this.description = description;
+		this.brand = brand;
+		this.colour = colour;
+		this.size = size;
+		this.mrp = mrp;
+		this.priceAfterDiscount = priceAfterDiscount;
+		this.inStock = inStock;
+		this.expectedDelivery = expectedDelivery;
+	}
+	
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category

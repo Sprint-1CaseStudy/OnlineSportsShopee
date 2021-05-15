@@ -1,8 +1,19 @@
 package com.example.OnlineSportsShopee.Entities;
 
 import javax.persistence.*;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 import javax.persistence.*;
 
 
