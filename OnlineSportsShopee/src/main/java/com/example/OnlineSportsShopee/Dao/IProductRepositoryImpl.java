@@ -1,5 +1,5 @@
 package com.example.OnlineSportsShopee.Dao;
 
-public class IProductRepositoryImpl {
+public class IProductRepositoryImpl implements IProductRepository {
 
 }
