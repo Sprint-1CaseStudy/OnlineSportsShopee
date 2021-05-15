@@ -6,6 +6,7 @@ import com.example.OnlineSportsShopee.Entities.CustomerEntity;
 
 public interface CustomerService {
 	//
+	//
 		public Customer addCustomer(CustomerEntity customer);
 		public Customer removeCustomer(long custId);
 		public Customer updateCustomer(long custId, CustomerEntity customer);
