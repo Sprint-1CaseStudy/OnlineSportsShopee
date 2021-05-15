@@ -23,7 +23,7 @@ private OrderUtils() {
         order.setOrderID(dto.getOrderID());
         order.setAmount(dto.getAmount());
         order.setBillingDate(dto.getBillingDate());
-       // order.setCustomer(dto.getCustomer());
+        order.setCustomer(dto.getCustomer());
         order.setPaymentMethod(dto.getPaymentMethod());
         return order;
     }        
