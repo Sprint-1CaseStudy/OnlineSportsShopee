@@ -2,7 +2,6 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
-import java.time.format.DateTimeFormatter;
 
 public class Card {
 	private long id;
@@ -46,7 +45,6 @@ public class Card {
 	}
 
 	public void setCardExpiry(LocalDate cardExpiry) {
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM/yyyy");
 		this.cardExpiry = cardExpiry;
 	}
 
