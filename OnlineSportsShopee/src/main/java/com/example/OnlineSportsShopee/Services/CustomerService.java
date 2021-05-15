@@ -1,6 +1,13 @@
 package com.example.OnlineSportsShopee.Services;
 
-public interface CustomerService {
+import java.util.List;
+import com.example.OnlineSportsShopee.Model.Customer;
 
-	//babu surya
+public interface CustomerService {
+	
+		public Customer addCustomer(Customer customer);
+		public Customer removeCustomer(long custId);
+		public Customer updateCustomer(long custId, Customer customer);
+		public Customer getCustomer(long custId);
+		public List<Customer> getAllCustomers(); 
 }
