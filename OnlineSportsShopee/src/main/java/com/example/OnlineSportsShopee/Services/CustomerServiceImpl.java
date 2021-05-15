@@ -1,8 +1,7 @@
 package com.example.OnlineSportsShopee.Services;
 
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.OnlineSportsShopee.Entities.CustomerEntity;
@@ -12,22 +11,20 @@ import com.example.OnlineSportsShopee.Dao.ICustomerRepository;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-	static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
+	//static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
+	//
+	//static String CustomerNotFound = "No Customer found in given ID";
 	
-	static String CustomerNotFound = "No Customer found in given ID";
-	
-	static String validationSuccessful = "Validation Successful";
+	//static String validationSuccessful = "Validation Successful";
 	
 	@Autowired
 	private ICustomerRepository CustRepo;
 	
 	@Override
-	public Customer addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		LOGGER.info("addCustomer() Service is initiated");
-		Customer customerEntity;
+	public Customer addCustomer(CustomerEntity customer) {
+		CustomerEntity customerentity;
 		if(customer == null)
-			customerEntity = null;
+			customerentity = null;
 		else {
 			//validateCustomer(customer);
 		}
@@ -41,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer updateCustomer(long custId, Customer customer) {
+	public Customer updateCustomer(long custId, CustomerEntity customer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
