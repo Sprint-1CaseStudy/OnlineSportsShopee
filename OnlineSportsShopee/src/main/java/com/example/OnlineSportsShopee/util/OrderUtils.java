@@ -14,21 +14,22 @@ private OrderUtils() {
 	public static List<Order> convertToOrderDtoList(List<Order> list){
 		List<Order> dtolist = new ArrayList<>();
 		for(Order order : list) 
-			dtolist.add(convertToOrderDto(order));
+			dtolist.add(convertToOrder(order));
 		return dtolist;
 	}
 	
-	public static OrderEntity convertToOrder(Order dto) {
-		Order order = new Order();
-		tenant.setTenantId(dto.getTenantId());
-		tenant.setTenantName(dto.getTenantName());
-		tenant.setTenantAge(dto.getTenantAge());
-		tenant.setTenantAddress(dto.getTenantAddress());
-		return tenant;
+	public static OrderEntity convertToOrderEntity(Order dto) {
+		OrderEntity order = new OrderEntity();
+		order.setOrderID(dto.getOrderID());
+		order.setAmount(dto.getAmount());
+		order.setBillingDate(dto.getBillingDate());
+		order.setCustomer(dto.getCustomer());
+		order.setPaymentMethod(dto.getPaymentMethod());
+		return order;
 	}		
 	
-	public static OrderEntity convertToOrderDto(Order order) {
-		OrderEntity dto = new OrderEntity();
+	public static Order convertToOrder(Order order) {
+		Order dto = new Order();
 		dto.setOrderID(order.getOrderID());
 		dto.setAmount(order.getAmount());
 		dto.setBillingDate(order.getBillingDate());
