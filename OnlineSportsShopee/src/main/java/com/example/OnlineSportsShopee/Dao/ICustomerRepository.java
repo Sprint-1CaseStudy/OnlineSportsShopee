@@ -1,5 +1,5 @@
 package com.example.OnlineSportsShopee.Dao;
 
-public class CustomerRepository {
+public class ICustomerRepository {
 
 }
