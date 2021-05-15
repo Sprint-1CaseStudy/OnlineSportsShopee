@@ -1,27 +1,37 @@
-package com.example.OnlineSportsShopee.Model;
+package com.example.onlinesportshopee.entities;
+
 
 import java.time.LocalDate;
 
-import com.example.OnlineSportsShopee.Entities.CustomerEntity;
+import javax.persistence.*;
 
-public class Order {
+@Entity
+@Table(name = "order")
 
+public class OrderEntity {
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "orderID")
 	private long orderID;
+	@Column(name = "amount")
 	private double amount;
+	@Column(name = "billingDate")
 	private LocalDate billingDate;
-	private Customer customer;
+	@Column(name = "customer")
+	private CustomerEntity customerEntity;
+	@Column(name = "paymentMethod")
 	private String paymentMethod;
 	
-	public Order() {
+	public OrderEntity() {
 		super();
 	}
 
-	public Order(long orderID, double amount, LocalDate billingDate, Customer customer, String paymentMethod) {
+	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customerEntity, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
 		this.billingDate = billingDate;
-		this.customer = customer;
+		this.customerEntity = customerEntity;
 		this.paymentMethod = paymentMethod;
 	}
 	
@@ -49,12 +59,12 @@ public class Order {
 		this.billingDate = billingDate;
 	}
 	
-	public Customer getCustomer() {
-		return customer;
+	public CustomerEntity getCustomerEntity() {
+		return customerEntity;
 	}
 	
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setCustomerEntity(CustomerEntity customerEntity) {
+		this.customerEntity = customerEntity;
 	}
 	
 	public String getPaymentMethod() {
@@ -68,10 +78,6 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate + ", customer="
-				+ customer + ", paymentMethod=" + paymentMethod + "]";
+				+ customerEntity + ", paymentMethod=" + paymentMethod + "]";
 	}
-
-	
-	
-
 }

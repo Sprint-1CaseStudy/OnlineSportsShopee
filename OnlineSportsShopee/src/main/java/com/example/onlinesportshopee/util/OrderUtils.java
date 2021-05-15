@@ -35,11 +35,6 @@ private OrderUtils() {
         dto.setBillingDate(order.getBillingDate());
         dto.setCustomer(order.getCustomer());
         dto.setPaymentMethod(order.getPaymentMethod());
-        
-
- 
-
-        
         return dto;
     }
 }

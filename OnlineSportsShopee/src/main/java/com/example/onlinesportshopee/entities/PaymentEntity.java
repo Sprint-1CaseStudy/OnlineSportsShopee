@@ -1,4 +1,4 @@
-package com.example.OnlineSportsShopee.Entities;
+package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;  
 @Entity

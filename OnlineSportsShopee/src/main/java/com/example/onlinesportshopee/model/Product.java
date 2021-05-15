@@ -1,4 +1,4 @@
-package com.example.OnlineSportsShopee.Model;
+package com.example.onlinesportshopee.model;
 
 
 

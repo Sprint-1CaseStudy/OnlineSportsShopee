@@ -1,9 +1,9 @@
-package com.example.OnlineSportsShopee.Dao;
+package com.example.onlinesportshopee.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.OnlineSportsShopee.Entities.ProductEntity;
+import com.example.onlinesportshopee.entities.ProductEntity;
 
 @Repository
 public interface IProductRepository extends JpaRepository<ProductEntity,Long> {

@@ -1,4 +1,4 @@
-package com.example.OnlineSportsShopee.Services;
+package com.example.onlinesportshopee.services;
 
 import org.springframework.stereotype.Service;
 
