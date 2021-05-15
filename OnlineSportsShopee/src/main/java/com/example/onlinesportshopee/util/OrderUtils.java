@@ -11,30 +11,30 @@ private OrderUtils() {
         
     }
     
-    public static List<Order> convertToOrderDtoList(List<Order> list){
+    public static List<Order> convertToOrderDtoList(List<OrderEntity> list){
         List<Order> dtolist = new ArrayList<>();
-        for(Order order : list) 
-            dtolist.add(convertToOrder(order));
+        for(OrderEntity orderEntity : list) 
+            dtolist.add(convertToOrder(orderEntity));
         return dtolist;
     }
     
-    public static OrderEntity convertToOrderEntity(OrderEntity dto) {
+    public static OrderEntity convertToOrder(Order dto) {
         OrderEntity order = new OrderEntity();
         order.setOrderID(dto.getOrderID());
         order.setAmount(dto.getAmount());
         order.setBillingDate(dto.getBillingDate());
-        order.setCustomerEntity(dto.getCustomerEntity());
+        //order.setCustomerEntity(dto.getCustomer());
         order.setPaymentMethod(dto.getPaymentMethod());
         return order;
     }        
     
-    public static Order convertToOrder(Order order) {
+    public static Order convertToOrder(OrderEntity orderEntity) {
         Order dto = new Order();
-        dto.setOrderID(order.getOrderID());
-        dto.setAmount(order.getAmount());
-        dto.setBillingDate(order.getBillingDate());
-        dto.setCustomer(order.getCustomer());
-        dto.setPaymentMethod(order.getPaymentMethod());
+        dto.setOrderID(orderEntity.getOrderID());
+        dto.setAmount(orderEntity.getAmount());
+        dto.setBillingDate(orderEntity.getBillingDate());
+        //dto.setCustomer(orderEntity.getCustomerEntity());
+        dto.setPaymentMethod(orderEntity.getPaymentMethod());
         return dto;
     }
 }
