@@ -9,8 +9,6 @@ import com.example.OnlineSportsShopee.Model.Product;
 public interface IProductService {
 	
 	
-	
-
 	public Product addProduct(ProductEntity product);
 	public Product removeProduct(long id);
 	public Product updateProduct(long id, ProductEntity product);
