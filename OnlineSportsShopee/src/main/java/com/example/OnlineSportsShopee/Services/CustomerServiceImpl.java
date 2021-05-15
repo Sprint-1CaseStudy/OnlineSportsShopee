@@ -2,8 +2,6 @@ package com.example.OnlineSportsShopee.Services;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.OnlineSportsShopee.Entities.CustomerEntity;
@@ -24,8 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public Customer addCustomer(CustomerEntity customer) {
-		// TODO Auto-generated method stub
-		LOGGER.info("addCustomer() Service is initiated");
 		CustomerEntity customerentity;
 		if(customer == null)
 			customerentity = null;
