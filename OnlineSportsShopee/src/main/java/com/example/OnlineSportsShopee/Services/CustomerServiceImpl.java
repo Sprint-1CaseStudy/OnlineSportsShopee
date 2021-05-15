@@ -13,11 +13,11 @@ import com.example.OnlineSportsShopee.Dao.ICustomerRepository;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-	static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
+	//static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
-	static String CustomerNotFound = "No Customer found in given ID";
+	//static String CustomerNotFound = "No Customer found in given ID";
 	
-	static String validationSuccessful = "Validation Successful";
+	//static String validationSuccessful = "Validation Successful";
 	
 	@Autowired
 	private ICustomerRepository CustRepo;
