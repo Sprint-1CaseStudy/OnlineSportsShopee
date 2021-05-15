@@ -1,5 +1,5 @@
 package com.example.OnlineSportsShopee.Services;
 
-public class CustomerService {
+public class CustomerServiceImpl {
 
 }
