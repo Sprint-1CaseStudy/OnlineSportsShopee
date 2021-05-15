@@ -52,25 +52,26 @@ public class ProductServiceImpl implements IProductService {
 	public List<Product> getProductsByName()
 	{
 		
-		
+		return null;
 	}
 	
 	@Override
 	public List<Product> getProductsBySize()
 	{
-		
+		return null;
 	}
 	
 	@Override
 	public List<Product> getProductsByPrice()
 	{
+		return null;
 		
 	}
 	
 	@Override
 	public List<Product> getProductsByColor()
 	{
-		
+		return null;
 	}
 
 	
