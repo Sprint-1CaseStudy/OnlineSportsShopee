@@ -29,7 +29,16 @@ public class OrderServiceImpl implements IOrderService {
 	}
 	@Override
 	public Order updateOrder(long id,OrderEntity orderEntity){
+		OrderEntity ordEntity;
+		OrderEntity existOrd= ordrepo.findById(id).orElse(null);
+		if (existOrd == null)
+			throw new OrdertNotFoundException(orderIdNotAvailable);
+		else {
+			
+			ordEntity = ordrepo.save(orderEntity);
+		}
 		
+		return OrderUtils.convertToOrder(ordEntity);
 	}
 	@Override
 	public Order deleteOrder(long id) {
