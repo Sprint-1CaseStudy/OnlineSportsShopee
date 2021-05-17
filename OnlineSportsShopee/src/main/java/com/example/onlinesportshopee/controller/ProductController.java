@@ -19,28 +19,29 @@ public class ProductController {
 	@GetMapping("/products/{name}")
 	public List<Product> getProductsByName(@PathVariable String name)
 	{
-		return null;
 		
+		return productRepository.findByName(name); 		
 	}
 	
 	@GetMapping("/products/{size}")
 	public List<Product> getProductsBySize(@PathVariable String size)
 	{
-		return null;
+		
+		return productRepository.findBySize(size);
 		
 	}
 	
 	@GetMapping("/products/{price}")
 	public List<Product> getProductsByPrice(@PathVariable double price)
 	{
-		return null;
+		return productRepository.findByPrice(price);
 		
 	}
 	
 	@GetMapping("/products/{color}")
 	public List<Product> getProductsByColor(@PathVariable String color)
 	{
-		return null;
+		return productRepository.findByColor(color);
 		
 	}
 
