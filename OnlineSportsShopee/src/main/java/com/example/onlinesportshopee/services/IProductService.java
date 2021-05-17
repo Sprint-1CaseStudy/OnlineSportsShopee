@@ -20,9 +20,12 @@ public interface IProductService {
 	public Product getProduct(long productId);
 	public List<Product> getAllProduct();
 	
-	public List<Product> getProductsByName();
-	public List<Product> getProductsBySize(); 
-	public List<Product> getProductsByPrice();
-	public List<Product> getProductsByColor();
-
+	
+	List<Product> getProductsByName(String name);
+	List<Product> getProductsBySize(String size);
+	List<Product> getProductsByPrice(double price);
+	List<Product> getProductsByColor(String color);
+	
+	
+	
 }

@@ -118,7 +118,9 @@ public class Product {
 	}
 	
 	
-
+	public Product() {
+		super();
+	}
 	
 	@Override
 	public String toString() {

@@ -58,32 +58,35 @@ public class ProductServiceImpl implements IProductService {
 		return ProductUtils.convertToProductDtoList(getAllProduct);
 	}
 	
-	
-	
 	@Override
-	public List<Product> getProductsByName()
+	public List<Product> getProductsByName(String name)
 	{
+		List<ProductEntity> getProductName = productRepository.findByName(name);
 		
-		return null;
+		return ProductUtils.convertToProductDtoList(getProductName);
+	}
+	
+	
+	@Override
+	public List<Product> getProductsBySize(String size)
+	{
+		List<ProductEntity> productSize = productRepository.findBySize(size);
+		return ProductUtils.convertToProductDtoList(productSize);
 	}
 	
 	@Override
-	public List<Product> getProductsBySize()
+	public List<Product> getProductsByPrice(double price)
 	{
-		return null;
-	}
-	
-	@Override
-	public List<Product> getProductsByPrice()
-	{
-		return null;
+		List<ProductEntity> productPrice = productRepository.findByPrice(price);
+		return ProductUtils.convertToProductDtoList(productPrice);
 		
 	}
 	
 	@Override
-	public List<Product> getProductsByColor()
+	public List<Product> getProductsByColor(String color)
 	{
-		return null;
+		List<ProductEntity> productColor = productRepository.findByColor(color);
+		return ProductUtils.convertToProductDtoList(productColor);
 	}
 
 	

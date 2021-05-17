@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "products")
 public class ProductEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "product_id")
@@ -120,7 +121,10 @@ public class ProductEntity {
 		this.expectedDelivery = expectedDelivery;
 	}
 	
-
+	public ProductEntity() {
+		super();
+	}
+	
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category

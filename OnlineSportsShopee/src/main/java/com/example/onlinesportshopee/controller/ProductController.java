@@ -2,10 +2,10 @@ package com.example.onlinesportshopee.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.onlinesportshopee.dao.IProductRepository;
 import com.example.onlinesportshopee.entities.ProductEntity;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IProductService;
@@ -14,9 +14,6 @@ import com.example.onlinesportshopee.services.IProductService;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-	
-	@Autowired
-	private IProductRepository productRepository;
 	
 	@Autowired
 	private IProductService productService;
@@ -55,30 +52,25 @@ public class ProductController {
 	@GetMapping("/product/{name}")
 	public List<Product> getProductsByName(@PathVariable String name)
 	{
-		
-		return productRepository.findByName(name); 		
+		return productService.getProductsByName(name); 		
 	}
 	
 	@GetMapping("/product/{size}")
 	public List<Product> getProductsBySize(@PathVariable String size)
 	{
-		
-		return productRepository.findBySize(size);
-		
+		return productService.getProductsBySize(size);
 	}
 	
 	@GetMapping("/product/{price}")
 	public List<Product> getProductsByPrice(@PathVariable double price)
 	{
-		return productRepository.findByPrice(price);
-		
+		return productService.getProductsByPrice(price);	
 	}
 	
 	@GetMapping("/product/{color}")
 	public List<Product> getProductsByColor(@PathVariable String color)
 	{
-		return productRepository.findByColor(color);
-		
+		return productService.getProductsByColor(color);	
 	}
 
 }
