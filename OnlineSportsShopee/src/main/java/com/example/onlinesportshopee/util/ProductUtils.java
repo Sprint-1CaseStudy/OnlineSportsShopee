@@ -14,43 +14,43 @@ public class ProductUtils {
 		
 	}
 	 public static List<Product> convertToProductDtoList(List<ProductEntity> list){
-	        List<Product> dtolist = new ArrayList<>();
+	        List<Product> productlist = new ArrayList<>();
 	        for(ProductEntity productEntity : list) 
-	            dtolist.add(convertToProduct(productEntity));
-	        return dtolist;
+	            productlist.add(convertToProduct(productEntity));
+	        return productlist;
 	    }
 	 
-	 public static ProductEntity convertToProduct(Product dto) {
-	        ProductEntity product = new ProductEntity();
-	        product.setProductId(dto.getProductId());
-	        product.setProductName(dto.getProductName());
-	        product.setCategory(dto.getCategory());
-	        product.setDescription(dto.getDescription());
-	        product.setBrand(dto.getBrand());
-	        product.setColour(dto.getColour());
-	        product.setSize(dto.getSize());
-	        product.setMrp(dto.getMrp());
-	        product.setPriceAfterDiscount(dto.getPriceAfterDiscount());
-	        product.setInStock(dto.isInStock());
-	        product.setExpectedDelivery(dto.getExpectedDelivery());
-	        return product;
+	 public static ProductEntity convertToProduct(Product product) {
+	        ProductEntity productEntity = new ProductEntity();
+	        productEntity.setProductId(product.getProductId());
+	        productEntity.setProductName(product.getProductName());
+	        productEntity.setCategory(product.getCategory());
+	        productEntity.setDescription(product.getDescription());
+	        productEntity.setBrand(product.getBrand());
+	        productEntity.setColour(product.getColour());
+	        productEntity.setSize(product.getSize());
+	        productEntity.setMrp(product.getMrp());
+	        productEntity.setPriceAfterDiscount(product.getPriceAfterDiscount());
+	        productEntity.setInStock(product.isInStock());
+	        productEntity.setExpectedDelivery(product.getExpectedDelivery());
+	        return productEntity;
 	     
 	    }    
 	 
 	 public static Product convertToProduct(ProductEntity productEntity) {
-		 Product dto = new Product();
-		 dto.setProductId(productEntity.getProductId());
-		 dto.setProductName(productEntity.getProductName());
-		 dto.setCategory(productEntity.getCategory());
-		 dto.setDescription(productEntity.getDescription());
-		 dto.setBrand(productEntity.getBrand());
-		 dto.setColour(productEntity.getColour());
-		 dto.setSize(productEntity.getSize());
-		 dto.setMrp(productEntity.getMrp());
-		 dto.setPriceAfterDiscount(productEntity.getPriceAfterDiscount());
-		 dto.setInStock(productEntity.isInStock());
-		 dto.setExpectedDelivery(productEntity.getExpectedDelivery());
-		 return dto;
+		 Product product = new Product();
+		 product.setProductId(productEntity.getProductId());
+		 product.setProductName(productEntity.getProductName());
+		 product.setCategory(productEntity.getCategory());
+		 product.setDescription(productEntity.getDescription());
+		 product.setBrand(productEntity.getBrand());
+		 product.setColour(productEntity.getColour());
+		 product.setSize(productEntity.getSize());
+		 product.setMrp(productEntity.getMrp());
+		 product.setPriceAfterDiscount(productEntity.getPriceAfterDiscount());
+		 product.setInStock(productEntity.isInStock());
+		 product.setExpectedDelivery(productEntity.getExpectedDelivery());
+		 return product;
 	 }
 
 }
