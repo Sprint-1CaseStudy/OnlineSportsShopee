@@ -23,19 +23,19 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	@Override
-	public Product removeProduct(long id) {
+	public Product removeProduct(long productId) {
 		
 		return null;
 	}
 
 	@Override
-	public Product updateProduct(long id, ProductEntity product) {
+	public Product updateProduct(long productId, ProductEntity product) {
 		
 		return null;
 	}
 
 	@Override
-	public Product getProduct(long id) {
+	public Product getProduct(long productId) {
 		
 		return null;
 	}

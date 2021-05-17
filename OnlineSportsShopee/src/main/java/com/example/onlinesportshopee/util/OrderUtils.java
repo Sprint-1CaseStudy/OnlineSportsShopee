@@ -23,7 +23,7 @@ private OrderUtils() {
         order.setOrderID(dto.getOrderID());
         order.setAmount(dto.getAmount());
         order.setBillingDate(dto.getBillingDate());
-        //order.setCustomerEntity(dto.getCustomer());
+        order.setCustomerEntity(dto.getCustomerEntity());
         order.setPaymentMethod(dto.getPaymentMethod());
         return order;
     }        
@@ -33,7 +33,7 @@ private OrderUtils() {
         dto.setOrderID(orderEntity.getOrderID());
         dto.setAmount(orderEntity.getAmount());
         dto.setBillingDate(orderEntity.getBillingDate());
-        //dto.setCustomer(orderEntity.getCustomerEntity());
+        dto.setCustomerEntity(orderEntity.getCustomerEntity());
         dto.setPaymentMethod(orderEntity.getPaymentMethod());
         return dto;
     }
