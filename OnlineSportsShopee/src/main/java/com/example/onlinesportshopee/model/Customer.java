@@ -2,7 +2,9 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
-import com.example.onlinesportshopee.model.Address;
+
+
+//import com.example.onlinesportshopee.model.Address;
 
 public class Customer 
 {
@@ -12,6 +14,11 @@ public class Customer
 	private String contactNo;
 	private LocalDate doB;
 	private Address address;
+	
+	public Customer()
+	{
+		super();
+	}
 	
 	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
 	{
@@ -53,6 +60,14 @@ public class Customer
 	}
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
+	}
+	public Address getaddress()
+	{
+		return address;
+	}
+	public void setaddress(Address address)
+	{
+		this.address = address;
 	}
 
 	@Override
