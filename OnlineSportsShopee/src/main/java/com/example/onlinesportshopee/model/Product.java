@@ -30,6 +30,8 @@ public class Product {
 	private boolean inStock;
 
 	private LocalDate expectedDelivery;
+	
+	
 	public long getProductId() {
 		return productId;
 	}
@@ -99,20 +101,25 @@ public class Product {
 	
 	
 	
-	public Product(long productId, String productName, String category, String description, String brand, String colour,
-			String size, double mrp, double priceAfterDiscount, boolean inStock, LocalDate expectedDelivery) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.category = category;
-		this.description = description;
-		this.brand = brand;
-		this.colour = colour;
-		this.size = size;
-		this.mrp = mrp;
-		this.priceAfterDiscount = priceAfterDiscount;
-		this.inStock = inStock;
-		this.expectedDelivery = expectedDelivery;
+//	public Product(long productId, String productName, String category, String description, String brand, String colour,
+//			String size, double mrp, double priceAfterDiscount, boolean inStock, LocalDate expectedDelivery) {
+//		super();
+//		this.productId = productId;
+//		this.productName = productName;
+//		this.category = category;
+//		this.description = description;
+//		this.brand = brand;
+//		this.colour = colour;
+//		this.size = size;
+//		this.mrp = mrp;
+//		this.priceAfterDiscount = priceAfterDiscount;
+//		this.inStock = inStock;
+//		this.expectedDelivery = expectedDelivery;
+//	}
+	
+	
+	public Product() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
