@@ -52,14 +52,14 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("/products/{name}")
+	@GetMapping("/product/{name}")
 	public List<Product> getProductsByName(@PathVariable String name)
 	{
 		
 		return productRepository.findByName(name); 		
 	}
 	
-	@GetMapping("/products/{size}")
+	@GetMapping("/product/{size}")
 	public List<Product> getProductsBySize(@PathVariable String size)
 	{
 		
@@ -67,14 +67,14 @@ public class ProductController {
 		
 	}
 	
-	@GetMapping("/products/{price}")
+	@GetMapping("/product/{price}")
 	public List<Product> getProductsByPrice(@PathVariable double price)
 	{
 		return productRepository.findByPrice(price);
 		
 	}
 	
-	@GetMapping("/products/{color}")
+	@GetMapping("/product/{color}")
 	public List<Product> getProductsByColor(@PathVariable String color)
 	{
 		return productRepository.findByColor(color);
