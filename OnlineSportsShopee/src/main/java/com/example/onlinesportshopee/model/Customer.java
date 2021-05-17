@@ -2,7 +2,9 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
-import com.example.onlinesportshopee.model.Address;
+
+
+//import com.example.onlinesportshopee.model.Address;
 
 public class Customer 
 {
