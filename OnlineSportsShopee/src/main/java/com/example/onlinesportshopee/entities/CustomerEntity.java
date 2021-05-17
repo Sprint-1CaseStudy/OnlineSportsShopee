@@ -25,6 +25,10 @@ public class CustomerEntity
 	@Column(name = "address")
 	private Address address;
 	
+	public CustomerEntity() {
+		super();
+	}
+	
 	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
 	{
 		super();
@@ -65,6 +69,14 @@ public class CustomerEntity
 	}
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
+	}
+	public Address getaddress()
+	{
+		return address;
+	}
+	public void setaddress(Address address)
+	{
+		this.address = address;
 	}
 
 	@Override
