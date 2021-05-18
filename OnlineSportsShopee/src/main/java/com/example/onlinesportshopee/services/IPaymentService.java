@@ -12,5 +12,5 @@ public interface IPaymentService {
 	public Payment removePayment(long id);
 	public Payment updatePayment(long id, PaymentEntity payment);
 	public Payment getPaymentDetails(long id);
-	public List<Payment> getAllPaymentDetails();
+	public List<Payment> getAllPaymentDetails(String name);
 }

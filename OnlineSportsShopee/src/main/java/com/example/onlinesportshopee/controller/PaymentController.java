@@ -26,7 +26,7 @@ public class PaymentController {
 	@DeleteMapping("/removePayment/payment/{paymentId}")
 	public Payment removePayment(@PathVariable long paymentId)
 	{
-		return paymentService.removeProduct(paymentId);
+		return paymentService.removePayment(paymentId);
 	}
 	
 	@PutMapping("/updatePayment/{paymentId}")
@@ -43,7 +43,7 @@ public class PaymentController {
 	@GetMapping("/payment/{name}")
 	public List<Payment> getAllPaymentByName(@PathVariable String name)
 	{
-		return paymentService.getAllPaymentByName(name); 		
+		return paymentService.getAllPaymentDetails(name); 		
 	}
 	
 }

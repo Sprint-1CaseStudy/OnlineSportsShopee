@@ -42,7 +42,7 @@ public class PaymentServiceImpl implements IPaymentService{
 	}
 
 	@Override
-	public List<Payment> getAllPaymentDetails() {
+	public List<Payment> getAllPaymentDetails(String name) {
 		List<PaymentEntity> getAllPaymentDetails = paymentRepository.findAll();
 		return ProductUtils.convertToProductDtoList(getAllPaymentDetails);
 	}
