@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.onlinesportshopee.Exception.InvalidOrderIdException;
+import com.example.onlinesportshopee.Exception.OrderNotFoundException;
 import com.example.onlinesportshopee.dao.IOrderRepository;
 import com.example.onlinesportshopee.entities.OrderEntity;
 import com.example.onlinesportshopee.model.Order;
@@ -17,7 +19,7 @@ public class OrderServiceImpl implements IOrderService {
 	private IOrderRepository ordrepo; 
 	
 	@Override
-	public Order addOrder(OrderEntity orderEntity) {
+	public Order addOrder(OrderEntity orderEntity) throws OrderNotFoundException,InvalidOrderIdException{
 		OrderEntity ordEntity;
 		if(orderEntity==null)
 			ordEntity=null;
@@ -28,11 +30,11 @@ public class OrderServiceImpl implements IOrderService {
 		return OrderUtils.convertToOrder(ordEntity);
 	}
 	@Override
-	public Order updateOrder(long id,OrderEntity orderEntity){
+	public Order updateOrder(long id,OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
 		OrderEntity ordEntity;
 		OrderEntity existOrd= ordrepo.findById(id).orElse(null);
 		if (existOrd == null)
-			throw new OrdertNotFoundException(orderIdNotAvailable);
+			throw new InvalidOrderIdException("orderIdNotAvailable");
 		else {
 			
 			ordEntity = ordrepo.save(orderEntity);
@@ -41,19 +43,19 @@ public class OrderServiceImpl implements IOrderService {
 		return OrderUtils.convertToOrder(ordEntity);
 	}
 	@Override
-	public Order deleteOrder(long id) {
+	public Order deleteOrder(long id) throws InvalidOrderIdException{
 		OrderEntity ordEntity = ordrepo.findById(id).orElse(null);
 		if (ordEntity == null)
-			throw new OrderNotFoundException(orderNotFound);
+			throw new InvalidOrderIdException("orderNotFound");
 		else
 			ordrepo.delete(ordEntity);
 		return OrderUtils.convertToOrder(ordEntity);
 	}
 	@Override
-	public Order getOrderDetails(long id) {
+	public Order getOrderDetails(long id)throws InvalidOrderIdException {
 		OrderEntity ordEntity = ordrepo.findById(id).orElse(null);
 		if (ordEntity == null)
-			throw new OrderNotFoundException(orderNotFound);
+			throw new InvalidOrderIdException("orderNotFound");
 		
 		return OrderUtils.convertToOrder(ordEntity);
 	}
