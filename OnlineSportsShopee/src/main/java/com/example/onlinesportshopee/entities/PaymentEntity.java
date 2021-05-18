@@ -14,18 +14,18 @@ public class PaymentEntity {
 	@Column(name = "status")
 	private String status;
 	@Column(name = "card")
-	CardEntity card;
+	CardEntity cardEntity;
 
 	public PaymentEntity() {
 		super();
 	}
 	
-	public PaymentEntity(long paymentId, String type, String status, CardEntity card) {
+	public PaymentEntity(long paymentId, String type, String status, CardEntity cardEntity) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
-		this.card = card;
+		this.cardEntity = cardEntity;
 	}
 
 	public long getPaymentId() {
@@ -52,12 +52,12 @@ public class PaymentEntity {
 		this.type = type;
 	}
 	
-	public CardEntity getCard() {
-		return card;
+	public CardEntity getCardEntity() {
+		return cardEntity;
 	}
 
-	public void setCard(CardEntity card) {
-		this.card = card;
+	public void setCardEntity(CardEntity cardEntity) {
+		this.cardEntity = cardEntity;
 	}
 
 	@Override
