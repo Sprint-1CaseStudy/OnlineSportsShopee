@@ -8,3 +8,4 @@ import com.example.onlinesportshopee.entities.CustomerEntity;
 public interface ICustomerRepository extends JpaRepository<CustomerEntity, Long> {
 	
 }
+//
