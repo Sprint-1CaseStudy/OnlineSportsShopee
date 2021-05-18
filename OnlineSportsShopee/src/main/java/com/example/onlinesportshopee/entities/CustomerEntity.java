@@ -2,10 +2,11 @@ package com.example.onlinesportshopee.entities;
 
 import java.time.LocalDate;
 
+
 import javax.persistence.*;
 
 import com.example.onlinesportshopee.model.Address;
-
+import com.example.onlinesportshopee.entities.AddressEntity;
 @Entity
 @Table(name = "Customer")
 public class CustomerEntity 
