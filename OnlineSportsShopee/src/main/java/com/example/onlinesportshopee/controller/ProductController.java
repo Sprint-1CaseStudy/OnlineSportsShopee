@@ -22,27 +22,46 @@ public class ProductController {
 	private IProductService productService;
 	
 	@PostMapping("/addProduct")
-	public Product addProduct(@RequestBody ProductEntity product)
+	public ResponseEntity<Object> addProduct(@RequestBody ProductEntity product) throws ProductsException
 	{
-		return productService.addProduct(product);
+		Product productDto = null;
+		ResponseEntity<Object> productResponse = null;
+		productDto = productService.addProduct(product);
+		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		return productResponse;
+		
 	}
 	
 	@DeleteMapping("/removeProduct/product/{productId}")
-	public Product removeProduct(@PathVariable long productId)
+	public ResponseEntity<Object> removeProduct(@PathVariable long productId) throws ProductsException
 	{
-		return productService.removeProduct(productId);
+		Product productDto = null;
+		ResponseEntity<Object> productResponse = null;
+		productDto = productService.removeProduct(productId);
+		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		return productResponse;
+	 
 	}
 	
 	@PutMapping("/updateProduct/{productId}")
-	public Product updateProduct(@PathVariable long productId, @RequestBody ProductEntity product)
+	public ResponseEntity<Object> updateProduct(@PathVariable long productId, @RequestBody ProductEntity product)
 	{
-		return productService.updateProduct(productId, product);
+		Product productDto =null;
+		ResponseEntity<Object> productResponse = null;
+		productDto = productService.updateProduct(productId, product);
+		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		return productResponse;
+		
 	}
 	
 	@GetMapping("/getProduct/{productId}")
-	public Product getProduct(@PathVariable long productId)
+	public ResponseEntity<Object> getProduct(@PathVariable long productId)
 	{
-		return productService.getProduct(productId);
+		Product productDto =null;
+		ResponseEntity<Object> productResponse = null;
+		productDto = productService.getProduct(productId);;
+		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		return productResponse;
 	}
 	
 	@GetMapping("/getAllProduct")

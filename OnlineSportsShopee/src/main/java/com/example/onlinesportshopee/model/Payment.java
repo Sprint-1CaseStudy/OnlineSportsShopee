@@ -1,24 +1,24 @@
 package com.example.onlinesportshopee.model;
 
-
+import com.example.onlinesportshopee.entities.CardEntity;
 
 public class Payment {
 
 	private long paymentId;
 	private String type;
 	private String status;
-	Card card;
+	CardEntity cardEntity;
 
 	public Payment() {
 		super();
 	}
 	
-	public Payment(long paymentId, String type, String status, Card card) {
+	public Payment(long paymentId, String type, String status, CardEntity cardEntity) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
-		this.card = card;
+		this.cardEntity = cardEntity;
 	}
 
 	public long getPaymentId() {
@@ -45,12 +45,12 @@ public class Payment {
 		this.type = type;
 	}
 	
-	public Card getCard() {
-		return card;
+	public CardEntity getCardEntity() {
+		return cardEntity;
 	}
 
-	public void setCard(Card card) {
-		this.card = card;
+	public void setCardEntity(CardEntity cardEntity) {
+		this.cardEntity = cardEntity;
 	}
 
 	@Override

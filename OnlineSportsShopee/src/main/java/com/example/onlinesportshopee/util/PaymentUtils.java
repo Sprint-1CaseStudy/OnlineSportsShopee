@@ -21,10 +21,10 @@ public class PaymentUtils {
 	}
 	 public static PaymentEntity convertToPayment(Payment paymentlist) {
 		 PaymentEntity payment= new PaymentEntity();
-		 payment.setPaymentId(payment.getPaymentId());
-		 payment.setType(payment.getType());
-	     payment.setStatus(payment.getStatus());
-	     payment.setCard(payment.getCard());
+		 payment.setPaymentId(paymentlist.getPaymentId());
+		 payment.setType(paymentlist.getType());
+	     payment.setStatus(paymentlist.getStatus());
+	     payment.setCardEntity(paymentlist.getCardEntity());
 	     return payment;
 	    }        
 	    
@@ -33,7 +33,7 @@ public class PaymentUtils {
 	        payment.setPaymentId(paymentEntity.getPaymentId());
 	        payment.setType(paymentEntity.getType());
 	        payment.setStatus(paymentEntity.getStatus());
-	        payment.setCard(paymentEntity.getCard());
+	        payment.setCardEntity(paymentEntity.getCardEntity());
 	        return payment;
 	    }
 	 }
