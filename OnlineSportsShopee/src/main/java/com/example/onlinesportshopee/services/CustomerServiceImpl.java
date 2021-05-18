@@ -2,9 +2,11 @@ package com.example.onlinesportshopee.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.onlinesportshopee.Exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.dao.ICustomerRepository;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 import com.example.onlinesportshopee.model.Customer;
@@ -18,7 +20,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	private ICustomerRepository CustRepo;
 	
 	@Override
-	public Customer addCustomer(CustomerEntity customer) {
+	public Customer addCustomer(CustomerEntity customer) throws CustomerNotFoundException {
 		CustomerEntity customerentity;
 		if(customer == null)
 			customerentity = null;
@@ -30,7 +32,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
-	public Customer removeCustomer(long custId) {
+	public Customer removeCustomer(long custId) throws CustomerNotFoundException{
 		// TODO Auto-generated method stub
 		CustomerEntity existcustomer = CustRepo.findById(custId).orElse(null);
 		if(existcustomer == null)
@@ -44,7 +46,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
-	public Customer updateCustomer(long custId, CustomerEntity customer) {
+	public Customer updateCustomer(long custId, CustomerEntity customer) throws CustomerNotFoundException{
 		// TODO Auto-generated method stub
 		CustomerEntity customerentity = null;
 		CustomerEntity updatecustomer = CustRepo.findById(custId).orElse(null);
@@ -59,7 +61,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
-	public Customer getCustomer(long custId) {
+	public Customer getCustomer(long custId) throws CustomerNotFoundException{
 		// TODO Auto-generated method stub
 		CustomerEntity getCustomer = CustRepo.findById(custId).orElse(null);
 		if(getCustomer == null)
