@@ -3,9 +3,12 @@ package com.example.onlinesportshopee.controller;
 import java.util.List;
 
 
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.onlinesportshopee.Exception.ProductsException;
 import com.example.onlinesportshopee.entities.ProductEntity;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IProductService;
@@ -49,28 +52,37 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("/product/{name}")
-	public List<Product> getProductsByName(@PathVariable String name)
+	@GetMapping("/byname/{name}")
+	public ResponseEntity<Object> getProductsByName(@PathVariable String name) throws ProductsException
 	{
-		return productService.getProductsByName(name); 		
+		ResponseEntity<Object> response = null;
+		List<Product> products = productService.getProductsByName(name);
+		response = new ResponseEntity<>(products,HttpStatus.ACCEPTED);	
+		return response;
 	}
 	
-	@GetMapping("/product/{size}")
-	public List<Product> getProductsBySize(@PathVariable String size)
+	@GetMapping("/bysize/{size}")
+	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
-		return productService.getProductsBySize(size);
+		List<Product> bysize = productService.getProductsBySize(size);
+		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
+		return response;
 	}
 	
-	@GetMapping("/product/{price}")
-	public List<Product> getProductsByPrice(@PathVariable double price)
+	@GetMapping("/byprice/{price}")
+	public ResponseEntity<Object> getProductsByPrice(@PathVariable double price) throws ProductsException
 	{
-		return productService.getProductsByPrice(price);	
+		List<Product> byprice = productService.getProductsByPrice(price);
+		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
+		return response;
 	}
 	
-	@GetMapping("/product/{color}")
-	public List<Product> getProductsByColor(@PathVariable String color)
+	@GetMapping("/bycolor/{color}")
+	public ResponseEntity<Object> getProductsByColor(@PathVariable String color) throws ProductsException
 	{
-		return productService.getProductsByColor(color);	
+		List<Product> bycolor = productService.getProductsByColor(color);
+		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
+		return response;
 	}
 
 }

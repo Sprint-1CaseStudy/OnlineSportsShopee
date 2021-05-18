@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.onlinesportshopee.Exception.InvalidOrderIdException;
+import com.example.onlinesportshopee.Exception.OrderNotFoundException;
 import com.example.onlinesportshopee.entities.OrderEntity;
 import com.example.onlinesportshopee.model.Order;
 import com.example.onlinesportshopee.services.IOrderService;
@@ -26,7 +28,7 @@ public class OrderController {
 	private IOrderService orderService;
 	
 	@PostMapping("/add-order")
-	public  ResponseEntity<Object> addProduct(@RequestBody OrderEntity orderEntity){
+	public  ResponseEntity<Object> addProduct(@RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
 		System.out.println(orderEntity);
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
@@ -35,7 +37,7 @@ public class OrderController {
 		return orderResponse;
 	}
 	@PutMapping("/update-order/{orderID}")
-	public ResponseEntity<Object> updateOrder(@PathVariable long orderID, @RequestBody OrderEntity orderEntity){
+	public ResponseEntity<Object> updateOrder(@PathVariable long orderID, @RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
 		
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
@@ -45,14 +47,14 @@ public class OrderController {
 		return orderResponse;
 	}
 	@DeleteMapping("/remove-order/{orderID}")
-	public ResponseEntity<Object> deleteOrder(@PathVariable long orderID){
+	public ResponseEntity<Object> deleteOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 		
 		Order orderDTO = orderService.deleteOrder(orderID);
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 
 	}
 	@GetMapping("/get-order/{orderID}")
-	public ResponseEntity<Object> getOrder(@PathVariable long orderID){
+	public ResponseEntity<Object> getOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 	
 		Order orderDTO = null;
 		orderDTO = orderService.getOrderDetails(orderID);

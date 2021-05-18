@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.example.onlinesportshopee.entities.OrderEntity;
 
 
-
 @Repository
 public interface IOrderRepository extends JpaRepository<OrderEntity,Long>{
 
