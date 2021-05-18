@@ -11,7 +11,7 @@ import com.example.onlinesportshopee.model.Customer;
 import com.example.onlinesportshopee.util.CustomerUtils;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements ICustomerService {
 //
 		
 	@Autowired
