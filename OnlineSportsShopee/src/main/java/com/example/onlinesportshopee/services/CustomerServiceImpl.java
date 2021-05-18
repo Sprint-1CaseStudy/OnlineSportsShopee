@@ -37,7 +37,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		CustomerEntity existcustomer = CustRepo.findById(custId).orElse(null);
 		if(existcustomer == null)
 		{
-			
+			throw new CustomerNotFoundException("CustomerNotFound");
 		}
 		else {
 			CustRepo.delete(existcustomer);
@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		CustomerEntity updatecustomer = CustRepo.findById(custId).orElse(null);
 		if(updatecustomer == null)
 		{
-			
+			throw new CustomerNotFoundException("CustomerNotFound");
 		}
 		else {
 			customerentity = CustRepo.save(customer);
@@ -66,7 +66,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		CustomerEntity getCustomer = CustRepo.findById(custId).orElse(null);
 		if(getCustomer == null)
 		{
-			
+			throw new CustomerNotFoundException("CustomerNotFound");
 		}
 		return CustomerUtils.convertToCustomer(getCustomer);
 	}
