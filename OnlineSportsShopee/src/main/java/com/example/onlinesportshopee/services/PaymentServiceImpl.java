@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.cars.util.PaymentUtils;
 import com.example.onlinesportshopee.dao.IPaymentRepository;
 import com.example.onlinesportshopee.entities.PaymentEntity;
 import com.example.onlinesportshopee.entities.ProductEntity;
@@ -21,30 +20,38 @@ public class PaymentServiceImpl implements IPaymentService{
 	@Override
 	public Payment addPayment(PaymentEntity payment) {
 		
-		Payment paymentEntity=payment.save(payment);
-		return PaymentUtils.convertToPayment(paymentEntity);
+		PaymentEntity paymentEntity=paymentRepository.save(payment);
+		return PaymentUtils.convertToPayment(payment);
 	}
 
 	@Override
 	public Payment removePayment(long paymentID) {
-		PaymentServiceImpl.delete(PaymentUtils.convertToPayment(paymentID));
+		
+		PaymentEntity paymentEntity=paymentRepository.findById(paymentID).get();
+		paymentRepository.delete(paymentEntity);
+		return PaymentUtils.convertToPayment(paymentEntity);
+		
 	}
 
 	@Override
-	public Payment updatePayment(long paymentID, PaymentEntity paymentEntity) {
-		paymentRepository.save(PaymentUtils.convertToPayment(paymentEntity));
+	public Payment updatePayment(long paymentID, PaymentEntity payment) {
+		PaymentEntity paymentEntity=paymentRepository.findById(paymentID).get();
+		paymentRepository.save(paymentEntity);
+		return PaymentUtils.convertToPayment(paymentEntity);
+		
 	}
 
 	@Override
 	public Payment getPaymentDetails(long paymentID) {
-		PaymentEntity getPaymentDetails= paymentRepository.findById(paymentId).get();
-		return PaymentUtils.convertToPayment(getPayment);
+		PaymentEntity getPaymentDetails= paymentRepository.findById(paymentID).get();
+		return PaymentUtils.convertToPayment(getPaymentDetails);
+		
 	}
 
 	@Override
 	public List<Payment> getAllPaymentDetails(String name) {
 		List<PaymentEntity> getAllPaymentDetails = paymentRepository.findAll();
-		return ProductUtils.convertToProductDtoList(getAllPaymentDetails);
+		return PaymentUtils.convertToPaymentList(getAllPaymentDetails);
 	}
 
 }
