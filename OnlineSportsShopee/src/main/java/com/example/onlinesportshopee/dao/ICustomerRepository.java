@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 
 @Repository
-public interface ICustomerRepository extends JpaRepository<CustomerEntity, String> {
+public interface ICustomerRepository extends JpaRepository<CustomerEntity, Long> {
 	
 }

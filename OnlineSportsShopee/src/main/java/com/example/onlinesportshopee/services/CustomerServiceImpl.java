@@ -8,16 +8,12 @@ import org.springframework.stereotype.Service;
 import com.example.onlinesportshopee.dao.ICustomerRepository;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 import com.example.onlinesportshopee.model.Customer;
-//
+import com.example.onlinesportshopee.util.CustomerUtils;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-	//static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
-	//
-	//static String CustomerNotFound = "No Customer found in given ID";
-	
-	//static String validationSuccessful = "Validation Successful";
-	
+		
 	@Autowired
 	private ICustomerRepository CustRepo;
 	
@@ -27,33 +23,56 @@ public class CustomerServiceImpl implements CustomerService {
 		if(customer == null)
 			customerentity = null;
 		else {
-			//validateCustomer(customer);
+			customerentity = CustRepo.save(customer);
 		}
-		return null;
+		return 
+				CustomerUtils.convertToCustomer(customerentity);
 	}
 
 	@Override
 	public Customer removeCustomer(long custId) {
 		// TODO Auto-generated method stub
-		return null;
+		CustomerEntity existcustomer = CustRepo.findById(custId).orElse(null);
+		if(existcustomer == null)
+		{
+			
+		}
+		else {
+			CustRepo.delete(existcustomer);
+		}
+		return CustomerUtils.convertToCustomer(existcustomer);
 	}
 
 	@Override
 	public Customer updateCustomer(long custId, CustomerEntity customer) {
 		// TODO Auto-generated method stub
-		return null;
+		CustomerEntity customerentity = null;
+		CustomerEntity updatecustomer = CustRepo.findById(custId).orElse(null);
+		if(updatecustomer == null)
+		{
+			
+		}
+		else {
+			customerentity = CustRepo.save(customer);
+		}
+		return CustomerUtils.convertToCustomer(customerentity);
 	}
 
 	@Override
 	public Customer getCustomer(long custId) {
 		// TODO Auto-generated method stub
-		return null;
+		CustomerEntity getCustomer = CustRepo.findById(custId).orElse(null);
+		if(getCustomer == null)
+		{
+			
+		}
+		return CustomerUtils.convertToCustomer(getCustomer);
 	}
 
 	@Override
 	public List<Customer> getAllCustomers() {
 		// TODO Auto-generated method stub
-		return null;
+		List<CustomerEntity> custlist = CustRepo.findAll();
+		return CustomerUtils.convertToCustomerList(custlist);
 	}
-	
 }
