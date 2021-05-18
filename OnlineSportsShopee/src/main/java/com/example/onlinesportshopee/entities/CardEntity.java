@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Table(name="Card")
 
 public class CardEntity {
+	@Id
 	@Column(name = "id")
 	private long id;
 	@Column(name = "cardName")
@@ -56,7 +57,7 @@ public class CardEntity {
 		return expiryDate;
 	}
 	public void setExpiryDate(LocalDate expiryDate) {
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM/yyyy");
+
 		this.expiryDate = expiryDate;
 	}
 	public String getBankName() {

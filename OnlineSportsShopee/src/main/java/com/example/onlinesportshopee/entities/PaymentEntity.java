@@ -1,11 +1,14 @@
 package com.example.onlinesportshopee.entities;
 
-import javax.persistence.*;  
+import javax.persistence.*;
+import com.example.onlinesportshopee.entities.CardEntity;
+
 @Entity
 @Table(name = "payment")
 
 public class PaymentEntity {
 	
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "paymentId")
 	private long paymentId;
@@ -13,7 +16,7 @@ public class PaymentEntity {
 	private String type;
 	@Column(name = "status")
 	private String status;
-	@Column(name = "card")
+	@Column(name = "cardEntity")
 	CardEntity cardEntity;
 
 	public PaymentEntity() {

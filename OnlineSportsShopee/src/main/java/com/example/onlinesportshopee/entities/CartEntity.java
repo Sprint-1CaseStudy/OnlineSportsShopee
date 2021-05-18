@@ -6,8 +6,10 @@ import javax.persistence.*;
 @Table(name="Cart")
 public class CartEntity 
 {
+	
 	@Column(name = "ImageName")
 	private String imageName;
+	@Id
 	@Column(name = "ProductName")
 	private String productName;
 	@Column(name = "Quantity")

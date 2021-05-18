@@ -10,6 +10,7 @@ import javax.persistence.*;
 
 public class OrderEntity {
 
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "orderID")
 	private long orderID;

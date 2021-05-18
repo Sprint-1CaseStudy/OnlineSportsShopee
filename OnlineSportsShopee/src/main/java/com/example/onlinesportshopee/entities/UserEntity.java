@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 public class UserEntity {
 	
+	@Id
 	@Column(name = "userid")
 	private String userid;
 	@Column(name = "password")
