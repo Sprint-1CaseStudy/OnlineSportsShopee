@@ -8,9 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.onlinesportshopee.entities.PaymentEntity;
-import com.example.onlinesportshopee.model.Order;
 import com.example.onlinesportshopee.model.Payment;
-import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IPaymentService;
 import com.example.onlinesportshopee.Exception.PaymentNotFoundException;
 
