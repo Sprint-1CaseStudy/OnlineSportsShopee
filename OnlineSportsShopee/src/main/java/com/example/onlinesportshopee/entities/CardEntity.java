@@ -6,15 +6,12 @@ import javax.persistence.*;
 import java.time.LocalDate;
 //import java.time.format.DateTimeFormatter;
 
-
-
-//@Entity
+@Entity
 @Table(name="card")
-
 public class CardEntity {
 
 	@Id
-	@Column(name = "id")
+	//@Column(name = "id")
 	private long id;
 	@Column(name = "cardName")
 	private String cardName;

@@ -19,20 +19,21 @@ import com.example.onlinesportshopee.exception.InvalidOrderIdException;
 import com.example.onlinesportshopee.exception.OrderNotFoundException;
 import com.example.onlinesportshopee.model.Order;
 import com.example.onlinesportshopee.services.IOrderService;
+import com.example.onlinesportshopee.services.OrderServiceImpl;
 
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
 
 	@Autowired
-	private IOrderService orderService;
+	private OrderServiceImpl orderServiceImpl;
 	
 	@PostMapping("/add-order")
 	public  ResponseEntity<Object> addProduct(@RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
 		System.out.println(orderEntity);
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
-		orderDTO = orderService.addOrder(orderEntity);
+		orderDTO = orderServiceImpl.addOrder(orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		return orderResponse;
 	}
@@ -41,7 +42,7 @@ public class OrderController {
 		
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
-		orderDTO = orderService.updateOrder(orderID,orderEntity);
+		orderDTO = orderServiceImpl.updateOrder(orderID,orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
 		return orderResponse;
@@ -49,7 +50,7 @@ public class OrderController {
 	@DeleteMapping("/remove-order/{orderID}")
 	public ResponseEntity<Object> deleteOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 		
-		Order orderDTO = orderService.deleteOrder(orderID);
+		Order orderDTO = orderServiceImpl.deleteOrder(orderID);
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 
 	}
@@ -57,7 +58,7 @@ public class OrderController {
 	public ResponseEntity<Object> getOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 	
 		Order orderDTO = null;
-		orderDTO = orderService.getOrderDetails(orderID);
+		orderDTO = orderServiceImpl.getOrderDetails(orderID);
 		
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
@@ -65,7 +66,7 @@ public class OrderController {
 	@GetMapping("/get-all-order/")
 	public List<Order> getAllOrder(){
 	
-		return orderService.getAllOrders();
+		return orderServiceImpl.getAllOrders();
 
 	}
 	

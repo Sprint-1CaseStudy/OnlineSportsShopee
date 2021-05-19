@@ -2,7 +2,7 @@ package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
 
-
+@Entity
 @Table(name="Cart")
 public class CartEntity 
 {

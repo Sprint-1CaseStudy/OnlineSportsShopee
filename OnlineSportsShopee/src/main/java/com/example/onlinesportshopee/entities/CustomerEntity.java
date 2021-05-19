@@ -4,16 +4,17 @@ import java.time.LocalDate;
 
 
 import javax.persistence.*;
-//
+
 import com.example.onlinesportshopee.model.Address;
 import com.example.onlinesportshopee.entities.AddressEntity;
+
 @Entity
 @Table(name = "Customer")
 public class CustomerEntity 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "user_id")
+	//@Column(name = "user_id")
 	private String userID;
 	@Column(name = "name")
 	private String name;
@@ -24,7 +25,7 @@ public class CustomerEntity
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="doorNo")
+	@JoinColumn(name="address id")
 	private Address address;
 	
 	public CustomerEntity() {

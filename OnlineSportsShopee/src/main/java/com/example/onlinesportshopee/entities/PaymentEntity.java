@@ -4,12 +4,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "payment")
-
 public class PaymentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "paymentId")
+	//@Column(name = "paymentId")
 	private long paymentId;
 	@Column(name = "type")
 	private String type;

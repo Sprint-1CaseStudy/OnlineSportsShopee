@@ -11,6 +11,7 @@ import com.example.onlinesportshopee.entities.PaymentEntity;
 import com.example.onlinesportshopee.exception.PaymentNotFoundException;
 import com.example.onlinesportshopee.model.Payment;
 import com.example.onlinesportshopee.services.IPaymentService;
+import com.example.onlinesportshopee.services.PaymentServiceImpl;
 
 @RestController
 @RequestMapping("/payments")
@@ -18,12 +19,12 @@ import com.example.onlinesportshopee.services.IPaymentService;
 public class PaymentController {
 	
 	@Autowired
-	private IPaymentService paymentService;
+	private PaymentServiceImpl paymentServiceImpl;
 	
 	@PostMapping("/addPayment")
 	public Payment addPayment(@RequestBody PaymentEntity payment)
 	{
-		return paymentService.addPayment(payment);
+		return paymentServiceImpl.addPayment(payment);
 	}
 	
 	@DeleteMapping("/removePayment/payment/{paymentId}")
@@ -31,7 +32,7 @@ public class PaymentController {
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentService.removePayment(paymentId);
+		paymentDTO = paymentServiceImpl.removePayment(paymentId);
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		return paymentResponse;
 		}
@@ -41,7 +42,7 @@ public class PaymentController {
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentService.updatePayment(paymentId,paymentEntity);
+		paymentDTO = paymentServiceImpl.updatePayment(paymentId,paymentEntity);
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		
 		return paymentResponse;
@@ -53,14 +54,14 @@ public class PaymentController {
 		
 		Payment paymentDTO =null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentService.getPaymentDetails(paymentId);;
+		paymentDTO = paymentServiceImpl.getPaymentDetails(paymentId);;
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		return paymentResponse;
 		}
 	@GetMapping("/payment/{name}")
 	public List<Payment> getAllPaymentByName(@PathVariable String name)
 	{
-		return paymentService.getAllPaymentDetails(name); 		
+		return paymentServiceImpl.getAllPaymentDetails(name); 		
 	}
 	
 }

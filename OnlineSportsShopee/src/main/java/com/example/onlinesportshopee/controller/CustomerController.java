@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 import com.example.onlinesportshopee.exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.model.Customer;
+import com.example.onlinesportshopee.services.CustomerServiceImpl;
 import com.example.onlinesportshopee.services.ICustomerService;
 
 //
@@ -18,31 +19,31 @@ import com.example.onlinesportshopee.services.ICustomerService;
 public class CustomerController 
 {
 	@Autowired
-	private ICustomerService customerservice;
+	private CustomerServiceImpl customerServiceImpl;
 	
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody CustomerEntity customer) throws CustomerNotFoundException {
-		return customerservice.addCustomer(customer);
+		return customerServiceImpl.addCustomer(customer);
 	}
 	
 	@DeleteMapping("/removeCustomer/Customer/{custId}")
 	public Customer removeCustomer(@PathVariable long custId) throws CustomerNotFoundException {
-		return customerservice.removeCustomer(custId);
+		return customerServiceImpl.removeCustomer(custId);
 	}
 
 	@PutMapping("/updateCustomer/{custId}")
 	public Customer updateCustomer(@PathVariable long custId,@RequestBody CustomerEntity customer) throws CustomerNotFoundException {
-		return customerservice.updateCustomer(custId, customer);
+		return customerServiceImpl.updateCustomer(custId, customer);
 	}
 
 	@GetMapping("/getCustomerDetails/{custId}")
 	public Customer getCustomer(@PathVariable long custId) throws CustomerNotFoundException {
-		return customerservice.getCustomer(custId);
+		return customerServiceImpl.getCustomer(custId);
 	}
 
 	@GetMapping("/Customers/{name}")
 	public List<Customer> getAllCustomers(@PathVariable String name) {
-		return customerservice.getAllCustomers();
+		return customerServiceImpl.getAllCustomers();
 	}
 	
 }
