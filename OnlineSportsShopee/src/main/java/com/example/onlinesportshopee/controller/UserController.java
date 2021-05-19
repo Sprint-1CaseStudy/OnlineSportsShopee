@@ -9,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.onlinesportshopee.Exception.UserException;
 import com.example.onlinesportshopee.entities.UserEntity;
+import com.example.onlinesportshopee.exception.UserException;
 import com.example.onlinesportshopee.model.User;
 import com.example.onlinesportshopee.services.IUserService;
 

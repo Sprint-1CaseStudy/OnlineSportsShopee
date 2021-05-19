@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.onlinesportshopee.Exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.dao.ICustomerRepository;
 import com.example.onlinesportshopee.entities.CustomerEntity;
+import com.example.onlinesportshopee.exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.model.Customer;
 import com.example.onlinesportshopee.util.CustomerUtils;
 

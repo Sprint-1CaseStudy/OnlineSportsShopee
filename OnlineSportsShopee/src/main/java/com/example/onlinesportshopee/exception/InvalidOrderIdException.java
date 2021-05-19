@@ -1,4 +1,4 @@
-package com.example.onlinesportshopee.Exception;
+package com.example.onlinesportshopee.exception;
 
 public class InvalidOrderIdException extends Exception{
 

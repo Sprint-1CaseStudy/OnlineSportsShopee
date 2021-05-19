@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.example.onlinesportshopee.Exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.entities.CustomerEntity;
+import com.example.onlinesportshopee.exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.model.Customer;
 import com.example.onlinesportshopee.services.ICustomerService;
 

@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.onlinesportshopee.entities.PaymentEntity;
+import com.example.onlinesportshopee.exception.PaymentNotFoundException;
 import com.example.onlinesportshopee.model.Payment;
 import com.example.onlinesportshopee.services.IPaymentService;
-import com.example.onlinesportshopee.Exception.PaymentNotFoundException;
 
 @RestController
 @RequestMapping("/payments")

@@ -3,11 +3,9 @@ package com.example.onlinesportshopee.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
- 
-
-import com.example.onlinesportshopee.Exception.UserException;
 import com.example.onlinesportshopee.dao.IUserRepository;
 import com.example.onlinesportshopee.entities.UserEntity;
+import com.example.onlinesportshopee.exception.UserException;
 import com.example.onlinesportshopee.model.User;
 import com.example.onlinesportshopee.util.UserUtils;
 

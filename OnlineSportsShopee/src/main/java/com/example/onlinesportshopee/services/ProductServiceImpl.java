@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.onlinesportshopee.Exception.ProductsException;
 import com.example.onlinesportshopee.dao.IProductRepository;
 import com.example.onlinesportshopee.entities.ProductEntity;
+import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.util.ProductUtils;
 

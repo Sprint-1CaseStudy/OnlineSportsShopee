@@ -2,8 +2,8 @@ package com.example.onlinesportshopee.services;
 
 import java.util.List;
 
-import com.example.onlinesportshopee.Exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.entities.CustomerEntity;
+import com.example.onlinesportshopee.exception.CustomerNotFoundException;
 import com.example.onlinesportshopee.model.Customer;
 
 public interface ICustomerService {
