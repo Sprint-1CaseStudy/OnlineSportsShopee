@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Table(name="card")
 
 public class CardEntity {
+
 	@Id
 	@Column(name = "id")
 	private long id;
