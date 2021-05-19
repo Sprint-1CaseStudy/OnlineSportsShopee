@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-s
+
 import com.example.onlinesportshopee.Exception.PaymentNotFoundException;
 import com.example.onlinesportshopee.dao.IPaymentRepository;
 import com.example.onlinesportshopee.entities.PaymentEntity;
@@ -20,7 +20,7 @@ public class PaymentServiceImpl implements IPaymentService{
 	@Override
 	public Payment addPayment(PaymentEntity paymentPayment) {
 		
-		PaymentEntity paymentEntity=paymentRepository.save(paymentEntity);
+		PaymentEntity paymentEntity=paymentRepository.save(paymentPayment);
 		return PaymentUtils.convertToPayment(paymentEntity);
 	}
 
