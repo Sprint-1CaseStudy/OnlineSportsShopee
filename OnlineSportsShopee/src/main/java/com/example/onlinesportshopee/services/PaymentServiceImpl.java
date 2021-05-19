@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.onlinesportshopee.Exception.PaymentNotFoundException;
 import com.example.onlinesportshopee.dao.IPaymentRepository;
 import com.example.onlinesportshopee.entities.PaymentEntity;
-import com.example.onlinesportshopee.entities.ProductEntity;
 import com.example.onlinesportshopee.model.Payment;
 import com.example.onlinesportshopee.util.*;
 
@@ -18,10 +18,10 @@ public class PaymentServiceImpl implements IPaymentService{
 	private IPaymentRepository paymentRepository;
 	//ghhh
 	@Override
-	public Payment addPayment(PaymentEntity payment) {
+	public Payment addPayment(PaymentEntity paymentPayment) {
 		
-		PaymentEntity paymentEntity=paymentRepository.save(payment);
-		return PaymentUtils.convertToPayment(payment);
+		PaymentEntity paymentEntity=paymentRepository.save(paymentPayment);
+		return PaymentUtils.convertToPayment(paymentEntity);
 	}
 
 	@Override
@@ -42,8 +42,10 @@ public class PaymentServiceImpl implements IPaymentService{
 	}
 
 	@Override
-	public Payment getPaymentDetails(long paymentID) {
+	public Payment getPaymentDetails(long paymentID) throws PaymentNotFoundException {
 		PaymentEntity getPaymentDetails= paymentRepository.findById(paymentID).get();
+		if (paymentID == 0)
+			throw new PaymentNotFoundException("orderNotFound");
 		return PaymentUtils.convertToPayment(getPaymentDetails);
 		
 	}

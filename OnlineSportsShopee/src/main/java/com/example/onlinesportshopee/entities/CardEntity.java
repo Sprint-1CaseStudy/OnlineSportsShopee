@@ -2,14 +2,14 @@ package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
 
+
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-import javax.persistence.*;
+//import java.time.format.DateTimeFormatter;
 
 
-@Entity
-@Table(name="Card")
+
+//@Entity
+@Table(name="card")
 
 public class CardEntity {
 	@Id

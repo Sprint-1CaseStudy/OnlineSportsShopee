@@ -1,7 +1,6 @@
 package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
-import com.example.onlinesportshopee.entities.CardEntity;
 
 @Entity
 @Table(name = "payment")

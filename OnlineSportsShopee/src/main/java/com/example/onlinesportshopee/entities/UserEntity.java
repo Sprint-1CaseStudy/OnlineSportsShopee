@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "payment")
 
 public class UserEntity {
-	
+
 	@Id
 	@Column(name = "userid")
 	private String userid;
