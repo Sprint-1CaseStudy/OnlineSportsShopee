@@ -28,6 +28,8 @@ public class CustomerEntity
 	@JoinColumn(name="address id")
 	private Address address;
 	
+	
+	
 	public CustomerEntity() {
 		super();
 	}
