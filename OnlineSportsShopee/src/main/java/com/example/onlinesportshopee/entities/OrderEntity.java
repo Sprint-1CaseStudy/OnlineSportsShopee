@@ -10,7 +10,8 @@ import javax.persistence.*;
 
 public class OrderEntity {
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
 	@Column(name = "orderID")
 	private long orderID;
 	@Column(name = "amount")

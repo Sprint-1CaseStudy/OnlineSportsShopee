@@ -2,11 +2,12 @@ package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 @Table(name = "address")
 public class AddressEntity 
 {
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
 	@Column(name = "doorNo")
 	private String doorNo;
 	@Column(name = "street")

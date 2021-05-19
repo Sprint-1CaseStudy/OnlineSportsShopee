@@ -8,10 +8,11 @@ import java.time.format.DateTimeFormatter;
 import javax.persistence.*;
 
 
-@Entity
-@Table(name="Card")
+//@Entity
+@Table(name="card")
 
 public class CardEntity {
+	
 	@Column(name = "id")
 	private long id;
 	@Column(name = "cardName")

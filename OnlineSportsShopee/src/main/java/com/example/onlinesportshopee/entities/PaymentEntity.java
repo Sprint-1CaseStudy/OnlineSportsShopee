@@ -6,7 +6,8 @@ import javax.persistence.*;
 
 public class PaymentEntity {
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
 	@Column(name = "paymentId")
 	private long paymentId;
 	@Column(name = "type")
