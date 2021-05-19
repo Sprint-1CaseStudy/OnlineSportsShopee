@@ -8,13 +8,8 @@ import com.example.onlinesportshopee.entities.CardEntity;
 
 public class PaymentEntity {
 	
-<<<<<<< HEAD
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-=======
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
->>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 	@Column(name = "paymentId")
 	private long paymentId;
 	@Column(name = "type")

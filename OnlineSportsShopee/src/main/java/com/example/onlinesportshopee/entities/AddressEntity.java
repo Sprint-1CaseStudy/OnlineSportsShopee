@@ -6,10 +6,7 @@ import javax.persistence.*;
 @Table(name = "address")
 public class AddressEntity 
 {
-<<<<<<< HEAD
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-=======
->>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
+
 	@Id
 	@Column(name = "doorNo")
 	private String doorNo;

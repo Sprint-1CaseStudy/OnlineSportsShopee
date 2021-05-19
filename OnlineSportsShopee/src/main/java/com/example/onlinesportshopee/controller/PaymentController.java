@@ -3,6 +3,8 @@ package com.example.onlinesportshopee.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.onlinesportshopee.entities.PaymentEntity;
@@ -27,17 +29,17 @@ public class PaymentController {
 	}
 	
 	@DeleteMapping("/removePayment/payment/{paymentId}")
-	public Payment removePayment(@PathVariable long paymentId) throws PaymentNotFoundException
+	public ResponseEntity<Object> removePayment(@PathVariable long paymentId) throws PaymentNotFoundException
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
 		paymentDTO = paymentService.removePayment(paymentId);
-		paymentDTO = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
+		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		return paymentResponse;
 		}
 	
 	@PutMapping("/updatePayment/{paymentId}")
-	public Payment updatePayment(@PathVariable long paymentId, @RequestBody PaymentEntity paymentEntity)  throws PaymentNotFoundException
+	public ResponseEntity<Object> updatePayment(@PathVariable long paymentId, @RequestBody PaymentEntity paymentEntity)  throws PaymentNotFoundException
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
@@ -48,7 +50,7 @@ public class PaymentController {
 	}
 	
 	@GetMapping("/getPaymentDetails/{paymentId}")
-	public Payment getPaymentDetails(@PathVariable long paymentId) throws PaymentNotFoundException
+	public ResponseEntity<Object> getPaymentDetails(@PathVariable long paymentId) throws PaymentNotFoundException
 	{
 		
 		Payment paymentDTO =null;

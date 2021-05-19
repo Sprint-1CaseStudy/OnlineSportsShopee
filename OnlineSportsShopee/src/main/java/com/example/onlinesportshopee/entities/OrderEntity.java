@@ -10,13 +10,9 @@ import javax.persistence.*;
 
 public class OrderEntity {
 
-<<<<<<< HEAD
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@Id
-=======
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
->>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 	@Column(name = "orderID")
 	private long orderID;
 	@Column(name = "amount")

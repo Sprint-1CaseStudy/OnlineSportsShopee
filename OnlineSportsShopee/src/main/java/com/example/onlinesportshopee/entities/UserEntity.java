@@ -6,10 +6,7 @@ import javax.persistence.*;
 @Table(name = "payment")
 
 public class UserEntity {
-<<<<<<< HEAD
-=======
-	
->>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
+
 	@Id
 	@Column(name = "userid")
 	private String userid;
