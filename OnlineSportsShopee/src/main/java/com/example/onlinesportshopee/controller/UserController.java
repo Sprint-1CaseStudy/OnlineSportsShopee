@@ -25,11 +25,19 @@ public class UserController {
 	public ResponseEntity<Object> signin(@PathVariable String userId,@PathVariable String Password) throws UserException
 	{
 		UserEntity userdata = new UserEntity(userId,Password);
-		User user = userService.signIn(userdata);
+		UserEntity user = userService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
 		return response;
 	}
 	
+	
+	@GetMapping("/signout")
+	public ResponseEntity<Object> signOut() throws UserException
+	{
+		String signout = userService.signOut(null);
+		ResponseEntity<Object> response = new ResponseEntity<>(signout,HttpStatus.ACCEPTED);
+		return response;
+	}
 	
 	@PutMapping("/changepassword/{userId}")
 	public ResponseEntity<Object> signin(@PathVariable long userId, @RequestBody UserEntity User) throws UserException

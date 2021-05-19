@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Table(name="card")
 
 public class CardEntity {
+<<<<<<< HEAD
 	
+=======
+	@Id
+>>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 	@Column(name = "id")
 	private long id;
 	@Column(name = "cardName")
@@ -57,7 +61,7 @@ public class CardEntity {
 		return expiryDate;
 	}
 	public void setExpiryDate(LocalDate expiryDate) {
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("MM/yyyy");
+
 		this.expiryDate = expiryDate;
 	}
 	public String getBankName() {

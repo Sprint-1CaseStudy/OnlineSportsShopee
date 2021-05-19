@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class Product {
 	
-
+	
 	private long productId;
 
 	private String productName;

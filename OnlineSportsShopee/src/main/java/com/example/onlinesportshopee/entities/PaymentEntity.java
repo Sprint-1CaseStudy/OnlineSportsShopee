@@ -1,20 +1,27 @@
 package com.example.onlinesportshopee.entities;
 
-import javax.persistence.*;  
+import javax.persistence.*;
+import com.example.onlinesportshopee.entities.CardEntity;
+
 @Entity
 @Table(name = "payment")
 
 public class PaymentEntity {
 	
+<<<<<<< HEAD
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+=======
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+>>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 	@Column(name = "paymentId")
 	private long paymentId;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "status")
 	private String status;
-	@Column(name = "card")
+	@Column(name = "cardEntity")
 	CardEntity cardEntity;
 
 	public PaymentEntity() {
