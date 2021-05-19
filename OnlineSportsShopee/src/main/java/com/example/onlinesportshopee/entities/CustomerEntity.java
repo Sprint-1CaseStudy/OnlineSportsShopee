@@ -23,7 +23,8 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
-	@Column(name = "address")
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="doorNo")
 	private Address address;
 	
 	public CustomerEntity() {
