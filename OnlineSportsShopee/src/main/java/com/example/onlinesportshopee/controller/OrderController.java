@@ -34,6 +34,8 @@ public class OrderController {
 	
 	@PostMapping("/add-order")
 	public  ResponseEntity<Object> addProduct(@RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
+		LOGGER.info("add-order URL is opened");
+		LOGGER.info("addOrderEntity() is initiated");
 		System.out.println(orderEntity);
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
