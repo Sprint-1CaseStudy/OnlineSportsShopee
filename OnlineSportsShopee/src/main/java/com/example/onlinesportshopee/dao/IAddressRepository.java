@@ -9,3 +9,4 @@ import com.example.onlinesportshopee.entities.AddressEntity;
 public interface IAddressRepository extends JpaRepository<AddressEntity, Long> {
 
 }
+//

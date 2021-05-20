@@ -4,7 +4,7 @@ import com.example.onlinesportshopee.entities.AddressEntity;
 import com.example.onlinesportshopee.model.Address;
 
 public class AddressUtils {
-	
+	//
 	private AddressUtils()
 	{
 		
