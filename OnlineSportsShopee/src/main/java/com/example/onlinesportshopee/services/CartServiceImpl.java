@@ -25,35 +25,35 @@ public class CartServiceImpl implements ICartService {
 	
 	@Override
 	public Cart addCart(CartEntity cartEntity) throws CartException {
-		LOGGER.info("addtocart()-service is initiated");
+		LOGGER.info("addtocart() service is initiated");
 		CartEntity carEntity = null;
 		if(cartEntity==null)
 			carEntity=null;
 		else {
 			carEntity = iCartRepository.save(cartEntity);
 		}
-		LOGGER.info("addtocart()-service is Executed");
+		LOGGER.info("addtocart() service is Executed");
 		return CartUtils.convertToOrder(carEntity);
 	}
 
 	@Override
 	public Cart deleteCart(long id) throws CartException {
-		LOGGER.info("deletecart()-service is initiated");
+		LOGGER.info("deletecart() service is initiated");
 		CartEntity carEntity = iCartRepository.findById(id).orElse(null);
 		if (carEntity == null)
 			throw new CartException("CartNotFound");
 		else
 			iCartRepository.delete(carEntity);
-		LOGGER.info("deletecart()-service is Executed");
+		LOGGER.info("deletecart() service is Executed");
 		return CartUtils.convertToOrder(carEntity);
 	}
 
 
 	@Override
 	public List<Cart> getallCartDetails() {
-		LOGGER.info("getallcartdetails()-service initiated");
+		LOGGER.info("getallcartdetails() service initiated");
 		List<CartEntity> carList = iCartRepository.findAll();
-		LOGGER.info("getallcartdetails()-service Executed");
+		LOGGER.info("getallcartdetails() service Executed");
 		return CartUtils.convertToOrderDtoList(carList);
 	}
 

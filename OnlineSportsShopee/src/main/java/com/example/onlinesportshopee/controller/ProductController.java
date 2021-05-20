@@ -29,6 +29,7 @@ public class ProductController {
 	@PostMapping("/addproduct")
 	public ResponseEntity<Object> addProduct(@RequestBody ProductEntity product) throws ProductsException
 	{
+		LOGGER.info("addProduct URL is opened");
 		LOGGER.info("addProduct() is initiated");
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
@@ -42,6 +43,7 @@ public class ProductController {
 	@DeleteMapping("/removeproduct/product/{productId}")
 	public ResponseEntity<Object> removeProduct(@PathVariable long productId) throws ProductsException
 	{
+		LOGGER.info("removeProduct URL is opened");
 		LOGGER.info("removeProduct() is initiated");
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
@@ -55,6 +57,7 @@ public class ProductController {
 	@PutMapping("/updateproduct/{productId}")
 	public ResponseEntity<Object> updateProduct(@PathVariable long productId, @RequestBody ProductEntity product)
 	{
+		LOGGER.info("updateProduct URL is opened");
 		LOGGER.info("updateProduct() is initiated");
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
@@ -68,6 +71,7 @@ public class ProductController {
 	@GetMapping("/getproduct/{productId}")
 	public ResponseEntity<Object> getProduct(@PathVariable long productId)
 	{
+		LOGGER.info("getProduct URL is opened");
 		LOGGER.info("getProduct() is initiated");
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
@@ -80,6 +84,7 @@ public class ProductController {
 	@GetMapping("/getallproduct")
 	public List<Product> getAllProduct()
 	{
+		LOGGER.info("getAllProducts URL is opened");
 		LOGGER.info("getAllProducts() is initiated");
 		return iProductService.getAllProduct();
 	}
@@ -88,6 +93,7 @@ public class ProductController {
 	@GetMapping("/byname/{name}")
 	public ResponseEntity<Object> getProductsByName(@PathVariable String name) throws ProductsException
 	{
+		LOGGER.info("Productbyname URL is opened");
 		LOGGER.info("Productbyname() is initiated");
 		ResponseEntity<Object> response = null;
 		List<Product> products = iProductService.getProductsByName(name);
@@ -99,6 +105,7 @@ public class ProductController {
 	@GetMapping("/bysize/{size}")
 	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
+		LOGGER.info("Productbysize URL is opened");
 		LOGGER.info("Productbysize() is initiated");
 		List<Product> bysize = iProductService.getProductsBySize(size);
 		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
@@ -109,6 +116,7 @@ public class ProductController {
 	@GetMapping("/byprice/{price}")
 	public ResponseEntity<Object> getProductsByPrice(@PathVariable double price) throws ProductsException
 	{
+		LOGGER.info("Productbyprice URL is opened");
 		LOGGER.info("Productbyprice() is initiated");
 		List<Product> byprice = iProductService.getProductsByPrice(price);
 		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
@@ -119,6 +127,7 @@ public class ProductController {
 	@GetMapping("/bycolor/{color}")
 	public ResponseEntity<Object> getProductsByColor(@PathVariable String color) throws ProductsException
 	{
+		LOGGER.info("Productbycolor URL is opened");
 		LOGGER.info("Productbycolor() is initiated");
 		List<Product> bycolor = iProductService.getProductsByColor(color);
 		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
