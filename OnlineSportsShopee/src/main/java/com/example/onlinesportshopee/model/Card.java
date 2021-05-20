@@ -16,6 +16,10 @@ public class Card {
 		this.cardExpiry= cardExpiry;
 	}
     
+	public Card() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getId() {
 		return id;
 	}
