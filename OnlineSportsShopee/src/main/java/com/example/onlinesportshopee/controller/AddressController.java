@@ -1,6 +1,9 @@
 package com.example.onlinesportshopee.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +17,8 @@ import com.example.onlinesportshopee.services.IAddressService;
 @RestController
 @RequestMapping("/address")
 public class AddressController {
+	
+	static final Logger LOGGER = LoggerFactory.getLogger(AddressController.class);
 	
 	@Autowired
 	private AddressServiceImpl addressServiceImpl;

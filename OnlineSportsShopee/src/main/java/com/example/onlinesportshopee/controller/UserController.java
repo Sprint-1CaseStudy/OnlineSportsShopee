@@ -1,6 +1,9 @@
 package com.example.onlinesportshopee.controller;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 //import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,8 @@ import com.example.onlinesportshopee.services.UserServiceImpl;
 @RestController
 @RequestMapping("/login")
 public class UserController {
+	
+	static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
 	private IUserService iUserService;
