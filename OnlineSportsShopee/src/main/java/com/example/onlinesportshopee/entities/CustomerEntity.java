@@ -1,6 +1,7 @@
 package com.example.onlinesportshopee.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -26,27 +27,25 @@ public class CustomerEntity
 	private LocalDate doB;
 
 	@OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
-	private List<AddressEntity> addresslist;
+	private List<AddressEntity> addressList;
 	
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "addressId")
-	private AddressEntity addressEntity;
-	@OneToOne(mappedBy="customerEntity",cascade=CascadeType.ALL)
-	private OrderEntity orderEntity;
+	
+	@OneToMany(mappedBy="customerEntity",cascade=CascadeType.ALL)
+	private List<OrderEntity> orderEntity;
 	
 	public CustomerEntity() {}
 	
 	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
-			List<AddressEntity> addresslist, AddressEntity addressEntity, OrderEntity orderEntity) {
+			List<AddressEntity> addresslist, AddressEntity addressEntity, List<OrderEntity> orderEntity) {
 		super();
 		this.userID = userID;
 		this.name = name;
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.addresslist = addresslist;
-		this.addressEntity = addressEntity;
+		
+		this.addressList = addressList;
 		this.orderEntity = orderEntity;
 	}
 	public String getUserID() {
