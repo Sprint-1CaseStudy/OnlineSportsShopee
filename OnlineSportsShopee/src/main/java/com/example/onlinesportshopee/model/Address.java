@@ -9,6 +9,10 @@ public class Address
 	private String state;
 	private int pincode;
 	
+	public Address()
+	{
+		super();
+	}
 	public Address(String doorNo, String street, String area, String city, String state, int pincode) {
 		super();
 		this.doorNo = doorNo;

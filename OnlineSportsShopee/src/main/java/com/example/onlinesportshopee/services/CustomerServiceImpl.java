@@ -17,7 +17,7 @@ public class CustomerServiceImpl implements ICustomerService {
 //
 		
 	@Autowired
-	private ICustomerRepository iCustomerRepository;
+	private ICustomerRepository icustomerRepository;
 	
 	@Override
 	public Customer addCustomer(CustomerEntity customer) throws CustomerNotFoundException {
@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		if(customer == null)
 			customerentity = null;
 		else {
-			customerentity = iCustomerRepository.save(customer);
+			customerentity = icustomerRepository.save(customer);
 		}
 		return 
 				CustomerUtils.convertToCustomer(customerentity);
@@ -33,13 +33,13 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	@Override
 	public Customer removeCustomer(long custId) throws CustomerNotFoundException{
-		CustomerEntity existcustomer = iCustomerRepository.findById(custId).orElse(null);
+		CustomerEntity existcustomer = icustomerRepository.findById(custId).orElse(null);
 		if(existcustomer == null)
 		{
 			throw new CustomerNotFoundException("CustomerNotFound");
 		}
 		else {
-			iCustomerRepository.delete(existcustomer);
+			icustomerRepository.delete(existcustomer);
 		}
 		return CustomerUtils.convertToCustomer(existcustomer);
 	}
@@ -48,20 +48,20 @@ public class CustomerServiceImpl implements ICustomerService {
 	public Customer updateCustomer(long custId, CustomerEntity customer) throws CustomerNotFoundException{
 		// TODO Auto-generated method stub
 		CustomerEntity customerentity = null;
-		CustomerEntity updatecustomer = iCustomerRepository.findById(custId).orElse(null);
+		CustomerEntity updatecustomer = icustomerRepository.findById(custId).orElse(null);
 		if(updatecustomer == null)
 		{
 			throw new CustomerNotFoundException("CustomerNotFound");
 		}
 		else {
-			customerentity = iCustomerRepository.save(customer);
+			customerentity = icustomerRepository.save(customer);
 		}
 		return CustomerUtils.convertToCustomer(customerentity);
 	}
 
 	@Override
 	public Customer getCustomer(long custId) throws CustomerNotFoundException{
-		CustomerEntity getCustomer = iCustomerRepository.findById(custId).orElse(null);
+		CustomerEntity getCustomer = icustomerRepository.findById(custId).orElse(null);
 		if(getCustomer == null)
 		{
 			throw new CustomerNotFoundException("CustomerNotFound");
@@ -71,7 +71,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	@Override
 	public List<Customer> getAllCustomers() {
-		List<CustomerEntity> custlist = iCustomerRepository.findAll();
+		List<CustomerEntity> custlist = icustomerRepository.findAll();
 		return CustomerUtils.convertToCustomerList(custlist);
 	}
 }

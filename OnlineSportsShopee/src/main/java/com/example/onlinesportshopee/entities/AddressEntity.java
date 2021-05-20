@@ -21,6 +21,11 @@ public class AddressEntity
 	@Column(name = "pincode")
 	private int pincode;
 	
+	public AddressEntity()
+	{
+		super();
+	}
+	
 	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode) {
 		super();
 		this.doorNo = doorNo;
