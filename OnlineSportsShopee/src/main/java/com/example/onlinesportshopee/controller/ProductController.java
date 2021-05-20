@@ -2,7 +2,6 @@ package com.example.onlinesportshopee.controller;
 
 import java.util.List;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.ResponseEntity;
@@ -84,7 +83,8 @@ public class ProductController {
 	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
 		List<Product> bysize = productService.getProductsBySize(size);
-		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
+		ResponseEntity<Object> response = null;
+		response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
 		return response;
 	}
 	
@@ -92,7 +92,8 @@ public class ProductController {
 	public ResponseEntity<Object> getProductsByPrice(@PathVariable double price) throws ProductsException
 	{
 		List<Product> byprice = productService.getProductsByPrice(price);
-		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
+		ResponseEntity<Object> response = null; 
+		response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
 		return response;
 	}
 	
@@ -100,7 +101,8 @@ public class ProductController {
 	public ResponseEntity<Object> getProductsByColor(@PathVariable String color) throws ProductsException
 	{
 		List<Product> bycolor = productService.getProductsByColor(color);
-		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
+		ResponseEntity<Object> response = null;
+		response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
 		return response;
 	}
 

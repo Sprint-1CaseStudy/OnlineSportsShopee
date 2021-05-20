@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 
 
-//@Entity
+@Entity
 @Table(name="card")
 
 public class CardEntity {
