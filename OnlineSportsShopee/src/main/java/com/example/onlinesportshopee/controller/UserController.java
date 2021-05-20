@@ -35,7 +35,7 @@ public class UserController {
 		UserEntity userdata = new UserEntity(userId,Password);
 		UserEntity user = iUserService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
-		LOGGER.info("signin() is Executed");
+		LOGGER.info("signin() has Executed");
 		return response;
 	}
 	
@@ -47,7 +47,7 @@ public class UserController {
 		LOGGER.info("signout() is initiated");
 		String signout = iUserService.signOut(null);
 		ResponseEntity<Object> response = new ResponseEntity<>(signout,HttpStatus.ACCEPTED);
-		LOGGER.info("signout() is Executed");
+		LOGGER.info("signout() has Executed");
 		return response;
 	}
 	
@@ -58,7 +58,7 @@ public class UserController {
 		LOGGER.info("changepassword() is initiated");
 		User user = iUserService.changePassword(userId, User);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
-		LOGGER.info("changepassword() is Executed");
+		LOGGER.info("changepassword() has Executed");
 		return response;
 	}	
 	

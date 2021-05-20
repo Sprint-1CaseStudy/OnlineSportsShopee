@@ -33,7 +33,7 @@ public class ProductServiceImpl implements IProductService {
      else {
     	 productEntity = iProductRepository.save(product);
     	  }
-     LOGGER.info("addProduct() service is executed");
+     LOGGER.info("addProduct() service has executed");
      return ProductUtils.convertToProduct(productEntity);
      
 	}
@@ -43,7 +43,7 @@ public class ProductServiceImpl implements IProductService {
 		LOGGER.info("removeProduct() service is initiated");
 		ProductEntity delproduct = iProductRepository.findById(productId).get();
 		iProductRepository.delete(delproduct);
-		LOGGER.info("removeProduct() service is executed");
+		LOGGER.info("removeProduct() service has executed");
 		return ProductUtils.convertToProduct(delproduct);
 	}
 
@@ -53,7 +53,7 @@ public class ProductServiceImpl implements IProductService {
 		LOGGER.info("updateProduct() service is initiated");
 		ProductEntity updateProduct = iProductRepository.findById(productId).get();
 		updateProduct = iProductRepository.save(product);
-		LOGGER.info("updateProduct() service is executed");
+		LOGGER.info("updateProduct() service has executed");
 		return ProductUtils.convertToProduct(updateProduct);
 	}
 
@@ -61,7 +61,7 @@ public class ProductServiceImpl implements IProductService {
 	public Product getProduct(long productId) {
 		LOGGER.info("getProduct() service is initiated");
 		ProductEntity getProduct = iProductRepository.findById(productId).get();
-		LOGGER.info("getProduct() service is executed");
+		LOGGER.info("getProduct() service has executed");
 		return ProductUtils.convertToProduct(getProduct);
 	}
 
@@ -69,7 +69,7 @@ public class ProductServiceImpl implements IProductService {
 	public List<Product> getAllProduct() {
 		LOGGER.info("getAllProduct() service is initiated");
 		List<ProductEntity> getAllProduct = iProductRepository.findAll();
-		LOGGER.info("getAllProduct() service is executed");
+		LOGGER.info("getAllProduct() service has executed");
 		return ProductUtils.convertToProductDtoList(getAllProduct);
 	}
 	
@@ -83,7 +83,7 @@ public class ProductServiceImpl implements IProductService {
 			String namenotfound = "No products found by the name "+name;
 			throw new ProductsException(namenotfound);
 		}
-		LOGGER.info("getProductByName() service is executed");
+		LOGGER.info("getProductByName() service has executed");
 		return ProductUtils.convertToProductDtoList(getProductName);
 	}
 	
@@ -98,7 +98,7 @@ public class ProductServiceImpl implements IProductService {
 			String sizenotfound = "No products found by the size "+size;
 			throw new ProductsException(sizenotfound);
 		}
-		LOGGER.info("getProductBySize() service is executed");
+		LOGGER.info("getProductBySize() service has executed");
 		return ProductUtils.convertToProductDtoList(productSize);
 	}
 	
@@ -112,7 +112,7 @@ public class ProductServiceImpl implements IProductService {
 			String pricenotfound = "No products found by the price "+price;
 			throw new ProductsException(pricenotfound);
 		}
-		LOGGER.info("getProductByPrice() service is executed");
+		LOGGER.info("getProductByPrice() service has executed");
 		return ProductUtils.convertToProductDtoList(productPrice);
 		
 	}
@@ -127,7 +127,7 @@ public class ProductServiceImpl implements IProductService {
 			String colornotfound = "No products found by the color "+color;
 			throw new ProductsException(colornotfound);
 		}
-		LOGGER.info("getProductByColor() service is executed");
+		LOGGER.info("getProductByColor() service has executed");
 		return ProductUtils.convertToProductDtoList(productColor);
 	}
 

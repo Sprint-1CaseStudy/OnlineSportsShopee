@@ -31,7 +31,7 @@ public class CartController {
 		ResponseEntity<Object> cartResponse = null;
 		cartDTO = cartService.addCart(cartEntity);
 		cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
-		LOGGER.info("addtocart() is Executed");
+		LOGGER.info("addtocart() has Executed");
 		return cartResponse;
 	}
 	
@@ -41,7 +41,7 @@ public class CartController {
 		LOGGER.info("deletecart() is initiated");
 		Cart cartDTO = cartService.deleteCart(delID);
 		ResponseEntity<Object> cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
-		LOGGER.info("deletecart() is Executed");
+		LOGGER.info("deletecart() has Executed");
 		return cartResponse;
 
 	}

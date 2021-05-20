@@ -35,7 +35,7 @@ public class ProductController {
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.addProduct(product);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
-		LOGGER.info("addProduct() is Executed");
+		LOGGER.info("addProduct() has Executed");
 		return productResponse;
 		
 	}
@@ -49,7 +49,7 @@ public class ProductController {
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.removeProduct(productId);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
-		LOGGER.info("removeProduct() is Executed");
+		LOGGER.info("removeProduct() has Executed");
 		return productResponse;
 	 
 	}
@@ -63,7 +63,7 @@ public class ProductController {
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.updateProduct(productId, product);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
-		LOGGER.info("updateProduct() is Executed");
+		LOGGER.info("updateProduct() has Executed");
 		return productResponse;
 		
 	}
@@ -77,7 +77,7 @@ public class ProductController {
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.getProduct(productId);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
-		LOGGER.info("getProduct() is Executed");
+		LOGGER.info("getProduct() has Executed");
 		return productResponse;
 	}
 	
@@ -98,7 +98,7 @@ public class ProductController {
 		ResponseEntity<Object> response = null;
 		List<Product> products = iProductService.getProductsByName(name);
 		response = new ResponseEntity<>(products,HttpStatus.ACCEPTED);	
-		LOGGER.info("Productbyname() is Executed");
+		LOGGER.info("Productbyname() has Executed");
 		return response;
 	}
 	
@@ -109,7 +109,7 @@ public class ProductController {
 		LOGGER.info("Productbysize() is initiated");
 		List<Product> bysize = iProductService.getProductsBySize(size);
 		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
-		LOGGER.info("Productbysize() is Executed");
+		LOGGER.info("Productbysize() has Executed");
 		return response;
 	}
 	
@@ -120,7 +120,7 @@ public class ProductController {
 		LOGGER.info("Productbyprice() is initiated");
 		List<Product> byprice = iProductService.getProductsByPrice(price);
 		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
-		LOGGER.info("Productbyprice() is Executed");
+		LOGGER.info("Productbyprice() has Executed");
 		return response;
 	}
 	
@@ -131,7 +131,7 @@ public class ProductController {
 		LOGGER.info("Productbycolor() is initiated");
 		List<Product> bycolor = iProductService.getProductsByColor(color);
 		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
-		LOGGER.info("Productbycolor() is Executed");
+		LOGGER.info("Productbycolor() has Executed");
 		return response;
 	}
 }

@@ -28,7 +28,7 @@ public class CardServiceImpl implements ICardService{
 	public Card addCard(CardEntity card) {
 		LOGGER.info("addCard() service is initiated");
 		CardEntity addCard = cardRepository.save(card);
-		LOGGER.info("addCard() service is executed");
+		LOGGER.info("addCard() service has executed");
 		return CardUtils.convertToCard(addCard);
 	}
 
@@ -37,7 +37,7 @@ public class CardServiceImpl implements ICardService{
 		LOGGER.info("removeCard() service is initiated");
 	    CardEntity deleteCard = cardRepository.findById(id).get();
 	    cardRepository.delete(deleteCard);
-	    LOGGER.info("removeCard() service is executed");
+	    LOGGER.info("removeCard() service has executed");
 	return CardUtils.convertToCard(deleteCard);
 	}
 
@@ -46,7 +46,7 @@ public class CardServiceImpl implements ICardService{
 		LOGGER.info("updateCard() service is initiated");
 		CardEntity updateCard = cardRepository.findById(id).get();
 		updateCard = cardRepository.save(card);
-		LOGGER.info("updateCard() service is executed");
+		LOGGER.info("updateCard() service has executed");
 		return CardUtils.convertToCard(updateCard);
 	}
 
@@ -54,7 +54,7 @@ public class CardServiceImpl implements ICardService{
 	public Card getCardDetails(long id) {
 		LOGGER.info("getCardDetails() service is initiated");
 		CardEntity getCardDetails = cardRepository.findById(id).get();
-		LOGGER.info("getCardDetails() service is executed");
+		LOGGER.info("getCardDetails() service has executed");
 		return CardUtils.convertToCard(getCardDetails);
 	}
 
@@ -62,12 +62,8 @@ public class CardServiceImpl implements ICardService{
 	public List<Card> getAllCards() {
 		LOGGER.info("getAllCards() service is initiated");
 		List<CardEntity> getAllCards = cardRepository.findAll();
-		LOGGER.info("getAllCards() service is executed");
+		LOGGER.info("getAllCards() service has executed");
 		return CardUtils.convertToCardList(getAllCards);
-	}
-	
-	
-	
-	
+	}	
 
 }

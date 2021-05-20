@@ -42,7 +42,7 @@ public class CardController {
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.addCard(card);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
-		LOGGER.info("addCard() is executed");
+		LOGGER.info("addCard() has executed");
 		return cardResponse;
 	}
 
@@ -55,7 +55,7 @@ public class CardController {
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.removeCard(id);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
-		LOGGER.info("removeCard() is executed");
+		LOGGER.info("removeCard() has executed");
 		return cardResponse;
 	 
 	}
@@ -69,7 +69,7 @@ public class CardController {
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.updateCard(id, card);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
-		LOGGER.info("updateCard() is executed");
+		LOGGER.info("updateCard() has executed");
 		return cardResponse;
 		
 	}
@@ -82,7 +82,7 @@ public class CardController {
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.getCardDetails(id);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
-		LOGGER.info("getCardDetails() is executed");
+		LOGGER.info("getCardDetails() has executed");
 		return cardResponse;
 	}
 	
@@ -92,7 +92,7 @@ public class CardController {
 	{
 		LOGGER.info("get-all-cards URL is opened");
 		LOGGER.info("getAllCards() is initiated");
-		LOGGER.info("getAllCards() is executed");
+		LOGGER.info("getAllCards() has executed");
 		return cardServiceImpl.getAllCards();
 	}
 	

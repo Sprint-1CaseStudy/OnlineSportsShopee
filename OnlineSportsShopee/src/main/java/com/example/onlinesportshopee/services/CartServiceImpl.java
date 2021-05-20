@@ -32,7 +32,7 @@ public class CartServiceImpl implements ICartService {
 		else {
 			carEntity = iCartRepository.save(cartEntity);
 		}
-		LOGGER.info("addtocart() service is Executed");
+		LOGGER.info("addtocart() service has Executed");
 		return CartUtils.convertToOrder(carEntity);
 	}
 
@@ -44,16 +44,16 @@ public class CartServiceImpl implements ICartService {
 			throw new CartException("CartNotFound");
 		else
 			iCartRepository.delete(carEntity);
-		LOGGER.info("deletecart() service is Executed");
+		LOGGER.info("deletecart() service has Executed");
 		return CartUtils.convertToOrder(carEntity);
 	}
 
 
 	@Override
 	public List<Cart> getallCartDetails() {
-		LOGGER.info("getallcartdetails() service initiated");
+		LOGGER.info("getallcartdetails() service is initiated");
 		List<CartEntity> carList = iCartRepository.findAll();
-		LOGGER.info("getallcartdetails() service Executed");
+		LOGGER.info("getallcartdetails() has Executed");
 		return CartUtils.convertToOrderDtoList(carList);
 	}
 

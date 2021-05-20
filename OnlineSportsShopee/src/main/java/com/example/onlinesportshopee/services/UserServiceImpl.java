@@ -38,7 +38,7 @@ public class UserServiceImpl implements IUserService {
         {
             if(userid.equals(useridrepo.getUserid()) && password.equals(useridrepo.getPassword())) 
             {
-            	LOGGER.info("signin() service is Executed");
+            	LOGGER.info("signin() service has Executed");
                 return useridrepo;
             }
             else {
@@ -68,7 +68,7 @@ public class UserServiceImpl implements IUserService {
             throw new UserException(usernotfound);
         }
         else userEnti = Userrepo.save(user);
-        LOGGER.info("changepassword() service is Executed");
+        LOGGER.info("changepassword() service has Executed");
         return UserUtils.convertToOrder(userEnti);
     }
 
