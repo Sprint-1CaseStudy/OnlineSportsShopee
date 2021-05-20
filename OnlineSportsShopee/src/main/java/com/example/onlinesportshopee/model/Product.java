@@ -3,7 +3,9 @@ package com.example.onlinesportshopee.model;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
+import com.example.onlinesportshopee.entities.CartEntity;
 import com.example.onlinesportshopee.entities.OrderEntity;
 
 
@@ -34,6 +36,7 @@ public class Product {
 	private LocalDate expectedDelivery;
 	
 	private OrderEntity orderEntity;
+	private List<CartEntity> cartEntity;
 	
 	
 	public Long getProductId() {
@@ -103,9 +106,21 @@ public class Product {
 		this.expectedDelivery = expectedDelivery;
 	}
 	
+	public OrderEntity getOrderEntity() {
+		return orderEntity;
+	}
+	public void setOrderEntity(OrderEntity orderEntity) {
+		this.orderEntity = orderEntity;
+	}
+	public List<CartEntity> getCartEntity() {
+		return cartEntity;
+	}
+	public void setCartEntity(List<CartEntity> cartEntity) {
+		this.cartEntity = cartEntity;
+	}
 	public Product(Long productId, String productName, String category, String description, String brand, String colour,
 			String size, Double mrp, Double priceAfterDiscount, Boolean inStock, LocalDate expectedDelivery,
-			OrderEntity orderEntity) {
+			OrderEntity orderEntity,List<CartEntity> cartEntity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -119,17 +134,11 @@ public class Product {
 		this.inStock = inStock;
 		this.expectedDelivery = expectedDelivery;
 		this.orderEntity = orderEntity;
+		this.cartEntity=cartEntity;
 	}
 	
 	public Product() {
 		super();
-	}
-	
-	public OrderEntity getOrderEntity() {
-		return orderEntity;
-	}
-	public void setOrderEntity(OrderEntity orderEntity) {
-		this.orderEntity = orderEntity;
 	}
 	
 	@Override

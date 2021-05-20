@@ -30,7 +30,7 @@ public class CartUtils {
         cart.setPrice(dto.getPrice());
         cart.setQuantity(dto.getQuantity());
         cart.setTotal(dto.getTotal());
-       
+        cart.setProductEntity(dto.getProductEntity());
         return cart;
     }        
     
@@ -42,6 +42,7 @@ public class CartUtils {
         dto.setPrice(cartEntity.getPrice());
         dto.setQuantity(cartEntity.getQuantity());
         dto.setTotal(cartEntity.getTotal());
+        dto.setProductEntity(cartEntity.getProductEntity());
         return dto;
     }
 

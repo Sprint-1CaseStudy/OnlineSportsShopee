@@ -17,7 +17,7 @@ public class Customer
 	private String email;
 	private String contactNo;
 	private LocalDate doB;
-	private List<AddressEntity> addressList;
+	private List<AddressEntity> addressEntity;
 	private List<OrderEntity> orderEntity;
 	
 	public Customer()
@@ -25,7 +25,7 @@ public class Customer
 		super();
 	}
 	
-	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, List<AddressEntity> addressList) 
+	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, List<AddressEntity> addressEntity,List<OrderEntity> orderEntity) 
 	{
 		super();
 		this.userID = userID;
@@ -33,7 +33,8 @@ public class Customer
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.addressList = addressList;
+		this.addressEntity = addressEntity;
+		this.orderEntity=orderEntity;
 	}
 
 	public String getUserID() {
@@ -66,20 +67,12 @@ public class Customer
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", addressList=" + addressList + ", orderEntity=" + orderEntity + "]";
+	public List<AddressEntity> getAddressEntity() {
+		return addressEntity;
 	}
 
-	public List<AddressEntity> getAddressList() {
-		return addressList;
-	}
-
-	public void setAddressList(List<AddressEntity> addressList) {
-		this.addressList = addressList;
+	public void setAddressEntity(List<AddressEntity> addressEntity) {
+		this.addressEntity = addressEntity;
 	}
 
 	public List<OrderEntity> getOrderEntity() {
@@ -90,6 +83,15 @@ public class Customer
 		this.orderEntity = orderEntity;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+				+ ", doB=" + doB + ", addressEntity=" + addressEntity + ", orderEntity=" + orderEntity + "]";
+	}
+
+	
 	
 	
 }

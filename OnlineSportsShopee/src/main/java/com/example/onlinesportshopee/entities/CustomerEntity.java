@@ -25,27 +25,24 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
-
 	@OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
-	private List<AddressEntity> addressList;
-	
-
-	
+	private List<AddressEntity> addressEntity;
 	@OneToMany(mappedBy="customerEntity",cascade=CascadeType.ALL)
 	private List<OrderEntity> orderEntity;
 	
-	public CustomerEntity() {}
+	public CustomerEntity() {
+		
+	}
 	
 	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
-			List<AddressEntity> addressList, List<OrderEntity> orderEntity) {
+			List<AddressEntity> addressEntity, List<OrderEntity> orderEntity) {
 		super();
 		this.userID = userID;
 		this.name = name;
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		
-		this.addressList = addressList;
+		this.addressEntity = addressEntity;
 		this.orderEntity = orderEntity;
 	}
 	public String getUserID() {
@@ -78,11 +75,11 @@ public class CustomerEntity
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public List<AddressEntity> getAddresslist() {
-		return addressList;
+	public List<AddressEntity> getAddressEntity() {
+		return addressEntity;
 	}
-	public void setAddresslist(List<AddressEntity> addresslist) {
-		this.addressList = addresslist;
+	public void setAddressEntity(List<AddressEntity> addressEntity) {
+		this.addressEntity = addressEntity;
 	}
 	public List<OrderEntity> getOrderEntity() {
 		return orderEntity;
@@ -94,7 +91,7 @@ public class CustomerEntity
 	@Override
 	public String toString() {
 		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", addressList=" + addressList + ", orderEntity=" + orderEntity + "]";
+				+ ", doB=" + doB + ", addressEntity=" + addressEntity + ", orderEntity=" + orderEntity + "]";
 	}
 	
 }

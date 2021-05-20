@@ -22,7 +22,6 @@ public class AddressEntity
 	private String state;
 	@Column(name = "pincode")
 	private Integer pincode;
-	
 	@ManyToOne
     @JoinColumn(name = "userid" ) 
     private CustomerEntity customerEntity;

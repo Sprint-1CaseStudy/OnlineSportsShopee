@@ -18,20 +18,19 @@ public class PaymentEntity {
 	private String type;
 	@Column(name = "status")
 	private String status;
-	
 	@OneToMany(mappedBy = "paymentEntity",cascade=CascadeType.ALL)
-	private List<CardEntity> cards;
+	private List<CardEntity> cardEntity;
 
 	public PaymentEntity() {
 		super();
 	}
 	
-	public PaymentEntity(Long paymentId, String type, String status, List<CardEntity> cards) {
+	public PaymentEntity(Long paymentId, String type, String status, List<CardEntity> cardEntity) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
-		this.cards = cards;
+		this.cardEntity = cardEntity;
 	}
 
 	public Long getPaymentId() {
@@ -57,17 +56,17 @@ public class PaymentEntity {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public List<CardEntity> getCards() {
-		return cards;
+	public List<CardEntity> getCardEntity() {
+		return cardEntity;
 	}
 
-	public void setCards(List<CardEntity> cards) {
-		this.cards = cards;
+	public void setCardEntity(List<CardEntity> cardEntity) {
+		this.cardEntity = cardEntity;
 	}
 
 	@Override
 	public String toString() {
-		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cards=" + cards
+		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cardEntity=" + cardEntity
 				+ "]";
 	}
 
