@@ -2,14 +2,15 @@ package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="Cart")
+
+@Table(name="cart")
 public class CartEntity 
 {
-	
+	@Id
+	@Column(name = "Id")
+	private long Id;
 	@Column(name = "ImageName")
 	private String imageName;
-	@Id
 	@Column(name = "ProductName")
 	private String productName;
 	@Column(name = "Quantity")
@@ -23,8 +24,9 @@ public class CartEntity
 		super();
 	}
 	
-	public CartEntity(String imageName, String productName, int quantity, double price, double total) {
+	public CartEntity(long productId, String imageName, String productName, int quantity, double price, double total) {
 		super();
+		this.Id = productId;
 		this.imageName = imageName;
 		this.productName = productName;
 		this.quantity = quantity;
@@ -61,12 +63,23 @@ public class CartEntity
 	public void setTotal(double total) {
 		this.total = total;
 	}
+	
+	public long getProductId() {
+		return Id;
+	}
+
+	public void setProductId(long productId) {
+		this.Id = productId;
+	}
 
 	@Override
 	public String toString() {
-		return "CartEntity [imageName=" + imageName + ", productName=" + productName + ", quantity=" + quantity
-				+ ", price=" + price + ", total=" + total + "]";
+		return "CartEntity [productId=" + Id + ", imageName=" + imageName + ", productName=" + productName
+				+ ", quantity=" + quantity + ", price=" + price + ", total=" + total + "]";
 	}
+
+	
+	
 	
 	
 	
