@@ -25,21 +25,23 @@ public class CartController {
 	
 	@PostMapping("/addtocart")
 	public  ResponseEntity<Object> addtocart(@RequestBody CartEntity cartEntity) throws CartException{
-		LOGGER.info("addtocart initiated");
+		LOGGER.info("add-cart URL is opened");
+		LOGGER.info("addtocart() is initiated");
 		Cart cartDTO = null;
 		ResponseEntity<Object> cartResponse = null;
 		cartDTO = cartService.addCart(cartEntity);
 		cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
-		LOGGER.info("addtocart has Executed");
+		LOGGER.info("addtocart() is Executed");
 		return cartResponse;
 	}
 	
 	@DeleteMapping("/removefromcart/{delID}")
 	public ResponseEntity<Object> deletecart(@PathVariable long delID)throws CartException{
-		LOGGER.info("deletecart initiated");
+		LOGGER.info("remove-cart URL is opened");
+		LOGGER.info("deletecart() is initiated");
 		Cart cartDTO = cartService.deleteCart(delID);
 		ResponseEntity<Object> cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
-		LOGGER.info("deletecart has Executed");
+		LOGGER.info("deletecart() is Executed");
 		return cartResponse;
 
 	}
@@ -47,7 +49,8 @@ public class CartController {
 	@GetMapping("/getallcartdetials")
 	public List<Cart> getAllProduct()
 	{
-		LOGGER.info("getallcartdetails initiated");
+		LOGGER.info("getall-cartdetails URL is opened");
+		LOGGER.info("getallcartdetails() initiated");
 		return cartService.getallCartDetails();
 	}
 }
