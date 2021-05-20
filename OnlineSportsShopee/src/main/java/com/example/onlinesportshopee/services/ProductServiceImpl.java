@@ -18,21 +18,20 @@ public class ProductServiceImpl implements IProductService {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(ProductServiceImpl.class);
 	
-	static String productNotFound = "No product found in given Id";
-	static String validationSuccessful = "Validation Succcessful";
 	
 	@Autowired 
 	private IProductRepository iProductRepository;
 	
 	@Override
 	public Product addProduct(ProductEntity product) {
-		LOGGER.info("addProduct() service is initiated");
+		LOGGER.info("addProduct() serivice is initiated");
      ProductEntity productEntity;
      if(product == null)
     	 productEntity = null;
      else {
     	 productEntity = iProductRepository.save(product);
     	  }
+
      LOGGER.info("addProduct() service has executed");
      return ProductUtils.convertToProduct(productEntity);
      
@@ -40,7 +39,7 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public Product removeProduct(long productId) {
-		LOGGER.info("removeProduct() service is initiated");
+		LOGGER.info("removeProduct() serivice is initiated");
 		ProductEntity delproduct = iProductRepository.findById(productId).get();
 		iProductRepository.delete(delproduct);
 		LOGGER.info("removeProduct() service has executed");
@@ -50,7 +49,7 @@ public class ProductServiceImpl implements IProductService {
 	
 	@Override
 	public Product updateProduct(long productId, ProductEntity product) {
-		LOGGER.info("updateProduct() service is initiated");
+		LOGGER.info("updateProduct() serivice is initiated");
 		ProductEntity updateProduct = iProductRepository.findById(productId).get();
 		updateProduct = iProductRepository.save(product);
 		LOGGER.info("updateProduct() service has executed");
@@ -59,7 +58,7 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public Product getProduct(long productId) {
-		LOGGER.info("getProduct() service is initiated");
+		LOGGER.info("getProduct() serivice is initiated");
 		ProductEntity getProduct = iProductRepository.findById(productId).get();
 		LOGGER.info("getProduct() service has executed");
 		return ProductUtils.convertToProduct(getProduct);
@@ -67,7 +66,7 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public List<Product> getAllProduct() {
-		LOGGER.info("getAllProduct() service is initiated");
+		LOGGER.info("getAllProduct() serivice is initiated");
 		List<ProductEntity> getAllProduct = iProductRepository.findAll();
 		LOGGER.info("getAllProduct() service has executed");
 		return ProductUtils.convertToProductDtoList(getAllProduct);
@@ -76,7 +75,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByName(String name) throws ProductsException
 	{
-		LOGGER.info("getProductByName() service is initiated");
+		LOGGER.info("getProductByName() serivice is initiated");
 		List<ProductEntity> getProductName = iProductRepository.findByName(name);
 		if (getProductName == null)
 		{
@@ -91,7 +90,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsBySize(String size) throws ProductsException
 	{
-		LOGGER.info("getProductBySize() service is initiated");
+		LOGGER.info("getProductBySize() serivice is initiated");
 		List<ProductEntity> productSize = iProductRepository.findBySize(size);
 		if (productSize == null)
 		{
@@ -105,7 +104,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByPrice(double price) throws ProductsException
 	{
-		LOGGER.info("getProductByPrice() service is initiated");
+		LOGGER.info("getProductByPrice() serivice is initiated");
 		List<ProductEntity> productPrice = iProductRepository.findByPrice(price);
 		if (productPrice == null)
 		{
@@ -120,7 +119,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByColor(String color) throws ProductsException
 	{
-		LOGGER.info("getProductByColor() service is initiated");
+		LOGGER.info("getProductByColor() serivice is initiated");
 		List<ProductEntity> productColor = iProductRepository.findByColor(color);
 		if (productColor == null)
 		{
