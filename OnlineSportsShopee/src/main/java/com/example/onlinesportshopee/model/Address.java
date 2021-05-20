@@ -66,17 +66,20 @@ public class Address
 	public void setPincode(Integer pincode) {
 		this.pincode = pincode;
 	}
-	@Override
-	public String toString() {
-		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
-				+ state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
-	}
+	
 	public CustomerEntity getCustomerEntity() {
 		return customerEntity;
 	}
 	public void setCustomerEntity(CustomerEntity customerEntity) {
 		this.customerEntity = customerEntity;
 	}
+	
+	@Override
+	public String toString() {
+		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
+				+ state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
+	}
+	
 	
 	
 }

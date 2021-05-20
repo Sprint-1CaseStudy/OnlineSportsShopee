@@ -2,6 +2,8 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
+import com.example.onlinesportshopee.entities.PaymentEntity;
+
 
 public class Card {
 	private Long id;
@@ -9,22 +11,30 @@ public class Card {
 	private String cardNumber;
     private LocalDate cardExpiry;
     private String bankName;
+    
+    private PaymentEntity paymentEntity;
+    
    public Card() {
 	   
    }
-    public Card(Long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName) {
-		this.id= id;
-    	this.cardName= cardName;
-		this.cardNumber= cardNumber;
-		this.cardExpiry= cardExpiry;
-	}
+   public Card(Long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName,
+		PaymentEntity paymentEntity) {
+    	super();
+		this.id = id;
+		this.cardName = cardName;
+		this.cardNumber = cardNumber;
+		this.cardExpiry = cardExpiry;
+		this.bankName = bankName;
+		this.paymentEntity = paymentEntity;
+    }
+    
     public Long getId() {
 		return id;
 	}
-public void setId(Long id) {
+    public void setId(Long id) {
 		this.id = id;
 	}
-public String getCardName() {
+    public String getCardName() {
 		return cardName;
 	}
 	
@@ -56,11 +66,18 @@ public String getCardName() {
 		this.bankName = bankName;
 	}
 
+	public PaymentEntity getPaymentEntity() {
+		return paymentEntity;
+	}
+	public void setPaymentEntity(PaymentEntity paymentEntity) {
+		this.paymentEntity = paymentEntity;
+	}
 	
     @Override
 	public String toString() {
 		return "Card [id=" + id + ", cardName=" + cardName + ", cardNumber=" + cardNumber + ", cardExpiry=" + cardExpiry
-				+ ", bankName=" + bankName + "]";
+				+ ", bankName=" + bankName + ", paymentEntity=" + paymentEntity + "]";
 	}
+	
 
 }

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 
 @Entity
-//@Table(name="card")
+@Table(name="card")
 public class CardEntity {
 
 	@Id
@@ -22,9 +22,11 @@ public class CardEntity {
 	private LocalDate expiryDate;
 	@Column(name = "bankName")
 	private String bankName;
+	
 	@ManyToOne
 	@JoinColumn(name="payment-card")
 	private PaymentEntity paymentEntity;
+	
 	public CardEntity() {
 		super();
 	}

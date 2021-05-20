@@ -5,10 +5,10 @@ import javax.persistence.*;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 
 @Entity
-//@Table(name = "address")
+@Table(name = "address")
 public class AddressEntity 
 {
-//
+
 	@Id
 	//@Column(name = "doorNo")
 	private String doorNo;

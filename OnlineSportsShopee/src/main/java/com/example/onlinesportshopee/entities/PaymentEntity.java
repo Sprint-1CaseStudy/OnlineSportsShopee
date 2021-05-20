@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "payment")
+@Table(name = "payment")
 public class PaymentEntity {
 	
 	@Id
@@ -17,10 +17,9 @@ public class PaymentEntity {
 	private String type;
 	@Column(name = "status")
 	private String status;
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name = "card_id")
-	@Column(name = "cardEntity")
-	private List<CardEntity> cards=new ArrayList<CardEntity>();
+	
+	@OneToMany(mappedBy = "paymentEntity",cascade=CascadeType.ALL)
+	private List<CardEntity> cards;
 
 	public PaymentEntity() {
 		super();

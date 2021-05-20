@@ -4,6 +4,8 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
+import com.example.onlinesportshopee.entities.OrderEntity;
+
 
 
 public class Product {
@@ -30,6 +32,8 @@ public class Product {
 	private Boolean inStock;
 
 	private LocalDate expectedDelivery;
+	
+	private OrderEntity orderEntity;
 	
 	
 	public Long getProductId() {
@@ -99,10 +103,9 @@ public class Product {
 		this.expectedDelivery = expectedDelivery;
 	}
 	
-	
-	
 	public Product(Long productId, String productName, String category, String description, String brand, String colour,
-			String size, Double mrp, Double priceAfterDiscount, Boolean inStock, LocalDate expectedDelivery) {
+			String size, Double mrp, Double priceAfterDiscount, Boolean inStock, LocalDate expectedDelivery,
+			OrderEntity orderEntity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -115,11 +118,18 @@ public class Product {
 		this.priceAfterDiscount = priceAfterDiscount;
 		this.inStock = inStock;
 		this.expectedDelivery = expectedDelivery;
+		this.orderEntity = orderEntity;
 	}
-	
 	
 	public Product() {
 		super();
+	}
+	
+	public OrderEntity getOrderEntity() {
+		return orderEntity;
+	}
+	public void setOrderEntity(OrderEntity orderEntity) {
+		this.orderEntity = orderEntity;
 	}
 	
 	@Override
@@ -128,7 +138,6 @@ public class Product {
 				+ ", description=" + description + ", brand=" + brand + ", colour=" + colour + ", size=" + size
 				+ ", mrp=" + mrp + ", priceAfterDiscount=" + priceAfterDiscount + ", inStock=" + inStock
 				+ ", expectedDelivery=" + expectedDelivery + "]";
-	}
-	
+	}	
 	
 }

@@ -1,5 +1,7 @@
 package com.example.onlinesportshopee.model;
 
+import java.util.List;
+
 import com.example.onlinesportshopee.entities.CardEntity;
 
 public class Payment {
@@ -7,18 +9,18 @@ public class Payment {
 	private Long paymentId;
 	private String type;
 	private String status;
-	CardEntity cardEntity;
+	private List<CardEntity> cards;
 
 	public Payment() {
 		super();
 	}
 	
-	public Payment(Long paymentId, String type, String status, CardEntity cardEntity) {
+	public Payment(Long paymentId, String type, String status, List<CardEntity> cards) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
-		this.cardEntity = cardEntity;
+		this.cards = cards;
 	}
 
 	public Long getPaymentId() {
@@ -45,17 +47,19 @@ public class Payment {
 		this.type = type;
 	}
 	
-	public CardEntity getCardEntity() {
-		return cardEntity;
+	public List<CardEntity> getCards() {
+		return cards;
 	}
 
-	public void setCardEntity(CardEntity cardEntity) {
-		this.cardEntity = cardEntity;
+	public void setCards(List<CardEntity> cards) {
+		this.cards = cards;
 	}
 
 	@Override
 	public String toString() {
-		return "Payment [paymentId=" + paymentId + ", type=" + type + ", status=" + status + "]";
-	}	
+		return "Payment [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cards=" + cards + "]";
+	}
+
+	
 	
 }

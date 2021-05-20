@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-//@Table(name="Cart")
+@Table(name="Cart")
 public class CartEntity 
 {
 	@Id
@@ -19,6 +19,8 @@ public class CartEntity
 	private Double price;
 	@Column(name="ToatlBill")
 	private Double total;
+	
+	
 	
 	public CartEntity() {
 		super();

@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name = "products")
+@Table(name = "products")
 public class ProductEntity {
 	
 	@Id
@@ -41,6 +41,7 @@ public class ProductEntity {
 	private Boolean inStock;
 	@Column(name = "expected_delivery")
 	private LocalDate expectedDelivery;
+	
 	@ManyToOne
 	@JoinColumn(name="product-order")
 	private OrderEntity orderEntity;
@@ -118,7 +119,7 @@ public class ProductEntity {
 	public void setOrderEntity(OrderEntity orderEntity) {
 		this.orderEntity = orderEntity;
 	}
-	public ProductEntity(Long productId, String productName, String category, String description, String brand, String colour, String size, Double mrp, Double priceAfterDiscount, Boolean inStock,OrderEntity orderEntity) {
+	public ProductEntity(Long productId, String productName, String category, String description, String brand, String colour, String size, Double mrp, Double priceAfterDiscount, Boolean inStock,OrderEntity orderEntity, LocalDate expectedDelivery) {
 		super();
 		this.productId = productId;
 		this.productName = productName;

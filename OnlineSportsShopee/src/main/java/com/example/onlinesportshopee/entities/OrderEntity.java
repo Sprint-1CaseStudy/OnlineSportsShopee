@@ -7,12 +7,12 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "order")
+@Table(name = "order")
 public class OrderEntity {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	//@Column(name = "orderID")
+	@Column(name = "orderID")
 	private Long orderID;
 	@Column(name = "amount")
 	private Double amount;
@@ -23,8 +23,10 @@ public class OrderEntity {
 	private CustomerEntity customerEntity;
 	@Column(name = "paymentMethod")
 	private String paymentMethod;
+	
 	@ManyToMany(mappedBy="orderEntity",cascade = CascadeType.ALL)
-	private List<ProductEntity> productEntity=new ArrayList<ProductEntity>();
+	private List<ProductEntity> productEntity;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="payment id")
 	private PaymentEntity paymentEntity;
@@ -107,10 +109,6 @@ public class OrderEntity {
 				+ ", customerEntity=" + customerEntity + ", paymentMethod=" + paymentMethod + ", productEntity="
 				+ productEntity + ", paymentEntity=" + paymentEntity + "]";
 	}
-
-	
-	
-	
 	
 }
 
