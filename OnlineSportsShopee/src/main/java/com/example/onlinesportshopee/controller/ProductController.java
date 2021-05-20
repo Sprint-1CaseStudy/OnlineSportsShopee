@@ -12,7 +12,7 @@ import com.example.onlinesportshopee.entities.ProductEntity;
 import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IProductService;
-import com.example.onlinesportshopee.services.ProductServiceImpl;
+
 
 
 @RestController
@@ -39,6 +39,7 @@ public class ProductController {
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.removeProduct(productId);
+		
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 	 
@@ -50,6 +51,7 @@ public class ProductController {
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.updateProduct(productId, product);
+
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 		
@@ -61,6 +63,7 @@ public class ProductController {
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.getProduct(productId);;
+
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 	}
@@ -69,6 +72,7 @@ public class ProductController {
 	public List<Product> getAllProduct()
 	{
 		return iProductService.getAllProduct();
+
 	}
 	
 	
@@ -77,6 +81,7 @@ public class ProductController {
 	{
 		ResponseEntity<Object> response = null;
 		List<Product> products = iProductService.getProductsByName(name);
+
 		response = new ResponseEntity<>(products,HttpStatus.ACCEPTED);	
 		return response;
 	}
@@ -84,8 +89,10 @@ public class ProductController {
 	@GetMapping("/bysize/{size}")
 	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
+
 		List<Product> bysize = iProductService.getProductsBySize(size);
 		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
+
 		return response;
 	}
 	
@@ -94,6 +101,7 @@ public class ProductController {
 	{
 		List<Product> byprice = iProductService.getProductsByPrice(price);
 		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
+
 		return response;
 	}
 	
@@ -102,7 +110,7 @@ public class ProductController {
 	{
 		List<Product> bycolor = iProductService.getProductsByColor(color);
 		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
+		
 		return response;
 	}
-
 }

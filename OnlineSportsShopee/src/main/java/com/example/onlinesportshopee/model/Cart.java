@@ -2,67 +2,81 @@ package com.example.onlinesportshopee.model;
 
 public class Cart {
 	
-	String imgageName;
+	Integer cartId;
+	String imageName;
 	String productName;
 	Integer quantity;
 	Double price;
 	Double total;
 
-
-
 	public Cart() {
 		super();
 	}
 
-	public Cart(String imgageName, String productName, Integer quantity, Double price, Double total) {
+	public Cart(Integer cartId, String imageName, String productName, Integer quantity, Double price, Double total) {
 		super();
-		this.imgageName = imgageName;
+		this.cartId = cartId;
+		this.imageName = imageName;
 		this.productName = productName;
 		this.quantity = quantity;
 		this.price = price;
 		this.total = total;
 	}
 
-	public String getImgageName() {
-		return imgageName;
+	public Integer getCartId() {
+		return cartId;
 	}
-	
-	public void setImgageName(String imgageName) {
-		this.imgageName = imgageName;
+
+	public void setCartId(Integer cartId) {
+		this.cartId = cartId;
 	}
-	
+
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}
+
 	public String getProductName() {
 		return productName;
 	}
-	
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}
-	
+
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	public Double getTotal() {
 		return total;
 	}
+
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+
 	@Override
 	public String toString() {
-		return "Cart [imgageName=" + imgageName + ", productName=" + productName + ", quantity=" + quantity + ", price="
-			+ price + ", total=" + total + "]";
+		return "Cart [cartId=" + cartId + ", imageName=" + imageName + ", productName=" + productName + ", quantity="
+				+ quantity + ", price=" + price + ", total=" + total + "]";
 	}
 
 
+	
 }

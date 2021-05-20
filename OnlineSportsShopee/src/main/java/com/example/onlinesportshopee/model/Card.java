@@ -9,22 +9,22 @@ public class Card {
 	private String cardNumber;
     private LocalDate cardExpiry;
     private String bankName;
-    public Card(long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName) {
+   public Card() {
+	   
+   }
+    public Card(Long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName) {
 		this.id= id;
     	this.cardName= cardName;
 		this.cardNumber= cardNumber;
 		this.cardExpiry= cardExpiry;
 	}
-    
-	public Long getId() {
+    public Long getId() {
 		return id;
 	}
-
-	public void setId(Long id) {
+public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getCardName() {
+public String getCardName() {
 		return cardName;
 	}
 	

@@ -57,18 +57,21 @@ public class PaymentEntity {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	/*
-	 * public CardEntity getCardEntity() { return cardEntity; }
-	 * 
-	 * public void setCardEntity(CardEntity cardEntity) { this.cardEntity =
-	 * cardEntity; }
-	 */
+	public List<CardEntity> getCards() {
+		return cards;
+	}
+
+	public void setCards(List<CardEntity> cards) {
+		this.cards = cards;
+	}
 
 	@Override
 	public String toString() {
-		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status +  "]";
+		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cards=" + cards
+				+ "]";
 	}
+
+	
 
 	
 

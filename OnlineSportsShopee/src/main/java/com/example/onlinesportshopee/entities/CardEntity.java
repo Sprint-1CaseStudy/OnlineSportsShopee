@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 //import java.time.format.DateTimeFormatter;
 
+
 @Entity
 //@Table(name="card")
 public class CardEntity {
