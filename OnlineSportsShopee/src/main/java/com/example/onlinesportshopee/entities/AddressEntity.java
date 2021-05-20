@@ -24,7 +24,7 @@ public class AddressEntity
 	private Integer pincode;
 	
 	@ManyToOne
-    @JoinColumn(name = "user_id" ) 
+    @JoinColumn(name = "userid" ) 
     private CustomerEntity customerEntity;
 
 	public AddressEntity()

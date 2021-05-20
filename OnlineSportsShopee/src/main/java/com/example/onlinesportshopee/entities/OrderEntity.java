@@ -7,12 +7,12 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class OrderEntity {
 
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "orderID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@Column(name = "orderID")
 	private Long orderID;
 	@Column(name = "amount")
 	private Double amount;
@@ -28,7 +28,7 @@ public class OrderEntity {
 	private List<ProductEntity> productEntity;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="payment id")
+	@JoinColumn(name="paymentid")
 	private PaymentEntity paymentEntity;
 	
 	public OrderEntity() {

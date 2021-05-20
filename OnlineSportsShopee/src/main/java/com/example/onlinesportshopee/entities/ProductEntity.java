@@ -43,7 +43,7 @@ public class ProductEntity {
 	private LocalDate expectedDelivery;
 	
 	@ManyToOne
-	@JoinColumn(name="product-order")
+	@JoinColumn(name="productorder")
 	private OrderEntity orderEntity;
 	
 	public Long getProductId() {
