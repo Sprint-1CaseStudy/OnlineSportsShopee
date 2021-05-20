@@ -37,7 +37,7 @@ public class CustomerEntity
 	public CustomerEntity() {}
 	
 	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
-			List<AddressEntity> addresslist, AddressEntity addressEntity, List<OrderEntity> orderEntity) {
+			List<AddressEntity> addressList, List<OrderEntity> orderEntity) {
 		super();
 		this.userID = userID;
 		this.name = name;
@@ -79,29 +79,22 @@ public class CustomerEntity
 		this.doB = doB;
 	}
 	public List<AddressEntity> getAddresslist() {
-		return addresslist;
+		return addressList;
 	}
 	public void setAddresslist(List<AddressEntity> addresslist) {
-		this.addresslist = addresslist;
+		this.addressList = addresslist;
 	}
-	public AddressEntity getAddressEntity() {
-		return addressEntity;
-	}
-	public void setAddressEntity(AddressEntity addressEntity) {
-		this.addressEntity = addressEntity;
-	}
-	public OrderEntity getOrderEntity() {
+	public List<OrderEntity> getOrderEntity() {
 		return orderEntity;
 	}
-	public void setOrderEntity(OrderEntity orderEntity) {
+	public void setOrderEntity(List<OrderEntity> orderEntity) {
 		this.orderEntity = orderEntity;
 	}
 	
 	@Override
 	public String toString() {
 		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", addresslist=" + addresslist + ", addressEntity=" + addressEntity
-				+ ", orderEntity=" + orderEntity + "]";
+				+ ", doB=" + doB + ", addressList=" + addressList + ", orderEntity=" + orderEntity + "]";
 	}
 	
 }

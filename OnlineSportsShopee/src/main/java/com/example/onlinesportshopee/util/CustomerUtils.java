@@ -25,7 +25,7 @@ public class CustomerUtils
 		customerEntity.setEmail(customer.getEmail());
 		customerEntity.setContactNo(customer.getContactNo());
 		customerEntity.setDoB(customer.getDoB());
-		customerEntity.setAddressEntity(customer.getAddressEntity());
+		customerEntity.setAddresslist(customer.getAddressList());
 		return customerEntity;
 	}		
 	
@@ -36,7 +36,7 @@ public class CustomerUtils
 		customer.setEmail(customerEntity.getEmail());
 		customer.setContactNo(customerEntity.getContactNo());
 		customer.setDoB(customerEntity.getDoB());
-		customer.setAddressEntity(customerEntity.getAddressEntity());
+		customer.setAddressList(customerEntity.getAddresslist());
 		return customer;
 	}
 }

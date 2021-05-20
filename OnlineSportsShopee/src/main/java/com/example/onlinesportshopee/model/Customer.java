@@ -1,11 +1,13 @@
 package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 import com.example.onlinesportshopee.entities.AddressEntity;
-
-
-
+import com.example.onlinesportshopee.entities.OrderEntity;
 import com.example.onlinesportshopee.model.Address;
 
 public class Customer 
@@ -15,14 +17,15 @@ public class Customer
 	private String email;
 	private String contactNo;
 	private LocalDate doB;
-	private AddressEntity addressEntity;
+	private List<AddressEntity> addressList;
+	private List<OrderEntity> orderEntity;
 	
 	public Customer()
 	{
 		super();
 	}
 	
-	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, AddressEntity addressEntity) 
+	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, List<AddressEntity> addressList) 
 	{
 		super();
 		this.userID = userID;
@@ -30,7 +33,7 @@ public class Customer
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.addressEntity = addressEntity;
+		this.addressList = addressList;
 	}
 
 	public String getUserID() {
@@ -63,19 +66,28 @@ public class Customer
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public AddressEntity getAddressEntity()
-	{
-		return addressEntity;
-	}
-	public void setAddressEntity(AddressEntity addressEntity)
-	{
-		this.addressEntity = addressEntity;
-	}
+
 
 	@Override
 	public String toString() {
 		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", addressEntity=" + addressEntity + "]";
+				+ ", doB=" + doB + ", addressList=" + addressList + ", orderEntity=" + orderEntity + "]";
+	}
+
+	public List<AddressEntity> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<AddressEntity> addressList) {
+		this.addressList = addressList;
+	}
+
+	public List<OrderEntity> getOrderEntity() {
+		return orderEntity;
+	}
+
+	public void setOrderEntity(List<OrderEntity> orderEntity) {
+		this.orderEntity = orderEntity;
 	}
 
 	
