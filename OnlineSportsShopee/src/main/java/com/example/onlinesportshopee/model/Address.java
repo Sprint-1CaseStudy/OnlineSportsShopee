@@ -1,5 +1,7 @@
 package com.example.onlinesportshopee.model;
 
+import com.example.onlinesportshopee.entities.CustomerEntity;
+
 public class Address 
 {
 	private String doorNo;
@@ -9,13 +11,15 @@ public class Address
 	private String state;
 	private Integer pincode;
 	
+	private CustomerEntity customerEntity;
 	
 	public Address()
 	{
 		super();
 	}
-	public Address(String doorNo, String street, String area, String city, String state, int pincode) {
-
+		
+	public Address(String doorNo, String street, String area, String city, String state, Integer pincode,
+			CustomerEntity customerEntity) {
 		super();
 		this.doorNo = doorNo;
 		this.street = street;
@@ -23,7 +27,9 @@ public class Address
 		this.city = city;
 		this.state = state;
 		this.pincode = pincode;
+		this.customerEntity = customerEntity;
 	}
+
 	public String getDoorNo() {
 		return doorNo;
 	}
@@ -63,7 +69,13 @@ public class Address
 	@Override
 	public String toString() {
 		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
-				+ state + ", pincode=" + pincode + "]";
+				+ state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
+	}
+	public CustomerEntity getCustomerEntity() {
+		return customerEntity;
+	}
+	public void setCustomerEntity(CustomerEntity customerEntity) {
+		this.customerEntity = customerEntity;
 	}
 	
 	
