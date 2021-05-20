@@ -1,6 +1,9 @@
 package com.example.onlinesportshopee.controller;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 //import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +22,19 @@ import com.example.onlinesportshopee.services.UserServiceImpl;
 @RequestMapping("/login")
 public class UserController {
 	
+	static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+	
 	@Autowired
 	private IUserService iUserService;
 	
 	@GetMapping("/signin/{userId}/{password}")
 	public ResponseEntity<Object> signin(@PathVariable String userId,@PathVariable String Password) throws UserException
 	{
+		LOGGER.info("signin initiated");
 		UserEntity userdata = new UserEntity(userId,Password);
 		UserEntity user = iUserService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
+		LOGGER.info("signin has Executed");
 		return response;
 	}
 	
@@ -35,16 +42,20 @@ public class UserController {
 	@GetMapping("/signout")
 	public ResponseEntity<Object> signOut() throws UserException
 	{
+		LOGGER.info("signout initiated");
 		String signout = iUserService.signOut(null);
 		ResponseEntity<Object> response = new ResponseEntity<>(signout,HttpStatus.ACCEPTED);
+		LOGGER.info("signout has Executed");
 		return response;
 	}
 	
 	@PutMapping("/changepassword/{userId}")
 	public ResponseEntity<Object> signin(@PathVariable long userId, @RequestBody UserEntity User) throws UserException
 	{
+		LOGGER.info("changepassword initiated");
 		User user = iUserService.changePassword(userId, User);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
+		LOGGER.info("changepassword has Executed");
 		return response;
 	}	
 	

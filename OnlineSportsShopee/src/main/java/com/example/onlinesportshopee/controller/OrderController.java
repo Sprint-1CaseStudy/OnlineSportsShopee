@@ -2,6 +2,8 @@ package com.example.onlinesportshopee.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,8 @@ import com.example.onlinesportshopee.services.OrderServiceImpl;
 @RequestMapping("/api/order")
 public class OrderController {
 
+	static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
+	
 	@Autowired
 	private IOrderService iOrderService;
 	

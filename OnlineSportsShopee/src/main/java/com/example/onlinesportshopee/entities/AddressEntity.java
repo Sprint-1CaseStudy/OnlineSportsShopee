@@ -31,7 +31,7 @@ public class AddressEntity
 		super();
 	}
 	
-	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode,
+	public AddressEntity(String doorNo, String street, String area, String city, String state, Integer pincode,
 			CustomerEntity customerEntity) {
 		super();
 		this.doorNo = doorNo;
@@ -73,10 +73,10 @@ public class AddressEntity
 	public void setState(String state) {
 		this.state = state;
 	}
-	public int getPincode() {
+	public Integer getPincode() {
 		return pincode;
 	}
-	public void setPincode(int pincode) {
+	public void setPincode(Integer pincode) {
 		this.pincode = pincode;
 		
 	}

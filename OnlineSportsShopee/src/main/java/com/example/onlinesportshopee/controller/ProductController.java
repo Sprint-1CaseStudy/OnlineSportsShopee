@@ -4,6 +4,8 @@ import java.util.List;
 
 
 import org.springframework.http.HttpStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,98 +21,108 @@ import com.example.onlinesportshopee.services.IProductService;
 @RequestMapping("/products")
 public class ProductController {
 	
+	static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
+	
 	@Autowired
 	private IProductService iProductService;
 	
-	@PostMapping("/addProduct")
+	@PostMapping("/addproduct")
 	public ResponseEntity<Object> addProduct(@RequestBody ProductEntity product) throws ProductsException
 	{
+		LOGGER.info("addProduct initiated");
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.addProduct(product);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		LOGGER.info("addProduct has Executed");
 		return productResponse;
 		
 	}
 	
-	@DeleteMapping("/removeProduct/product/{productId}")
+	@DeleteMapping("/removeproduct/product/{productId}")
 	public ResponseEntity<Object> removeProduct(@PathVariable long productId) throws ProductsException
 	{
+		LOGGER.info("removeProduct initiated");
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.removeProduct(productId);
-		
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		LOGGER.info("removeProduct has Executed");
 		return productResponse;
 	 
 	}
 	
-	@PutMapping("/updateProduct/{productId}")
+	@PutMapping("/updateproduct/{productId}")
 	public ResponseEntity<Object> updateProduct(@PathVariable long productId, @RequestBody ProductEntity product)
 	{
+		LOGGER.info("updateProduct initiated");
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
 		productDto = iProductService.updateProduct(productId, product);
-
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		LOGGER.info("updateProduct has Executed");
 		return productResponse;
 		
 	}
 	
-	@GetMapping("/getProduct/{productId}")
+	@GetMapping("/getproduct/{productId}")
 	public ResponseEntity<Object> getProduct(@PathVariable long productId)
 	{
+		LOGGER.info("getProduct initiated");
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
-		productDto = iProductService.getProduct(productId);;
-
+		productDto = iProductService.getProduct(productId);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
+		LOGGER.info("getProduct has Executed");
 		return productResponse;
 	}
 	
-	@GetMapping("/getAllProduct")
+	@GetMapping("/getallproduct")
 	public List<Product> getAllProduct()
 	{
+		LOGGER.info("getAllProducts initiated");
 		return iProductService.getAllProduct();
-
 	}
 	
 	
 	@GetMapping("/byname/{name}")
 	public ResponseEntity<Object> getProductsByName(@PathVariable String name) throws ProductsException
 	{
+		LOGGER.info("Productbyname initiated");
 		ResponseEntity<Object> response = null;
 		List<Product> products = iProductService.getProductsByName(name);
-
 		response = new ResponseEntity<>(products,HttpStatus.ACCEPTED);	
+		LOGGER.info("Productbyname has Executed");
 		return response;
 	}
 	
 	@GetMapping("/bysize/{size}")
 	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
-
+		LOGGER.info("Productbysize initiated");
 		List<Product> bysize = iProductService.getProductsBySize(size);
 		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
-
+		LOGGER.info("Productbysize has Executed");
 		return response;
 	}
 	
 	@GetMapping("/byprice/{price}")
 	public ResponseEntity<Object> getProductsByPrice(@PathVariable double price) throws ProductsException
 	{
+		LOGGER.info("Productbyprice initiated");
 		List<Product> byprice = iProductService.getProductsByPrice(price);
 		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
-
+		LOGGER.info("Productbyprice has Executed");
 		return response;
 	}
 	
 	@GetMapping("/bycolor/{color}")
 	public ResponseEntity<Object> getProductsByColor(@PathVariable String color) throws ProductsException
 	{
+		LOGGER.info("Productbycolor initiated");
 		List<Product> bycolor = iProductService.getProductsByColor(color);
 		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
-		
+		LOGGER.info("Productbycolor has Executed");
 		return response;
 	}
 }
