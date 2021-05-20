@@ -52,7 +52,7 @@ public class OrderController {
 		ResponseEntity<Object> orderResponse = null;
 		orderDTO = iOrderService.updateOrder(orderID,orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
-		LOGGER.info("updateOrder() has executed");
+		LOGGER.info("updateOrder() has executed");//jh
 		return orderResponse;
 	}
 	@DeleteMapping("/remove-order/{orderID}")

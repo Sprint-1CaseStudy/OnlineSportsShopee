@@ -65,7 +65,7 @@ public class OrderServiceImpl implements IOrderService {
 		OrderEntity ordEntity = iOrderRepository.findById(id).orElse(null);
 		if (ordEntity == null)
 			throw new InvalidOrderIdException("orderNotFound");
-		LOGGER.info("viewOrder() service has executed");
+		LOGGER.info("viewOrder() service has executed");//gh
 		return OrderUtils.convertToOrder(ordEntity);
 	}
 	@Override
