@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Product {
 	
 	
-	private long productId;
+	private Long productId;
 
 	private String productName;
 
@@ -23,19 +23,19 @@ public class Product {
 	
 	private String size;
 	
-	private double mrp;
+	private Double mrp;
 	
-	private double priceAfterDiscount;
+	private Double priceAfterDiscount;
 	
-	private boolean inStock;
+	private Boolean inStock;
 
 	private LocalDate expectedDelivery;
 	
 	
-	public long getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
-	public void setProductId(long productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public String getProductName() {
@@ -80,16 +80,16 @@ public class Product {
 	public void setMrp(double mrp) {
 		this.mrp = mrp;
 	}
-	public double getPriceAfterDiscount() {
+	public Double getPriceAfterDiscount() {
 		return priceAfterDiscount;
 	}
-	public void setPriceAfterDiscount(double priceAfterDiscount) {
+	public void setPriceAfterDiscount(Double priceAfterDiscount) {
 		this.priceAfterDiscount = priceAfterDiscount;
 	}
-	public boolean isInStock() {
+	public Boolean isInStock() {
 		return inStock;
 	}
-	public void setInStock(boolean inStock) {
+	public void setInStock(Boolean inStock) {
 		this.inStock = inStock;
 	}
 	public LocalDate getExpectedDelivery() {
@@ -101,8 +101,8 @@ public class Product {
 	
 	
 	
-	public Product(long productId, String productName, String category, String description, String brand, String colour,
-			String size, double mrp, double priceAfterDiscount, boolean inStock, LocalDate expectedDelivery) {
+	public Product(Long productId, String productName, String category, String description, String brand, String colour,
+			String size, Double mrp, Double priceAfterDiscount, Boolean inStock, LocalDate expectedDelivery) {
 		super();
 		this.productId = productId;
 		this.productName = productName;

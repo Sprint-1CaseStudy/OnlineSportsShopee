@@ -19,12 +19,12 @@ import com.example.onlinesportshopee.services.PaymentServiceImpl;
 public class PaymentController {
 	
 	@Autowired
-	private PaymentServiceImpl paymentServiceImpl;
+	private IPaymentService iPaymentService;
 	
 	@PostMapping("/addPayment")
 	public Payment addPayment(@RequestBody PaymentEntity payment)
 	{
-		return paymentServiceImpl.addPayment(payment);
+		return iPaymentService.addPayment(payment);
 	}
 	
 	@DeleteMapping("/removePayment/payment/{paymentId}")
@@ -32,7 +32,7 @@ public class PaymentController {
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentServiceImpl.removePayment(paymentId);
+		paymentDTO = iPaymentService.removePayment(paymentId);
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		return paymentResponse;
 		}
@@ -42,7 +42,7 @@ public class PaymentController {
 	{
 		Payment paymentDTO = null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentServiceImpl.updatePayment(paymentId,paymentEntity);
+		paymentDTO = iPaymentService.updatePayment(paymentId,paymentEntity);
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		
 		return paymentResponse;
@@ -54,14 +54,14 @@ public class PaymentController {
 		
 		Payment paymentDTO =null;
 		ResponseEntity<Object> paymentResponse = null;
-		paymentDTO = paymentServiceImpl.getPaymentDetails(paymentId);;
+		paymentDTO = iPaymentService.getPaymentDetails(paymentId);;
 		paymentResponse = new ResponseEntity<>(paymentDTO, HttpStatus.ACCEPTED);
 		return paymentResponse;
 		}
 	@GetMapping("/payment/{name}")
 	public List<Payment> getAllPaymentByName(@PathVariable String name)
 	{
-		return paymentServiceImpl.getAllPaymentDetails(name); 		
+		return iPaymentService.getAllPaymentDetails(name); 		
 	}
 	
 }

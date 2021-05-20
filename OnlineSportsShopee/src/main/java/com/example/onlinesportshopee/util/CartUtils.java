@@ -24,7 +24,7 @@ public class CartUtils {
     
     public static CartEntity convertToOrder(Cart dto) {
     	CartEntity cart = new CartEntity();
-    	cart.setProductId(dto.getProductId());
+    	cart.setCartId(dto.getCartId());
         cart.setProductName(dto.getProductName());
         cart.setImageName(dto.getImageName());
         cart.setPrice(dto.getPrice());
@@ -36,7 +36,7 @@ public class CartUtils {
     
     public static Cart convertToOrder(CartEntity cartEntity) {
     	Cart dto = new Cart();
-    	dto.setProductId(cartEntity.getProductId());
+    	dto.setCartId(cartEntity.getCartId());
         dto.setProductName(cartEntity.getProductName());
         dto.setImageName(cartEntity.getImageName());
         dto.setPrice(cartEntity.getPrice());

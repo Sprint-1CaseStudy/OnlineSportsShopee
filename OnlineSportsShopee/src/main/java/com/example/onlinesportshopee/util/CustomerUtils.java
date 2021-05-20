@@ -12,31 +12,31 @@ public class CustomerUtils
 		
 	}
 	public static List<Customer> convertToCustomerList(List<CustomerEntity> list){
-		List<Customer> Customerlist = new ArrayList<>();
+		List<Customer> customerList = new ArrayList<>();
 		for(CustomerEntity cust : list) 
-			Customerlist.add(convertToCustomer(cust));
-		return Customerlist;
+			customerList.add(convertToCustomer(cust));
+		return customerList;
 	}
 	
 	public static CustomerEntity convertToCustomerEntity(Customer customer) {
-		CustomerEntity customerentity = new CustomerEntity();
-		customerentity.setUserID(customer.getUserID());
-		customerentity.setName(customer.getName());
-		customerentity.setEmail(customer.getEmail());
-		customerentity.setContactNo(customer.getContactNo());
-		customerentity.setDoB(customer.getDoB());
-		customerentity.setaddress(customer.getaddress());
-		return customerentity;
+		CustomerEntity customerEntity = new CustomerEntity();
+		customerEntity.setUserID(customer.getUserID());
+		customerEntity.setName(customer.getName());
+		customerEntity.setEmail(customer.getEmail());
+		customerEntity.setContactNo(customer.getContactNo());
+		customerEntity.setDoB(customer.getDoB());
+		customerEntity.setAddressEntity(customer.getAddressEntity());
+		return customerEntity;
 	}		
 	
-	public static Customer convertToCustomer(CustomerEntity customerentity) {
+	public static Customer convertToCustomer(CustomerEntity customerEntity) {
 		Customer customer = new Customer();
-		customer.setUserID(customerentity.getUserID());
-		customer.setName(customerentity.getName());
-		customer.setEmail(customerentity.getEmail());
-		customer.setContactNo(customerentity.getContactNo());
-		customer.setDoB(customerentity.getDoB());
-		customer.setaddress(customerentity.getaddress());
+		customer.setUserID(customerEntity.getUserID());
+		customer.setName(customerEntity.getName());
+		customer.setEmail(customerEntity.getEmail());
+		customer.setContactNo(customerEntity.getContactNo());
+		customer.setDoB(customerEntity.getDoB());
+		customer.setAddressEntity(customerEntity.getAddressEntity());
 		return customer;
 	}
 }

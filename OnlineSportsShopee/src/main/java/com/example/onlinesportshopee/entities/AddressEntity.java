@@ -5,7 +5,7 @@ import javax.persistence.*;
 import com.example.onlinesportshopee.entities.CustomerEntity;
 
 @Entity
-@Table(name = "address")
+//@Table(name = "address")
 public class AddressEntity 
 {
 //
@@ -21,7 +21,8 @@ public class AddressEntity
 	@Column(name = "state")
 	private String state;
 	@Column(name = "pincode")
-	private int pincode;
+	private Integer pincode;
+	
 	
 	@ManyToOne
     @JoinColumn(name = "user_id" ) 
@@ -42,6 +43,7 @@ public class AddressEntity
 		this.state = state;
 		this.pincode = pincode;
 		this.customerEntity = customerEntity;
+
 	}
 	public String getDoorNo() {
 		return doorNo;
@@ -78,8 +80,8 @@ public class AddressEntity
 	}
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
+		
 	}
-	
 
 	public CustomerEntity getCustomerEntity() {
 		return customerEntity;
@@ -88,9 +90,13 @@ public class AddressEntity
 	public void setCustomerEntity(CustomerEntity customerEntity) {
 		this.customerEntity = customerEntity;
 	}
+
 	@Override
 	public String toString() {
 		return "AddressEntity [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city
 				+ ", state=" + state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
 	}
+
+	
+	
 }

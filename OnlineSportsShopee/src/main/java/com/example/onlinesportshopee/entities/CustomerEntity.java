@@ -24,13 +24,21 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
+
 	@OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
 	private List<AddressEntity> addresslist;
 	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "addressId")
+	private AddressEntity addressEntity;
+	@OneToOne(mappedBy="customerEntity",cascade=CascadeType.ALL)
+	private OrderEntity orderEntity;
 	
+	public CustomerEntity() {}
 	
 	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
-			List<AddressEntity> addresslist) {
+			List<AddressEntity> addresslist, AddressEntity addressEntity, OrderEntity orderEntity) {
 		super();
 		this.userID = userID;
 		this.name = name;
@@ -38,12 +46,9 @@ public class CustomerEntity
 		this.contactNo = contactNo;
 		this.doB = doB;
 		this.addresslist = addresslist;
+		this.addressEntity = addressEntity;
+		this.orderEntity = orderEntity;
 	}
-
-	public CustomerEntity() {
-		super();
-	}
-
 	public String getUserID() {
 		return userID;
 	}
@@ -74,18 +79,30 @@ public class CustomerEntity
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public List<AddressEntity> getaddress()
-	{
+	public List<AddressEntity> getAddresslist() {
 		return addresslist;
 	}
-	public void setaddress(List<AddressEntity> address)
-	{
-		this.addresslist = address;
+	public void setAddresslist(List<AddressEntity> addresslist) {
+		this.addresslist = addresslist;
 	}
-
+	public AddressEntity getAddressEntity() {
+		return addressEntity;
+	}
+	public void setAddressEntity(AddressEntity addressEntity) {
+		this.addressEntity = addressEntity;
+	}
+	public OrderEntity getOrderEntity() {
+		return orderEntity;
+	}
+	public void setOrderEntity(OrderEntity orderEntity) {
+		this.orderEntity = orderEntity;
+	}
+	
 	@Override
 	public String toString() {
 		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", addresslist=" + addresslist + "]";
+				+ ", doB=" + doB + ", addresslist=" + addresslist + ", addressEntity=" + addressEntity
+				+ ", orderEntity=" + orderEntity + "]";
 	}
+	
 }

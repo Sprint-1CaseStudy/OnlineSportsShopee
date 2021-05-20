@@ -2,6 +2,8 @@ package com.example.onlinesportshopee.model;
 
 import java.time.LocalDate;
 
+import com.example.onlinesportshopee.entities.AddressEntity;
+
 
 
 import com.example.onlinesportshopee.model.Address;
@@ -13,14 +15,14 @@ public class Customer
 	private String email;
 	private String contactNo;
 	private LocalDate doB;
-	private Address address;
+	private AddressEntity addressEntity;
 	
 	public Customer()
 	{
 		super();
 	}
 	
-	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
+	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, AddressEntity addressEntity) 
 	{
 		super();
 		this.userID = userID;
@@ -28,7 +30,7 @@ public class Customer
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.address = address;
+		this.addressEntity = addressEntity;
 	}
 
 	public String getUserID() {
@@ -61,19 +63,21 @@ public class Customer
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public Address getaddress()
+	public AddressEntity getAddressEntity()
 	{
-		return address;
+		return addressEntity;
 	}
-	public void setaddress(Address address)
+	public void setAddressEntity(AddressEntity addressEntity)
 	{
-		this.address = address;
+		this.addressEntity = addressEntity;
 	}
 
 	@Override
 	public String toString() {
 		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", address=" + address + "]";
+				+ ", doB=" + doB + ", addressEntity=" + addressEntity + "]";
 	}
+
+	
 	
 }

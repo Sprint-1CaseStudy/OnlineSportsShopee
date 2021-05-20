@@ -1,15 +1,18 @@
 package com.example.onlinesportshopee.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "payment")
+//@Table(name = "payment")
 public class PaymentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "paymentId")
-	private long paymentId;
+	private Long paymentId;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "status")
@@ -17,25 +20,25 @@ public class PaymentEntity {
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name = "card_id")
 	@Column(name = "cardEntity")
-	CardEntity cardEntity;
+	private List<CardEntity> cards=new ArrayList<CardEntity>();
 
 	public PaymentEntity() {
 		super();
 	}
 	
-	public PaymentEntity(long paymentId, String type, String status, CardEntity cardEntity) {
+	public PaymentEntity(Long paymentId, String type, String status, List<CardEntity> cards) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
-		this.cardEntity = cardEntity;
+		this.cards = cards;
 	}
 
-	public long getPaymentId() {
+	public Long getPaymentId() {
 		return paymentId;
 	}
 	
-	public void setPaymentId(long paymentId) {
+	public void setPaymentId(Long paymentId) {
 		this.paymentId = paymentId;
 	}
 	
@@ -54,18 +57,22 @@ public class PaymentEntity {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	public CardEntity getCardEntity() {
-		return cardEntity;
+	public List<CardEntity> getCards() {
+		return cards;
 	}
 
-	public void setCardEntity(CardEntity cardEntity) {
-		this.cardEntity = cardEntity;
+	public void setCards(List<CardEntity> cards) {
+		this.cards = cards;
 	}
 
 	@Override
 	public String toString() {
-		return "Payment [paymentId=" + paymentId + ", type=" + type + ", status=" + status + "]";
+		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cards=" + cards
+				+ "]";
 	}
+
+	
+
+	
 
 }

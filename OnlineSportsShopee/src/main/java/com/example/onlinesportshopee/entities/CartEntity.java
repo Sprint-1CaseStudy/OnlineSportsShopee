@@ -3,84 +3,93 @@ package com.example.onlinesportshopee.entities;
 import javax.persistence.*;
 
 
-@Table(name="cart")
+@Entity
+//@Table(name="Cart")
 public class CartEntity 
 {
 	@Id
-	@Column(name = "Id")
-	private long Id;
+	private Integer cartId;
 	@Column(name = "ImageName")
 	private String imageName;
 	@Column(name = "ProductName")
 	private String productName;
 	@Column(name = "Quantity")
-	private int quantity;
+	private Integer quantity;
 	@Column(name = "Price")
-	private double price;
+	private Double price;
 	@Column(name="ToatlBill")
-	private double total;
+	private Double total;
 	
 	public CartEntity() {
 		super();
 	}
-	
-	public CartEntity(long productId, String imageName, String productName, int quantity, double price, double total) {
-		super();
-		this.Id = productId;
-		this.imageName = imageName;
-		this.productName = productName;
-		this.quantity = quantity;
-		this.price = price;
-		this.total = total;
+
+	public Integer getCartId() {
+		return cartId;
 	}
+
+	public void setCartId(Integer cartId) {
+		this.cartId = cartId;
+	}
+
 	public String getImageName() {
 		return imageName;
 	}
+
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
 	}
+
 	public String getProductName() {
 		return productName;
 	}
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public int getQuantity() {
+
+	public Integer getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
+
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-	public double getPrice() {
+
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public double getTotal() {
+
+	public Double getTotal() {
 		return total;
 	}
-	public void setTotal(double total) {
+
+	public void setTotal(Double total) {
 		this.total = total;
 	}
-	
-	public long getProductId() {
-		return Id;
-	}
 
-	public void setProductId(long productId) {
-		this.Id = productId;
+	public CartEntity(Integer cartId, String imageName, String productName, Integer quantity, Double price,
+			Double total) {
+		super();
+		this.cartId = cartId;
+		this.imageName = imageName;
+		this.productName = productName;
+		this.quantity = quantity;
+		this.price = price;
+		this.total = total;
 	}
 
 	@Override
 	public String toString() {
-		return "CartEntity [productId=" + Id + ", imageName=" + imageName + ", productName=" + productName
+		return "CartEntity [cartId=" + cartId + ", imageName=" + imageName + ", productName=" + productName
 				+ ", quantity=" + quantity + ", price=" + price + ", total=" + total + "]";
 	}
+	
+}
 
 	
 	
-	
-	
-	
-}

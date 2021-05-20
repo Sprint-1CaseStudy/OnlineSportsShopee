@@ -6,8 +6,8 @@ import com.example.onlinesportshopee.entities.CustomerEntity;
 
 public class Order {
 
-	private long orderID;
-	private double amount;
+	private Long orderID;
+	private Double amount;
 	private LocalDate billingDate;
 	private CustomerEntity customerEntity;
 	private String paymentMethod;
@@ -16,7 +16,7 @@ public class Order {
 		super();
 	}
 
-	public Order(long orderID, double amount, LocalDate billingDate, CustomerEntity customerEntity, String paymentMethod) {
+	public Order(Long orderID, Double amount, LocalDate billingDate, CustomerEntity customerEntity, String paymentMethod) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
@@ -25,19 +25,19 @@ public class Order {
 		this.paymentMethod = paymentMethod;
 	}
 	
-	public long getOrderID() {
+	public Long getOrderID() {
 		return orderID;
 	}
 	
-	public void setOrderID(long orderID) {
+	public void setOrderID(Long orderID) {
 		this.orderID = orderID;
 	}
 	
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 	
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 	

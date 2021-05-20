@@ -7,25 +7,24 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order")
+//@Table(name = "order")
 public class OrderEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "orderID")
-	private long orderID;
+	private Long orderID;
 	@Column(name = "amount")
-	private double amount;
+	private Double amount;
 	@Column(name = "billingDate")
 	private LocalDate billingDate;
-    @ManyToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="cust_id")
 	private CustomerEntity customerEntity;
 	@Column(name = "paymentMethod")
 	private String paymentMethod;
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "product_orders", joinColumns = { @JoinColumn(name = "order_id") }, inverseJoinColumns = { @JoinColumn(name = "product_id") })
-	private ProductEntity productEntity;
+	@OneToMany(mappedBy="orderEntity",cascade = CascadeType.ALL)
+	private List<ProductEntity> productEntity=new ArrayList<ProductEntity>();
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="payment id")
 	private PaymentEntity paymentEntity;
@@ -34,7 +33,7 @@ public class OrderEntity {
 		super();
 	}
 
-	public OrderEntity(long orderID, double amount, LocalDate billingDate, CustomerEntity customerEntity, ProductEntity productEntity,String paymentMethod,PaymentEntity paymentEntity) {
+	public OrderEntity(Long orderID, Double amount, LocalDate billingDate, CustomerEntity customerEntity, List<ProductEntity> productEntity,String paymentMethod,PaymentEntity paymentEntity) {
 		super();
 		this.orderID = orderID;
 		this.amount = amount;
@@ -45,19 +44,19 @@ public class OrderEntity {
 		this.paymentEntity=paymentEntity;
 	}
 
-	public long getOrderID() {
+	public Long getOrderID() {
 		return orderID;
 	}
 
-	public void setOrderID(long orderID) {
+	public void setOrderID(Long orderID) {
 		this.orderID = orderID;
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
@@ -85,13 +84,14 @@ public class OrderEntity {
 		this.paymentMethod = paymentMethod;
 	}
 
-	public ProductEntity getProductEntity() {
+	public List<ProductEntity> getProductEntity(){ 
 		return productEntity;
-	}
-
-	public void setProductEntity(ProductEntity productEntity) {
-		this.productEntity = productEntity;
-	}
+	  }
+	  
+	  public void setProductEntity(List<ProductEntity> productEntity) {
+	  this.productEntity = productEntity; }
+	 
+	 
 
 	public PaymentEntity getPaymentEntity() {
 		return paymentEntity;
@@ -107,6 +107,8 @@ public class OrderEntity {
 				+ ", customerEntity=" + customerEntity + ", paymentMethod=" + paymentMethod + ", productEntity="
 				+ productEntity + ", paymentEntity=" + paymentEntity + "]";
 	}
+
+	
 	
 	
 	

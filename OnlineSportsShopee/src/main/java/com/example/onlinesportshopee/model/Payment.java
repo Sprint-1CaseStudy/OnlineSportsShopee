@@ -4,7 +4,7 @@ import com.example.onlinesportshopee.entities.CardEntity;
 
 public class Payment {
 
-	private long paymentId;
+	private Long paymentId;
 	private String type;
 	private String status;
 	CardEntity cardEntity;
@@ -13,7 +13,7 @@ public class Payment {
 		super();
 	}
 	
-	public Payment(long paymentId, String type, String status, CardEntity cardEntity) {
+	public Payment(Long paymentId, String type, String status, CardEntity cardEntity) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
@@ -21,11 +21,11 @@ public class Payment {
 		this.cardEntity = cardEntity;
 	}
 
-	public long getPaymentId() {
+	public Long getPaymentId() {
 		return paymentId;
 	}
 	
-	public void setPaymentId(long paymentId) {
+	public void setPaymentId(Long paymentId) {
 		this.paymentId = paymentId;
 	}
 	

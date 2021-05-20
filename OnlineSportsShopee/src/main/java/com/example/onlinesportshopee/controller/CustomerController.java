@@ -19,31 +19,31 @@ import com.example.onlinesportshopee.services.ICustomerService;
 public class CustomerController 
 {
 	@Autowired
-	private CustomerServiceImpl customerServiceImpl;
+	private ICustomerService iCustomerService;
 	
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody CustomerEntity customer) throws CustomerNotFoundException {
-		return customerServiceImpl.addCustomer(customer);
+		return iCustomerService.addCustomer(customer);
 	}
 	
 	@DeleteMapping("/removeCustomer/Customer/{custId}")
 	public Customer removeCustomer(@PathVariable long custId) throws CustomerNotFoundException {
-		return customerServiceImpl.removeCustomer(custId);
+		return iCustomerService.removeCustomer(custId);
 	}
 
 	@PutMapping("/updateCustomer/{custId}")
 	public Customer updateCustomer(@PathVariable long custId,@RequestBody CustomerEntity customer) throws CustomerNotFoundException {
-		return customerServiceImpl.updateCustomer(custId, customer);
+		return iCustomerService.updateCustomer(custId, customer);
 	}
 
 	@GetMapping("/getCustomerDetails/{custId}")
 	public Customer getCustomer(@PathVariable long custId) throws CustomerNotFoundException {
-		return customerServiceImpl.getCustomer(custId);
+		return iCustomerService.getCustomer(custId);
 	}
 
 	@GetMapping("/Customers/{name}")
 	public List<Customer> getAllCustomers(@PathVariable String name) {
-		return customerServiceImpl.getAllCustomers();
+		return iCustomerService.getAllCustomers();
 	}
 	
 }
