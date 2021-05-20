@@ -33,6 +33,8 @@ public class ProductUtils {
 	        productEntity.setPriceAfterDiscount(product.getPriceAfterDiscount());
 	        productEntity.setInStock(product.isInStock());
 	        productEntity.setExpectedDelivery(product.getExpectedDelivery());
+	        productEntity.setOrderEntity(product.getOrderEntity());
+	        productEntity.setCartEntity(product.getCartEntity());
 	        return productEntity;
 	     
 	    }    
@@ -48,8 +50,10 @@ public class ProductUtils {
 		 product.setSize(productEntity.getSize());
 		 product.setMrp(productEntity.getMrp());
 		 product.setPriceAfterDiscount(productEntity.getPriceAfterDiscount());
-		 product.setInStock(productEntity.isInStock());
+		 product.setInStock(productEntity.getInStock());
 		 product.setExpectedDelivery(productEntity.getExpectedDelivery());
+		 product.setOrderEntity(productEntity.getOrderEntity());
+		 product.setCartEntity(productEntity.getCartEntity());
 		 return product;
 	 }
 

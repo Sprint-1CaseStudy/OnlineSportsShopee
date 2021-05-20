@@ -10,7 +10,6 @@ public class Address
 	private String city;
 	private String state;
 	private Integer pincode;
-	
 	private CustomerEntity customerEntity;
 	
 	public Address()

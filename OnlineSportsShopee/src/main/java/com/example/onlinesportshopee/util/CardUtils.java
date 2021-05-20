@@ -28,6 +28,7 @@ public class CardUtils {
 	     card.setCardNumber(cardList.getCardNumber());
 	     card.setExpiryDate(cardList.getCardExpiry());
 	     card.setBankName(cardList.getBankName());
+	     card.setPaymentEntity(cardList.getPaymentEntity());
 	     return card;
 	    } 
 	 public static Card convertToCard(CardEntity cardEntity) {
@@ -37,7 +38,7 @@ public class CardUtils {
 	        card.setCardNumber(cardEntity.getCardNumber());
 	        card.setCardExpiry(cardEntity.getExpiryDate());
 	        card.setBankName(cardEntity.getBankName());
-	  
+	        card.setPaymentEntity(cardEntity.getPaymentEntity()); 
 	        return card;
 	
 	 }

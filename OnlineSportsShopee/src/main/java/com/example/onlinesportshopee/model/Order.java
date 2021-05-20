@@ -12,12 +12,11 @@ public class Order {
 	private Long orderID;
 	private Double amount;
 	private LocalDate billingDate;
-	private CustomerEntity customerEntity;
 	private String paymentMethod;
-	
+	private CustomerEntity customerEntity;
 	private List<ProductEntity> productEntity;
-	
 	private PaymentEntity paymentEntity;
+	
 	
 	public Order() {
 		super();

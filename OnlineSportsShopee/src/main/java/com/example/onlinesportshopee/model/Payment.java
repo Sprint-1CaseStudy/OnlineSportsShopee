@@ -47,11 +47,11 @@ public class Payment {
 		this.type = type;
 	}
 	
-	public List<CardEntity> getCards() {
+	public List<CardEntity> getCardEntity() {
 		return cards;
 	}
 
-	public void setCards(List<CardEntity> cards) {
+	public void setCardEntity(List<CardEntity> cards) {
 		this.cards = cards;
 	}
 

@@ -22,7 +22,6 @@ public class CardEntity {
 	private LocalDate expiryDate;
 	@Column(name = "bankName")
 	private String bankName;
-	
 	@ManyToOne
 	@JoinColumn(name="paymentcard")
 	private PaymentEntity paymentEntity;
