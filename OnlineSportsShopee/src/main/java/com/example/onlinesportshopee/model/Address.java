@@ -7,9 +7,9 @@ public class Address
 	private String area;
 	private String city;
 	private String state;
-	private int pincode;
+	private Integer pincode;
 	
-	public Address(String doorNo, String street, String area, String city, String state, int pincode) {
+	public Address(String doorNo, String street, String area, String city, String state, Integer pincode) {
 		super();
 		this.doorNo = doorNo;
 		this.street = street;
@@ -48,10 +48,10 @@ public class Address
 	public void setState(String state) {
 		this.state = state;
 	}
-	public int getPincode() {
+	public Integer getPincode() {
 		return pincode;
 	}
-	public void setPincode(int pincode) {
+	public void setPincode(Integer pincode) {
 		this.pincode = pincode;
 	}
 	@Override

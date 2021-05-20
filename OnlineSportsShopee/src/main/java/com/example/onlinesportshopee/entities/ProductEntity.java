@@ -4,19 +4,23 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "products")
+//@Table(name = "products")
 public class ProductEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "product_id")
-	private long productId;
+	private Long productId;
 	@Column(name = "product_name")
 	private String productName;
 	@Column(name = "product_category")
@@ -30,18 +34,21 @@ public class ProductEntity {
 	@Column(name = "product_size")
 	private String size;
 	@Column(name = "product_mrp")
-	private double mrp;
+	private Double mrp;
 	@Column(name = "product_discount")
-	private double priceAfterDiscount;
+	private Double priceAfterDiscount;
 	@Column(name = "in_stock")
-	private boolean inStock;
+	private Boolean inStock;
 	@Column(name = "expected_delivery")
 	private LocalDate expectedDelivery;
+	@ManyToOne
+	@JoinColumn(name="product-order")
+	private OrderEntity orderEntity;
 	
-	public long getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
-	public void setProductId(long productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public String getProductName() {
@@ -80,22 +87,22 @@ public class ProductEntity {
 	public void setSize(String size) {
 		this.size = size;
 	}
-	public double getMrp() {
+	public Double getMrp() {
 		return mrp;
 	}
 	public void setMrp(double mrp) {
 		this.mrp = mrp;
 	}
-	public double getPriceAfterDiscount() {
+	public Double getPriceAfterDiscount() {
 		return priceAfterDiscount;
 	}
-	public void setPriceAfterDiscount(double priceAfterDiscount) {
+	public void setPriceAfterDiscount(Double priceAfterDiscount) {
 		this.priceAfterDiscount = priceAfterDiscount;
 	}
 	public boolean isInStock() {
 		return inStock;
 	}
-	public void setInStock(boolean inStock) {
+	public void setInStock(Boolean inStock) {
 		this.inStock = inStock;
 	}
 	public LocalDate getExpectedDelivery() {
@@ -105,8 +112,13 @@ public class ProductEntity {
 		this.expectedDelivery = expectedDelivery;
 	}
 	
-	
-	public ProductEntity(long productId, String productName, String category, String description, String brand, String colour, String size, double mrp, double priceAfterDiscount, boolean inStock) {
+	public OrderEntity getOrderEntity() {
+		return orderEntity;
+	}
+	public void setOrderEntity(OrderEntity orderEntity) {
+		this.orderEntity = orderEntity;
+	}
+	public ProductEntity(Long productId, String productName, String category, String description, String brand, String colour, String size, Double mrp, Double priceAfterDiscount, Boolean inStock,OrderEntity orderEntity) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -119,6 +131,7 @@ public class ProductEntity {
 		this.priceAfterDiscount = priceAfterDiscount;
 		this.inStock = inStock;
 		this.expectedDelivery = expectedDelivery;
+		this.orderEntity= orderEntity;
 	}
 	
 	public ProductEntity() {

@@ -20,13 +20,13 @@ import com.example.onlinesportshopee.services.UserServiceImpl;
 public class UserController {
 	
 	@Autowired
-	private UserServiceImpl userServiceImpl;
+	private IUserService iUserService;
 	
 	@GetMapping("/signin/{userId}/{password}")
 	public ResponseEntity<Object> signin(@PathVariable String userId,@PathVariable String Password) throws UserException
 	{
 		UserEntity userdata = new UserEntity(userId,Password);
-		UserEntity user = userServiceImpl.signIn(userdata);
+		UserEntity user = iUserService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
 		return response;
 	}
@@ -35,7 +35,7 @@ public class UserController {
 	@GetMapping("/signout")
 	public ResponseEntity<Object> signOut() throws UserException
 	{
-		String signout = userServiceImpl.signOut(null);
+		String signout = iUserService.signOut(null);
 		ResponseEntity<Object> response = new ResponseEntity<>(signout,HttpStatus.ACCEPTED);
 		return response;
 	}
@@ -43,7 +43,7 @@ public class UserController {
 	@PutMapping("/changepassword/{userId}")
 	public ResponseEntity<Object> signin(@PathVariable long userId, @RequestBody UserEntity User) throws UserException
 	{
-		User user = userServiceImpl.changePassword(userId, User);
+		User user = iUserService.changePassword(userId, User);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
 		return response;
 	}	

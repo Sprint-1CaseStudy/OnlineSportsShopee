@@ -7,12 +7,12 @@ import java.time.LocalDate;
 //import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name="card")
+//@Table(name="card")
 public class CardEntity {
 
 	@Id
-	//@Column(name = "id")
-	private long id;
+	//@Column(name = "cardId")
+	private Long id;
 	@Column(name = "cardName")
 	private String cardName;
 	@Column(name = "cardNumber")
@@ -25,7 +25,7 @@ public class CardEntity {
 	public CardEntity() {
 		super();
 	}
-	public CardEntity(long id, String cardName, String cardNumber, LocalDate expiryDate, String bankName) {
+	public CardEntity(Long id, String cardName, String cardNumber, LocalDate expiryDate, String bankName) {
 		super();
 		this.id= id;
     	this.cardName= cardName;
@@ -33,10 +33,10 @@ public class CardEntity {
 		this.expiryDate= expiryDate;
 		this.bankName= bankName;
 	}
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getCardName() {

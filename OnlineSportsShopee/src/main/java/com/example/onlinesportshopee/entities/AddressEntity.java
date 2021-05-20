@@ -3,7 +3,7 @@ package com.example.onlinesportshopee.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "address")
+//@Table(name = "address")
 public class AddressEntity 
 {
 
@@ -19,7 +19,8 @@ public class AddressEntity
 	@Column(name = "state")
 	private String state;
 	@Column(name = "pincode")
-	private int pincode;
+	private Integer pincode;
+	
 	
 	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode) {
 		super();
@@ -29,6 +30,7 @@ public class AddressEntity
 		this.city = city;
 		this.state = state;
 		this.pincode = pincode;
+		
 	}
 	public String getDoorNo() {
 		return doorNo;
@@ -65,10 +67,13 @@ public class AddressEntity
 	}
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
+		
 	}
+	
 	@Override
 	public String toString() {
-		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
-				+ state + ", pincode=" + pincode + "]";
+		return "AddressEntity [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city
+				+ ", state=" + state + ", pincode=" + pincode +  "]";
 	}
+	
 }

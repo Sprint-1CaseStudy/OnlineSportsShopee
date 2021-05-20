@@ -26,14 +26,14 @@ import com.example.onlinesportshopee.services.OrderServiceImpl;
 public class OrderController {
 
 	@Autowired
-	private OrderServiceImpl orderServiceImpl;
+	private IOrderService iOrderService;
 	
 	@PostMapping("/add-order")
 	public  ResponseEntity<Object> addProduct(@RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
 		System.out.println(orderEntity);
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
-		orderDTO = orderServiceImpl.addOrder(orderEntity);
+		orderDTO = iOrderService.addOrder(orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		return orderResponse;
 	}
@@ -42,7 +42,7 @@ public class OrderController {
 		
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
-		orderDTO = orderServiceImpl.updateOrder(orderID,orderEntity);
+		orderDTO = iOrderService.updateOrder(orderID,orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
 		return orderResponse;
@@ -50,7 +50,7 @@ public class OrderController {
 	@DeleteMapping("/remove-order/{orderID}")
 	public ResponseEntity<Object> deleteOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 		
-		Order orderDTO = orderServiceImpl.deleteOrder(orderID);
+		Order orderDTO = iOrderService.deleteOrder(orderID);
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 
 	}
@@ -58,7 +58,7 @@ public class OrderController {
 	public ResponseEntity<Object> getOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 	
 		Order orderDTO = null;
-		orderDTO = orderServiceImpl.getOrderDetails(orderID);
+		orderDTO = iOrderService.getOrderDetails(orderID);
 		
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
@@ -66,7 +66,7 @@ public class OrderController {
 	@GetMapping("/get-all-order/")
 	public List<Order> getAllOrder(){
 	
-		return orderServiceImpl.getAllOrders();
+		return iOrderService.getAllOrders();
 
 	}
 	

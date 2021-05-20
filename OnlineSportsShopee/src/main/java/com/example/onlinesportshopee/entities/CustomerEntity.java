@@ -9,7 +9,7 @@ import com.example.onlinesportshopee.model.Address;
 import com.example.onlinesportshopee.entities.AddressEntity;
 
 @Entity
-@Table(name = "Customer")
+//@Table(name = "Customer")
 public class CustomerEntity 
 {
 	@Id
@@ -24,17 +24,18 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="address_id")
-	private Address address;
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "addressId")
+	private AddressEntity addressEntity;
+	@OneToOne(mappedBy="customerEntity",cascade=CascadeType.ALL)
+	private OrderEntity orderEntity;
 	
 	
 	public CustomerEntity() {
 		super();
 	}
 	
-	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
+	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB, AddressEntity addressEntity,OrderEntity orderEntity) 
 	{
 		super();
 		this.userID = userID;
@@ -42,7 +43,9 @@ public class CustomerEntity
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.address = address;
+		this.addressEntity = addressEntity;
+		this.orderEntity=orderEntity;
+		
 	}
 
 	public String getUserID() {
@@ -75,18 +78,29 @@ public class CustomerEntity
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public Address getaddress()
+	public AddressEntity getAddressEntity()
 	{
-		return address;
+		return addressEntity;
 	}
-	public void setaddress(Address address)
+	public void setAddressEntity(AddressEntity addressEntity)
 	{
-		this.address = address;
+		this.addressEntity = addressEntity;
+	}
+	
+
+	public OrderEntity getOrderEntity() {
+		return orderEntity;
+	}
+
+	public void setOrderEntity(OrderEntity orderEntity) {
+		this.orderEntity = orderEntity;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", address=" + address + "]";
+		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+				+ ", doB=" + doB + ", addressEntity=" + addressEntity + ", orderEntity=" + orderEntity + "]";
 	}
+
+
 }

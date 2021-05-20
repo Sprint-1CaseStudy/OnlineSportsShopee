@@ -4,9 +4,9 @@ public class Cart {
 	
 	String imgageName;
 	String productName;
-	int quantity;
-	double price;
-	double total;
+	Integer quantity;
+	Double price;
+	Double total;
 
 
 
@@ -14,7 +14,7 @@ public class Cart {
 		super();
 	}
 
-	public Cart(String imgageName, String productName, int quantity, double price, double total) {
+	public Cart(String imgageName, String productName, Integer quantity, Double price, Double total) {
 		super();
 		this.imgageName = imgageName;
 		this.productName = productName;
@@ -39,23 +39,23 @@ public class Cart {
 		this.productName = productName;
 	}
 	
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 	
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public double getTotal() {
+	public Double getTotal() {
 		return total;
 	}
-	public void setTotal(double total) {
+	public void setTotal(Double total) {
 		this.total = total;
 	}
 	@Override

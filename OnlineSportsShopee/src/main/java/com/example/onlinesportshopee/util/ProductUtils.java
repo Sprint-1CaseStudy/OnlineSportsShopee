@@ -14,10 +14,10 @@ public class ProductUtils {
 		
 	}
 	 public static List<Product> convertToProductDtoList(List<ProductEntity> list){
-	        List<Product> productlist = new ArrayList<>();
+	        List<Product> productList = new ArrayList<>();
 	        for(ProductEntity productEntity : list) 
-	            productlist.add(convertToProduct(productEntity));
-	        return productlist;
+	        	productList.add(convertToProduct(productEntity));
+	        return productList;
 	    }
 	 
 	 public static ProductEntity convertToProduct(Product product) {
