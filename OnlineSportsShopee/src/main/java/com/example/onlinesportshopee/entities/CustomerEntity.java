@@ -25,7 +25,7 @@ public class CustomerEntity
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
 	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="address id")
+	@JoinColumn(name="address_id")
 	private Address address;
 	
 	

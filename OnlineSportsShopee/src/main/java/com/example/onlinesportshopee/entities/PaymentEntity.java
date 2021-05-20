@@ -14,6 +14,8 @@ public class PaymentEntity {
 	private String type;
 	@Column(name = "status")
 	private String status;
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name = "card_id")
 	@Column(name = "cardEntity")
 	CardEntity cardEntity;
 
