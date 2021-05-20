@@ -1,19 +1,24 @@
 package com.example.onlinesportshopee.model;
 
+import java.util.List;
+
+import com.example.onlinesportshopee.entities.ProductEntity;
+
 public class Cart {
 	
-	Integer cartId;
-	String imageName;
-	String productName;
-	Integer quantity;
-	Double price;
-	Double total;
+	private Integer cartId;
+	private String imageName;
+	private String productName;
+	private Integer quantity;
+	private Double price;
+	private Double total;
+	private List<ProductEntity> productEntity;
 
 	public Cart() {
 		super();
 	}
 
-	public Cart(Integer cartId, String imageName, String productName, Integer quantity, Double price, Double total) {
+	public Cart(Integer cartId, String imageName, String productName, Integer quantity, Double price, Double total,List<ProductEntity> productEntity) {
 		super();
 		this.cartId = cartId;
 		this.imageName = imageName;
@@ -21,6 +26,7 @@ public class Cart {
 		this.quantity = quantity;
 		this.price = price;
 		this.total = total;
+		this.productEntity=productEntity;
 	}
 
 	public Integer getCartId() {
@@ -70,11 +76,20 @@ public class Cart {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+	
+
+	public List<ProductEntity> getProductEntity() {
+		return productEntity;
+	}
+
+	public void setProductEntity(List<ProductEntity> productEntity) {
+		this.productEntity = productEntity;
+	}
 
 	@Override
 	public String toString() {
 		return "Cart [cartId=" + cartId + ", imageName=" + imageName + ", productName=" + productName + ", quantity="
-				+ quantity + ", price=" + price + ", total=" + total + "]";
+				+ quantity + ", price=" + price + ", total=" + total + ", productEntity=" + productEntity + "]";
 	}
 
 

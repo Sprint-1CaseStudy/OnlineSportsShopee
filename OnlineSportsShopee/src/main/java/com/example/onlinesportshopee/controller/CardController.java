@@ -2,6 +2,8 @@ package com.example.onlinesportshopee.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,26 +28,34 @@ import com.example.onlinesportshopee.services.CardServiceImpl;
 @RequestMapping("/cards")
 public class CardController {
 	
+	static final Logger LOGGER = LoggerFactory.getLogger(CardController.class);
+	
 	@Autowired
 	private CardServiceImpl cardServiceImpl;
 	
 	@PostMapping("/add-card")
 	public ResponseEntity<Object> addCard(@RequestBody CardEntity card) throws CardNotFoundException
 	{
+		LOGGER.info("add-card URL is opened");
+		LOGGER.info("addCard() is initiated");
 		Card cardDto = null;
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.addCard(card);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
+		LOGGER.info("addCard() is executed");
 		return cardResponse;
 	}
 
 	@DeleteMapping("/remove-card/card/{id}")
 	public ResponseEntity<Object> removeCard(@PathVariable long id) throws CardNotFoundException
 	{
+		LOGGER.info("remove-card URL is opened");
+		LOGGER.info("removeCard() is initiated");
 		Card cardDto = null;
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.removeCard(id);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
+		LOGGER.info("removeCard() is executed");
 		return cardResponse;
 	 
 	}
@@ -53,26 +63,36 @@ public class CardController {
 	@PutMapping("/update-card/{id}")
 	public ResponseEntity<Object> updateCard(@PathVariable long id, @RequestBody CardEntity card)
 	{
+		LOGGER.info("update-card URL is opened");
+		LOGGER.info("updateCard() is initiated");
 		Card cardDto = null;
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.updateCard(id, card);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
+		LOGGER.info("updateCard() is executed");
 		return cardResponse;
 		
 	}
 	@GetMapping("/get-card-details/{id}")
 	public ResponseEntity<Object> getCardDetails(@PathVariable long id)
 	{
+		LOGGER.info("get-card-details URL is opened");
+		LOGGER.info("getCardDetails() is initiated");
 		Card cardDto = null;
 		ResponseEntity<Object> cardResponse = null;
 		cardDto = cardServiceImpl.getCardDetails(id);
 		cardResponse = new ResponseEntity<>(cardDto, HttpStatus.ACCEPTED);
+		LOGGER.info("getCardDetails() is executed");
 		return cardResponse;
 	}
 	
 	@GetMapping("/get-all-cards")
+
 	public List<Card> getAllCards()
 	{
+		LOGGER.info("get-all-cards URL is opened");
+		LOGGER.info("getAllCards() is initiated");
+		LOGGER.info("getAllCards() is executed");
 		return cardServiceImpl.getAllCards();
 	}
 	

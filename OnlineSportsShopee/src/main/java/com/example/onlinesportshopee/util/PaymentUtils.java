@@ -24,7 +24,7 @@ public class PaymentUtils {
 		 payment.setPaymentId(paymentlist.getPaymentId());
 		 payment.setType(paymentlist.getType());
 	     payment.setStatus(paymentlist.getStatus());
-	    // payment.setCardEntity(paymentlist.getCardEntity());
+	     payment.setCardEntity(paymentlist.getCardEntity());
 	     return payment;
 	    }        
 	    
@@ -33,7 +33,7 @@ public class PaymentUtils {
 	        payment.setPaymentId(paymentEntity.getPaymentId());
 	        payment.setType(paymentEntity.getType());
 	        payment.setStatus(paymentEntity.getStatus());
-	        //payment.setCardEntity(paymentEntity.getCardEntity());
+	        payment.setCardEntity(paymentEntity.getCardEntity());
 	        return payment;
 	    }
 	 }

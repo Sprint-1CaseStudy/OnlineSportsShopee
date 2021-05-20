@@ -1,5 +1,7 @@
 package com.example.onlinesportshopee.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -19,7 +21,9 @@ public class CartEntity
 	private Double price;
 	@Column(name="ToatlBill")
 	private Double total;
-	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="product-cart")
+	private List<ProductEntity> productEntity;
 	
 	
 	public CartEntity() {
@@ -73,9 +77,18 @@ public class CartEntity
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+	
+
+	public List<ProductEntity> getProductEntity() {
+		return productEntity;
+	}
+
+	public void setProductEntity(List<ProductEntity> productEntity) {
+		this.productEntity = productEntity;
+	}
 
 	public CartEntity(Integer cartId, String imageName, String productName, Integer quantity, Double price,
-			Double total) {
+			Double total,List<ProductEntity> productEntity) {
 		super();
 		this.cartId = cartId;
 		this.imageName = imageName;
@@ -83,12 +96,14 @@ public class CartEntity
 		this.quantity = quantity;
 		this.price = price;
 		this.total = total;
+		this.productEntity=productEntity;
 	}
 
 	@Override
 	public String toString() {
 		return "CartEntity [cartId=" + cartId + ", imageName=" + imageName + ", productName=" + productName
-				+ ", quantity=" + quantity + ", price=" + price + ", total=" + total + "]";
+				+ ", quantity=" + quantity + ", price=" + price + ", total=" + total + ", productEntity="
+				+ productEntity + "]";
 	}
 	
 }

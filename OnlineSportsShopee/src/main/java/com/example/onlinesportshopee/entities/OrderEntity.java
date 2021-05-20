@@ -18,15 +18,13 @@ public class OrderEntity {
 	private Double amount;
 	@Column(name = "billingDate")
 	private LocalDate billingDate;
+    @Column(name = "paymentMethod")
+	private String paymentMethod;
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="cust_id")
 	private CustomerEntity customerEntity;
-	@Column(name = "paymentMethod")
-	private String paymentMethod;
-	
-	@ManyToMany(mappedBy="orderEntity",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="orderEntity",cascade = CascadeType.ALL)
 	private List<ProductEntity> productEntity;
-	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="paymentid")
 	private PaymentEntity paymentEntity;

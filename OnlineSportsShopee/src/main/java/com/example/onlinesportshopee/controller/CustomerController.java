@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Sprint-1CaseStudy/OnlineSportsShopee.git
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;

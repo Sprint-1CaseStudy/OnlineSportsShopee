@@ -11,14 +11,12 @@ public class Card {
 	private String cardNumber;
     private LocalDate cardExpiry;
     private String bankName;
-    
     private PaymentEntity paymentEntity;
     
    public Card() {
 	   
    }
-   public Card(Long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName,
-		PaymentEntity paymentEntity) {
+   public Card(Long id, String cardName, String cardNumber, LocalDate cardExpiry, String bankName,PaymentEntity paymentEntity) {
     	super();
 		this.id = id;
 		this.cardName = cardName;
