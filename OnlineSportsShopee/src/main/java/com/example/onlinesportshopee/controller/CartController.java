@@ -25,23 +25,29 @@ public class CartController {
 	
 	@PostMapping("/addtocart")
 	public  ResponseEntity<Object> addtocart(@RequestBody CartEntity cartEntity) throws CartException{
+		LOGGER.info("addtocart initiated");
 		Cart cartDTO = null;
 		ResponseEntity<Object> cartResponse = null;
 		cartDTO = cartService.addCart(cartEntity);
 		cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
+		LOGGER.info("addtocart has Executed");
 		return cartResponse;
 	}
 	
 	@DeleteMapping("/removefromcart/{delID}")
 	public ResponseEntity<Object> deletecart(@PathVariable long delID)throws CartException{
+		LOGGER.info("deletecart initiated");
 		Cart cartDTO = cartService.deleteCart(delID);
-		return new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
+		ResponseEntity<Object> cartResponse = new ResponseEntity<>(cartDTO, HttpStatus.ACCEPTED);
+		LOGGER.info("deletecart has Executed");
+		return cartResponse;
 
 	}
 	
 	@GetMapping("/getallcartdetials")
 	public List<Cart> getAllProduct()
 	{
+		LOGGER.info("getallcartdetails initiated");
 		return cartService.getallCartDetails();
 	}
 }
