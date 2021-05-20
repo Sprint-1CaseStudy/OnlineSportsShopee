@@ -1,7 +1,7 @@
 package com.example.onlinesportshopee.entities;
 
 import java.time.LocalDate;
-
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,25 +24,24 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="address_id")
-	private Address address;
+	@OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
+	private List<AddressEntity> addresslist;
 	
 	
 	
-	public CustomerEntity() {
-		super();
-	}
-	
-	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB, Address address) 
-	{
+	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
+			List<AddressEntity> addresslist) {
 		super();
 		this.userID = userID;
 		this.name = name;
 		this.email = email;
 		this.contactNo = contactNo;
 		this.doB = doB;
-		this.address = address;
+		this.addresslist = addresslist;
+	}
+
+	public CustomerEntity() {
+		super();
 	}
 
 	public String getUserID() {
@@ -75,18 +74,18 @@ public class CustomerEntity
 	public void setDoB(LocalDate doB) {
 		this.doB = doB;
 	}
-	public Address getaddress()
+	public List<AddressEntity> getaddress()
 	{
-		return address;
+		return addresslist;
 	}
-	public void setaddress(Address address)
+	public void setaddress(List<AddressEntity> address)
 	{
-		this.address = address;
+		this.addresslist = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
-				+ ", doB=" + doB + ", address=" + address + "]";
+		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+				+ ", doB=" + doB + ", addresslist=" + addresslist + "]";
 	}
 }

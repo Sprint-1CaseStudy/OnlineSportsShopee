@@ -2,6 +2,8 @@ package com.example.onlinesportshopee.entities;
 
 import javax.persistence.*;
 
+import com.example.onlinesportshopee.entities.CustomerEntity;
+
 @Entity
 @Table(name = "address")
 public class AddressEntity 
@@ -21,12 +23,17 @@ public class AddressEntity
 	@Column(name = "pincode")
 	private int pincode;
 	
+	@ManyToOne
+    @JoinColumn(name = "user_id" ) 
+    private CustomerEntity customerEntity;
+
 	public AddressEntity()
 	{
 		super();
 	}
 	
-	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode) {
+	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode,
+			CustomerEntity customerEntity) {
 		super();
 		this.doorNo = doorNo;
 		this.street = street;
@@ -34,6 +41,7 @@ public class AddressEntity
 		this.city = city;
 		this.state = state;
 		this.pincode = pincode;
+		this.customerEntity = customerEntity;
 	}
 	public String getDoorNo() {
 		return doorNo;
@@ -71,9 +79,18 @@ public class AddressEntity
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
+	
+
+	public CustomerEntity getCustomerEntity() {
+		return customerEntity;
+	}
+
+	public void setCustomerEntity(CustomerEntity customerEntity) {
+		this.customerEntity = customerEntity;
+	}
 	@Override
 	public String toString() {
-		return "Address [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city + ", state="
-				+ state + ", pincode=" + pincode + "]";
+		return "AddressEntity [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city
+				+ ", state=" + state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
 	}
 }
