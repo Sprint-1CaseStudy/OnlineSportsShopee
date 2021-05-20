@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "address")
 public class AddressEntity 
 {
-
+//
 	@Id
 	//@Column(name = "doorNo")
 	private String doorNo;
@@ -20,6 +20,11 @@ public class AddressEntity
 	private String state;
 	@Column(name = "pincode")
 	private int pincode;
+	
+	public AddressEntity()
+	{
+		super();
+	}
 	
 	public AddressEntity(String doorNo, String street, String area, String city, String state, int pincode) {
 		super();

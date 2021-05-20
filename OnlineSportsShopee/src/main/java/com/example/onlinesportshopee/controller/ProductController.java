@@ -12,7 +12,7 @@ import com.example.onlinesportshopee.entities.ProductEntity;
 import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IProductService;
-import com.example.onlinesportshopee.services.ProductServiceImpl;
+
 
 
 @RestController
@@ -20,14 +20,14 @@ import com.example.onlinesportshopee.services.ProductServiceImpl;
 public class ProductController {
 	
 	@Autowired
-	private ProductServiceImpl productServiceImpl;
+	private IProductService productService;
 	
 	@PostMapping("/addProduct")
 	public ResponseEntity<Object> addProduct(@RequestBody ProductEntity product) throws ProductsException
 	{
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
-		productDto = productServiceImpl.addProduct(product);
+		productDto = productService.addProduct(product);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 		
@@ -38,7 +38,7 @@ public class ProductController {
 	{
 		Product productDto = null;
 		ResponseEntity<Object> productResponse = null;
-		productDto = productServiceImpl.removeProduct(productId);
+		productDto = productService.removeProduct(productId);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 	 
@@ -49,7 +49,7 @@ public class ProductController {
 	{
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
-		productDto = productServiceImpl.updateProduct(productId, product);
+		productDto = productService.updateProduct(productId, product);
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 		
@@ -60,7 +60,7 @@ public class ProductController {
 	{
 		Product productDto =null;
 		ResponseEntity<Object> productResponse = null;
-		productDto = productServiceImpl.getProduct(productId);;
+		productDto = productService.getProduct(productId);;
 		productResponse = new ResponseEntity<>(productDto, HttpStatus.ACCEPTED);
 		return productResponse;
 	}
@@ -68,7 +68,7 @@ public class ProductController {
 	@GetMapping("/getAllProduct")
 	public List<Product> getAllProduct()
 	{
-		return productServiceImpl.getAllProduct();
+		return productService.getAllProduct();
 	}
 	
 	
@@ -76,7 +76,7 @@ public class ProductController {
 	public ResponseEntity<Object> getProductsByName(@PathVariable String name) throws ProductsException
 	{
 		ResponseEntity<Object> response = null;
-		List<Product> products = productServiceImpl.getProductsByName(name);
+		List<Product> products = productService.getProductsByName(name);
 		response = new ResponseEntity<>(products,HttpStatus.ACCEPTED);	
 		return response;
 	}
@@ -84,25 +84,27 @@ public class ProductController {
 	@GetMapping("/bysize/{size}")
 	public ResponseEntity<Object> getProductsBySize(@PathVariable String size) throws ProductsException
 	{
-		List<Product> bysize = productServiceImpl.getProductsBySize(size);
-		ResponseEntity<Object> response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
+		List<Product> bysize = productService.getProductsBySize(size);
+		ResponseEntity<Object> response = null;
+		response = new ResponseEntity<>(bysize,HttpStatus.ACCEPTED);
 		return response;
 	}
 	
 	@GetMapping("/byprice/{price}")
 	public ResponseEntity<Object> getProductsByPrice(@PathVariable double price) throws ProductsException
 	{
-		List<Product> byprice = productServiceImpl.getProductsByPrice(price);
-		ResponseEntity<Object> response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
+		List<Product> byprice = productService.getProductsByPrice(price);
+		ResponseEntity<Object> response = null; 
+		response = new ResponseEntity<>(byprice,HttpStatus.ACCEPTED);
 		return response;
 	}
 	
 	@GetMapping("/bycolor/{color}")
 	public ResponseEntity<Object> getProductsByColor(@PathVariable String color) throws ProductsException
 	{
-		List<Product> bycolor = productServiceImpl.getProductsByColor(color);
-		ResponseEntity<Object> response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
+		List<Product> bycolor = productService.getProductsByColor(color);
+		ResponseEntity<Object> response = null;
+		response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
 		return response;
 	}
-
 }

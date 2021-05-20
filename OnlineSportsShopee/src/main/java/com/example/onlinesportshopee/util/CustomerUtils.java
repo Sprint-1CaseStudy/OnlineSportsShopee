@@ -35,6 +35,8 @@ public class CustomerUtils
 		customer.setName(customerentity.getName());
 		customer.setEmail(customerentity.getEmail());
 		customer.setContactNo(customerentity.getContactNo());
+		customer.setDoB(customerentity.getDoB());
+		customer.setaddress(customerentity.getaddress());
 		return customer;
 	}
 }
