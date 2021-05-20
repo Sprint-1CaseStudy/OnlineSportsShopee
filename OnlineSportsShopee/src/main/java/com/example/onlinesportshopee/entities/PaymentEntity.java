@@ -4,17 +4,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "payment")
-
 public class PaymentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "paymentId")
+	//@Column(name = "paymentId")
 	private long paymentId;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "status")
 	private String status;
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name = "card_id")
 	@Column(name = "cardEntity")
 	CardEntity cardEntity;
 

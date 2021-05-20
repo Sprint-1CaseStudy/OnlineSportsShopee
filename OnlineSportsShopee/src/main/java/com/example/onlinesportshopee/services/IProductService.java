@@ -1,12 +1,11 @@
 package com.example.onlinesportshopee.services;
 
 import java.util.List;
-import com.example.onlinesportshopee.Exception.ProductsException;
-
 
 import org.springframework.http.ResponseEntity;
 
 import com.example.onlinesportshopee.entities.ProductEntity;
+import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 
 

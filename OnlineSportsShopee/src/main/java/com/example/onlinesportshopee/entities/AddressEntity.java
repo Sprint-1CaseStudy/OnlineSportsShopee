@@ -8,7 +8,7 @@ public class AddressEntity
 {
 
 	@Id
-	@Column(name = "doorNo")
+	//@Column(name = "doorNo")
 	private String doorNo;
 	@Column(name = "street")
 	private String street;

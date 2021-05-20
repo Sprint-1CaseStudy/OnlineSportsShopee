@@ -2,15 +2,17 @@ package com.example.onlinesportshopee.controller;
 
 import java.util.List;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.onlinesportshopee.Exception.ProductsException;
 import com.example.onlinesportshopee.entities.ProductEntity;
+import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.services.IProductService;
+
 
 
 @RestController
@@ -105,5 +107,4 @@ public class ProductController {
 		response = new ResponseEntity<>(bycolor,HttpStatus.ACCEPTED);
 		return response;
 	}
-
 }

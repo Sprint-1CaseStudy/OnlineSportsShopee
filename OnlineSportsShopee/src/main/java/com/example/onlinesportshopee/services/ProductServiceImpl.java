@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.onlinesportshopee.Exception.ProductsException;
 import com.example.onlinesportshopee.dao.IProductRepository;
 import com.example.onlinesportshopee.entities.ProductEntity;
+import com.example.onlinesportshopee.exception.ProductsException;
 import com.example.onlinesportshopee.model.Product;
 import com.example.onlinesportshopee.util.ProductUtils;
 
@@ -18,7 +18,7 @@ public class ProductServiceImpl implements IProductService {
 	
 	
 	@Autowired 
-	private IProductRepository productRepository;
+	private IProductRepository iProductRepository;
 	
 	@Override
 	public Product addProduct(ProductEntity product) {
@@ -26,7 +26,7 @@ public class ProductServiceImpl implements IProductService {
      if(product == null)
     	 productEntity = null;
      else {
-    	 productEntity = productRepository.save(product);
+    	 productEntity = iProductRepository.save(product);
     	  }
      return ProductUtils.convertToProduct(productEntity);
      
@@ -34,29 +34,29 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public Product removeProduct(long productId) {
-		ProductEntity delproduct = productRepository.findById(productId).get();
-		 productRepository.delete(delproduct);
+		ProductEntity delproduct = iProductRepository.findById(productId).get();
+		iProductRepository.delete(delproduct);
 		return ProductUtils.convertToProduct(delproduct);
 	}
 
 	
 	@Override
 	public Product updateProduct(long productId, ProductEntity product) {
-		ProductEntity updateProduct = productRepository.findById(productId).get();
-		updateProduct = productRepository.save(product);
+		ProductEntity updateProduct = iProductRepository.findById(productId).get();
+		updateProduct = iProductRepository.save(product);
 		
 		return ProductUtils.convertToProduct(updateProduct);
 	}
 
 	@Override
 	public Product getProduct(long productId) {
-		ProductEntity getProduct = productRepository.findById(productId).get();
+		ProductEntity getProduct = iProductRepository.findById(productId).get();
 		return ProductUtils.convertToProduct(getProduct);
 	}
 
 	@Override
 	public List<Product> getAllProduct() {
-		List<ProductEntity> getAllProduct = productRepository.findAll();
+		List<ProductEntity> getAllProduct = iProductRepository.findAll();
 
 		return ProductUtils.convertToProductDtoList(getAllProduct);
 	}
@@ -64,7 +64,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByName(String name) throws ProductsException
 	{
-		List<ProductEntity> getProductName = productRepository.findByName(name);
+		List<ProductEntity> getProductName = iProductRepository.findByName(name);
 		if (getProductName == null)
 		{
 			String namenotfound = "No products found by the name "+name;
@@ -77,7 +77,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsBySize(String size) throws ProductsException
 	{
-		List<ProductEntity> productSize = productRepository.findBySize(size);
+		List<ProductEntity> productSize = iProductRepository.findBySize(size);
 		if (productSize == null)
 		{
 			String sizenotfound = "No products found by the size "+size;
@@ -89,7 +89,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByPrice(double price) throws ProductsException
 	{
-		List<ProductEntity> productPrice = productRepository.findByPrice(price);
+		List<ProductEntity> productPrice = iProductRepository.findByPrice(price);
 		if (productPrice == null)
 		{
 			String pricenotfound = "No products found by the price "+price;
@@ -102,7 +102,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getProductsByColor(String color) throws ProductsException
 	{
-		List<ProductEntity> productColor = productRepository.findByColor(color);
+		List<ProductEntity> productColor = iProductRepository.findByColor(color);
 		if (productColor == null)
 		{
 			String colornotfound = "No products found by the color "+color;

@@ -14,8 +14,8 @@ import javax.persistence.Table;
 public class ProductEntity {
 	
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "product_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@Column(name = "product_id")
 	private long productId;
 	@Column(name = "product_name")
 	private String productName;
