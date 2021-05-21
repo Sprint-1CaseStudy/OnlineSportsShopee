@@ -30,11 +30,12 @@ public class UserController {
 	@GetMapping("/signin/{userId}/{password}")
 	public ResponseEntity<Object> signin(@PathVariable String userId,@PathVariable String Password) throws UserException
 	{
+		LOGGER.info("sign-in URL is opened");
 		LOGGER.info("signin() is initiated");
 		UserEntity userdata = new UserEntity(userId,Password);
 		UserEntity user = iUserService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
-		LOGGER.info("signin() is Executed");
+		LOGGER.info("signin() has Executed");
 		return response;
 	}
 	
@@ -42,20 +43,22 @@ public class UserController {
 	@GetMapping("/signout")
 	public ResponseEntity<Object> signOut() throws UserException
 	{
+		LOGGER.info("sign-out URL is opened");
 		LOGGER.info("signout() is initiated");
 		String signout = iUserService.signOut(null);
 		ResponseEntity<Object> response = new ResponseEntity<>(signout,HttpStatus.ACCEPTED);
-		LOGGER.info("signout() is Executed");
+		LOGGER.info("signout() has Executed");
 		return response;
 	}
 	
 	@PutMapping("/changepassword/{userId}")
 	public ResponseEntity<Object> signin(@PathVariable long userId, @RequestBody UserEntity User) throws UserException
 	{
+		LOGGER.info("changepassword URL is opened");
 		LOGGER.info("changepassword() is initiated");
 		User user = iUserService.changePassword(userId, User);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
-		LOGGER.info("changepassword() is Executed");
+		LOGGER.info("changepassword() has Executed");
 		return response;
 	}	
 	

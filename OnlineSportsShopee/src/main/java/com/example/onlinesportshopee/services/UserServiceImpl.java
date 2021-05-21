@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserEntity signIn(UserEntity user) throws UserException {
-    	LOGGER.info("signin()-sevice is initiated");
+    	LOGGER.info("signin() service is initiated");
         String userid = user.getUserid();
         String password = user.getPassword();
         UserEntity useridrepo = Userrepo.findById(Long.parseLong(userid)).orElse(null);
@@ -38,7 +38,7 @@ public class UserServiceImpl implements IUserService {
         {
             if(userid.equals(useridrepo.getUserid()) && password.equals(useridrepo.getPassword())) 
             {
-            	LOGGER.info("signin()-service is Executed");
+            	LOGGER.info("signin() service has Executed");
                 return useridrepo;
             }
             else {
@@ -51,7 +51,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public String signOut(UserEntity user) {
-    	LOGGER.info("signout()-service is initiated");
+    	LOGGER.info("signout() service is initiated");
         return "Signout Successfully";
     }
 
@@ -59,7 +59,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User changePassword(long id, UserEntity user) throws UserException {
-    	LOGGER.info("changepassword()-service is initiated");
+    	LOGGER.info("changepassword() service is initiated");
         UserEntity userEnti;
         UserEntity changePassword = Userrepo.findById(id).orElse(null);
         if(changePassword == null)
@@ -68,7 +68,7 @@ public class UserServiceImpl implements IUserService {
             throw new UserException(usernotfound);
         }
         else userEnti = Userrepo.save(user);
-        LOGGER.info("changepassword()-service is Executed");
+        LOGGER.info("changepassword() service has Executed");
         return UserUtils.convertToOrder(userEnti);
     }
 
