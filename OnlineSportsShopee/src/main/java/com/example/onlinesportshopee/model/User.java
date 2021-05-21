@@ -2,7 +2,7 @@ package com.example.onlinesportshopee.model;
 
 public class User {
 	
-	private String userId;
+	private Long id;
 
 	private String password;
 	
@@ -10,18 +10,17 @@ public class User {
 		super();
 	}
 
-	public User(String userId, String password) {
+	public User(Long id, String password) {
 		super();
-		this.userId = userId;
+		this.id = id;
 		this.password = password;
 	}
 
-	public String getUserId() {
-		return userId;
+	public Long getID() {
+		return id;
 	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 
 	public String getPassword() {
@@ -34,7 +33,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", password=" + password + "]";
+		return "User [id=" + id + ", password=" + password + "]";
 	}
 
 }

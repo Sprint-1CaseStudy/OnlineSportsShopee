@@ -6,7 +6,7 @@ import com.example.onlinesportshopee.entities.ProductEntity;
 
 public class Cart {
 	
-	private Integer cartId;
+	private Long id;
 	private String imageName;
 	private String productName;
 	private Integer quantity;
@@ -18,9 +18,9 @@ public class Cart {
 		super();
 	}
 
-	public Cart(Integer cartId, String imageName, String productName, Integer quantity, Double price, Double total,List<ProductEntity> productEntity) {
+	public Cart(Long id, String imageName, String productName, Integer quantity, Double price, Double total,List<ProductEntity> productEntity) {
 		super();
-		this.cartId = cartId;
+		this.id = id;
 		this.imageName = imageName;
 		this.productName = productName;
 		this.quantity = quantity;
@@ -29,12 +29,11 @@ public class Cart {
 		this.productEntity=productEntity;
 	}
 
-	public Integer getCartId() {
-		return cartId;
+	public Long getID() {
+		return id;
 	}
-
-	public void setCartId(Integer cartId) {
-		this.cartId = cartId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 
 	public String getImageName() {
@@ -88,7 +87,7 @@ public class Cart {
 
 	@Override
 	public String toString() {
-		return "Cart [cartId=" + cartId + ", imageName=" + imageName + ", productName=" + productName + ", quantity="
+		return "Cart [id=" + id + ", imageName=" + imageName + ", productName=" + productName + ", quantity="
 				+ quantity + ", price=" + price + ", total=" + total + ", productEntity=" + productEntity + "]";
 	}
 

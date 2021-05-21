@@ -13,7 +13,7 @@ public class PaymentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "paymentId")
-	private Long paymentId;
+	private Long id;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "status")
@@ -25,20 +25,19 @@ public class PaymentEntity {
 		super();
 	}
 	
-	public PaymentEntity(Long paymentId, String type, String status, List<CardEntity> cardEntity) {
+	public PaymentEntity(Long id, String type, String status, List<CardEntity> cardEntity) {
 		super();
-		this.paymentId = paymentId;
+		this.id = id;
 		this.type = type;
 		this.status = status;
 		this.cardEntity = cardEntity;
 	}
 
-	public Long getPaymentId() {
-		return paymentId;
+	public Long getID() {
+		return id;
 	}
-	
-	public void setPaymentId(Long paymentId) {
-		this.paymentId = paymentId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	
 	public String getStatus() {
@@ -66,7 +65,7 @@ public class PaymentEntity {
 
 	@Override
 	public String toString() {
-		return "PaymentEntity [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cardEntity=" + cardEntity
+		return "PaymentEntity [id=" + id + ", type=" + type + ", status=" + status + ", cardEntity=" + cardEntity
 				+ "]";
 	}
 

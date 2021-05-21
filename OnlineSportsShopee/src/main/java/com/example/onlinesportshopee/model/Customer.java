@@ -12,7 +12,7 @@ import com.example.onlinesportshopee.model.Address;
 
 public class Customer 
 {
-	private String userID;
+	private Long id;
 	private String name;
 	private String email;
 	private String contactNo;
@@ -25,10 +25,10 @@ public class Customer
 		super();
 	}
 	
-	public Customer(String userID, String name, String email, String contactNo, LocalDate doB, List<AddressEntity> addressEntity,List<OrderEntity> orderEntity) 
+	public Customer(Long id, String name, String email, String contactNo, LocalDate doB, List<AddressEntity> addressEntity,List<OrderEntity> orderEntity) 
 	{
 		super();
-		this.userID = userID;
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.contactNo = contactNo;
@@ -37,11 +37,11 @@ public class Customer
 		this.orderEntity=orderEntity;
 	}
 
-	public String getUserID() {
-		return userID;
+	public Long getID() {
+		return id;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -87,7 +87,7 @@ public class Customer
 
 	@Override
 	public String toString() {
-		return "Customer [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+		return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
 				+ ", doB=" + doB + ", addressEntity=" + addressEntity + ", orderEntity=" + orderEntity + "]";
 	}
 

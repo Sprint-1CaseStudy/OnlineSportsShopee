@@ -11,7 +11,7 @@ public class AddressEntity
 
 	@Id
 	//@Column(name = "doorNo")
-	private String doorNo;
+	private Long id;
 	@Column(name = "street")
 	private String street;
 	@Column(name = "area")
@@ -23,7 +23,7 @@ public class AddressEntity
 	@Column(name = "pincode")
 	private Integer pincode;
 	@ManyToOne
-    @JoinColumn(name = "userid" ) 
+    @JoinColumn(name = "id" ) 
     private CustomerEntity customerEntity;
 
 	public AddressEntity()
@@ -31,10 +31,10 @@ public class AddressEntity
 		super();
 	}
 	
-	public AddressEntity(String doorNo, String street, String area, String city, String state, Integer pincode,
+	public AddressEntity(Long id, String street, String area, String city, String state, Integer pincode,
 			CustomerEntity customerEntity) {
 		super();
-		this.doorNo = doorNo;
+		this.id = id;
 		this.street = street;
 		this.area = area;
 		this.city = city;
@@ -43,11 +43,11 @@ public class AddressEntity
 		this.customerEntity = customerEntity;
 
 	}
-	public String getDoorNo() {
-		return doorNo;
+	public Long getID() {
+		return id;
 	}
-	public void setDoorNo(String doorNo) {
-		this.doorNo = doorNo;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	public String getStreet() {
 		return street;
@@ -91,7 +91,7 @@ public class AddressEntity
 
 	@Override
 	public String toString() {
-		return "AddressEntity [doorNo=" + doorNo + ", street=" + street + ", area=" + area + ", city=" + city
+		return "AddressEntity [id=" + id + ", street=" + street + ", area=" + area + ", city=" + city
 				+ ", state=" + state + ", pincode=" + pincode + ", customerEntity=" + customerEntity + "]";
 	}
 

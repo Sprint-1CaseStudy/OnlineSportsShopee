@@ -9,7 +9,7 @@ import com.example.onlinesportshopee.entities.ProductEntity;
 
 public class Order {
 
-	private Long orderID;
+	private Long id;
 	private Double amount;
 	private LocalDate billingDate;
 	private String paymentMethod;
@@ -22,10 +22,10 @@ public class Order {
 		super();
 	}
 
-	public Order(Long orderID, Double amount, LocalDate billingDate, CustomerEntity customerEntity,
+	public Order(Long id, Double amount, LocalDate billingDate, CustomerEntity customerEntity,
 			String paymentMethod, List<ProductEntity> productEntity, PaymentEntity paymentEntity) {
 		super();
-		this.orderID = orderID;
+		this.id = id;
 		this.amount = amount;
 		this.billingDate = billingDate;
 		this.customerEntity = customerEntity;
@@ -34,12 +34,11 @@ public class Order {
 		this.paymentEntity = paymentEntity;
 	}
 	
-	public Long getOrderID() {
-		return orderID;
+	public Long getID() {
+		return id;
 	}
-	
-	public void setOrderID(Long orderID) {
-		this.orderID = orderID;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	
 	public Double getAmount() {
@@ -92,7 +91,7 @@ public class Order {
 	
 	@Override
 	public String toString() {
-		return "Order [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate + ", customerEntity="
+		return "Order [id=" + id + ", amount=" + amount + ", billingDate=" + billingDate + ", customerEntity="
 				+ customerEntity + ", paymentMethod=" + paymentMethod + ", productEntity=" + productEntity
 				+ ", paymentEntity=" + paymentEntity + "]";
 	}

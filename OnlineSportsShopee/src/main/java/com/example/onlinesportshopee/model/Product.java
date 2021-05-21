@@ -13,7 +13,7 @@ import com.example.onlinesportshopee.entities.OrderEntity;
 public class Product {
 	
 	
-	private Long productId;
+	private Long id;
 
 	private String productName;
 
@@ -39,11 +39,11 @@ public class Product {
 	private List<CartEntity> cartEntity;
 	
 	
-	public Long getProductId() {
-		return productId;
+	public Long getID() {
+		return id;
 	}
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	public String getProductName() {
 		return productName;
@@ -122,7 +122,7 @@ public class Product {
 			String size, Double mrp, Double priceAfterDiscount, Boolean inStock, LocalDate expectedDelivery,
 			OrderEntity orderEntity,List<CartEntity> cartEntity) {
 		super();
-		this.productId = productId;
+		this.id = id;
 		this.productName = productName;
 		this.category = category;
 		this.description = description;
@@ -143,7 +143,7 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category
+		return "Product [id=" + id + ", productName=" + productName + ", category=" + category
 				+ ", description=" + description + ", brand=" + brand + ", colour=" + colour + ", size=" + size
 				+ ", mrp=" + mrp + ", priceAfterDiscount=" + priceAfterDiscount + ", inStock=" + inStock
 				+ ", expectedDelivery=" + expectedDelivery + "]";

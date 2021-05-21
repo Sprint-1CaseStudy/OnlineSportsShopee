@@ -21,7 +21,7 @@ public class ProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "product_id")
-	private Long productId;
+	private Long id;
 	@Column(name = "product_name")
 	private String productName;
 	@Column(name = "product_category")
@@ -43,7 +43,7 @@ public class ProductEntity {
 	@Column(name = "expected_delivery")
 	private LocalDate expectedDelivery;
 	@ManyToOne
-	@JoinColumn(name="oder-product")
+	@JoinColumn(name="id")
 	private OrderEntity orderEntity;
 	@ManyToMany(fetch=FetchType.LAZY,mappedBy="productEntity")
 	private List<CartEntity> cartEntity;
@@ -52,10 +52,10 @@ public class ProductEntity {
 		
 	}
 	
-	public ProductEntity(Long productId, String productName, String category, String description, String brand, String colour, String size, 
+	public ProductEntity(Long id, String productName, String category, String description, String brand, String colour, String size, 
 			Double mrp, Double priceAfterDiscount, Boolean inStock,OrderEntity orderEntity, LocalDate expectedDelivery,List<CartEntity> cartEntity) {
 		super();
-		this.productId = productId;
+		this.id = id;
 		this.productName = productName;
 		this.category = category;
 		this.description = description;
@@ -71,13 +71,11 @@ public class ProductEntity {
 	}
 
 
-	public Long getProductId() {
-		return productId;
+	public Long getID() {
+		return id;
 	}
-
-
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 
 
@@ -204,7 +202,7 @@ public class ProductEntity {
 
 	@Override
 	public String toString() {
-		return "ProductEntity [productId=" + productId + ", productName=" + productName + ", category=" + category
+		return "ProductEntity [id=" + id + ", productName=" + productName + ", category=" + category
 				+ ", description=" + description + ", brand=" + brand + ", colour=" + colour + ", size=" + size
 				+ ", mrp=" + mrp + ", priceAfterDiscount=" + priceAfterDiscount + ", inStock=" + inStock
 				+ ", expectedDelivery=" + expectedDelivery + ", orderEntity=" + orderEntity + ", cartEntity="

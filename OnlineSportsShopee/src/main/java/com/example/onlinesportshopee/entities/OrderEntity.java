@@ -13,7 +13,7 @@ public class OrderEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "orderID")
-	private Long orderID;
+	private Long id;
 	@Column(name = "amount")
 	private Double amount;
 	@Column(name = "billingDate")
@@ -26,16 +26,16 @@ public class OrderEntity {
 	@OneToMany(mappedBy="orderEntity",cascade = CascadeType.ALL)
 	private List<ProductEntity> productEntity;
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="paymentid")
+	@JoinColumn(name="id")
 	private PaymentEntity paymentEntity;
 	
 	public OrderEntity() {
 		super();
 	}
 
-	public OrderEntity(Long orderID, Double amount, LocalDate billingDate, CustomerEntity customerEntity, List<ProductEntity> productEntity,String paymentMethod,PaymentEntity paymentEntity) {
+	public OrderEntity(Long id, Double amount, LocalDate billingDate, CustomerEntity customerEntity, List<ProductEntity> productEntity,String paymentMethod,PaymentEntity paymentEntity) {
 		super();
-		this.orderID = orderID;
+		this.id = id;
 		this.amount = amount;
 		this.billingDate = billingDate;
 		this.customerEntity = customerEntity;
@@ -43,13 +43,12 @@ public class OrderEntity {
 		this.productEntity=productEntity;
 		this.paymentEntity=paymentEntity;
 	}
-
-	public Long getOrderID() {
-		return orderID;
+	
+	public Long getID() {
+		return id;
 	}
-
-	public void setOrderID(Long orderID) {
-		this.orderID = orderID;
+	public void setID(Long id) {
+		this.id = id;
 	}
 
 	public Double getAmount() {
@@ -103,7 +102,7 @@ public class OrderEntity {
 
 	@Override
 	public String toString() {
-		return "OrderEntity [orderID=" + orderID + ", amount=" + amount + ", billingDate=" + billingDate
+		return "OrderEntity [id=" + id + ", amount=" + amount + ", billingDate=" + billingDate
 				+ ", customerEntity=" + customerEntity + ", paymentMethod=" + paymentMethod + ", productEntity="
 				+ productEntity + ", paymentEntity=" + paymentEntity + "]";
 	}

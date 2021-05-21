@@ -6,7 +6,7 @@ import com.example.onlinesportshopee.entities.CardEntity;
 
 public class Payment {
 
-	private Long paymentId;
+	private Long id;
 	private String type;
 	private String status;
 	private List<CardEntity> cards;
@@ -15,20 +15,19 @@ public class Payment {
 		super();
 	}
 	
-	public Payment(Long paymentId, String type, String status, List<CardEntity> cards) {
+	public Payment(Long id, String type, String status, List<CardEntity> cards) {
 		super();
-		this.paymentId = paymentId;
+		this.id = id;
 		this.type = type;
 		this.status = status;
 		this.cards = cards;
 	}
 
-	public Long getPaymentId() {
-		return paymentId;
+	public Long getID() {
+		return id;
 	}
-	
-	public void setPaymentId(Long paymentId) {
-		this.paymentId = paymentId;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	
 	public String getStatus() {
@@ -57,7 +56,7 @@ public class Payment {
 
 	@Override
 	public String toString() {
-		return "Payment [paymentId=" + paymentId + ", type=" + type + ", status=" + status + ", cards=" + cards + "]";
+		return "Payment [id=" + id + ", type=" + type + ", status=" + status + ", cards=" + cards + "]";
 	}
 
 	

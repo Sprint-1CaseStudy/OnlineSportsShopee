@@ -16,7 +16,7 @@ public class CustomerEntity
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//@Column(name = "user_id")
-	private String userID;
+	private Long id;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "email")
@@ -34,10 +34,10 @@ public class CustomerEntity
 		
 	}
 	
-	public CustomerEntity(String userID, String name, String email, String contactNo, LocalDate doB,
+	public CustomerEntity(Long id, String name, String email, String contactNo, LocalDate doB,
 			List<AddressEntity> addressEntity, List<OrderEntity> orderEntity) {
 		super();
-		this.userID = userID;
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.contactNo = contactNo;
@@ -45,11 +45,11 @@ public class CustomerEntity
 		this.addressEntity = addressEntity;
 		this.orderEntity = orderEntity;
 	}
-	public String getUserID() {
-		return userID;
+	public Long getID() {
+		return id;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -90,7 +90,7 @@ public class CustomerEntity
 	
 	@Override
 	public String toString() {
-		return "CustomerEntity [userID=" + userID + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
+		return "CustomerEntity [id=" + id + ", name=" + name + ", email=" + email + ", contactNo=" + contactNo
 				+ ", doB=" + doB + ", addressEntity=" + addressEntity + ", orderEntity=" + orderEntity + "]";
 	}
 	

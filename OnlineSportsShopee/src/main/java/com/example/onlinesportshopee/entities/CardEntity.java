@@ -23,7 +23,7 @@ public class CardEntity {
 	@Column(name = "bankName")
 	private String bankName;
 	@ManyToOne
-	@JoinColumn(name="paymentcard")
+	@JoinColumn(name="id")
 	private PaymentEntity paymentEntity;
 	
 	public CardEntity() {
@@ -38,10 +38,10 @@ public class CardEntity {
 		this.bankName= bankName;
 		this.paymentEntity=paymentEntity;
 	}
-	public Long getId() {
+	public Long getID() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setID(Long id) {
 		this.id = id;
 	}
 	public String getCardName() {

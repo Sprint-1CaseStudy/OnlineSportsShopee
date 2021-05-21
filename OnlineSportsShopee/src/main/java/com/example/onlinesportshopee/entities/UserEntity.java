@@ -8,7 +8,7 @@ public class UserEntity {
 
 	@Id
 	//@Column(name = "userid")
-	private String userid;
+	private Long id;
 	@Column(name = "password")
 	private String password;
 	
@@ -16,18 +16,17 @@ public class UserEntity {
 		super();
 	}
 	
-	public UserEntity(String userid, String password) {
+	public UserEntity(Long id, String password) {
 		super();
-		this.userid = userid;
+		this.id = id;
 		this.password = password;
 	}
 	
-	public String getUserid() {
-		return userid;
+	public Long getID() {
+		return id;
 	}
-	
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setID(Long id) {
+		this.id = id;
 	}
 	
 	public String getPassword() {
@@ -40,7 +39,7 @@ public class UserEntity {
 	
 	@Override
 	public String toString() {
-		return "UserEntity [userid=" + userid + ", password=" + password + "]";
+		return "UserEntity [id=" + id + ", password=" + password + "]";
 	}
 	
 	
