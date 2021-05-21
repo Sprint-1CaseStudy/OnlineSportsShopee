@@ -24,7 +24,7 @@ import com.example.onlinesportshopee.services.IOrderService;
 import com.example.onlinesportshopee.services.OrderServiceImpl;
 
 @RestController
-@RequestMapping("onlinesportshopee/api/order")
+@RequestMapping("onlinesportshopee/order")
 public class OrderController {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
