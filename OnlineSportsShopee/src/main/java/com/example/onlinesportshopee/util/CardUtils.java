@@ -23,7 +23,7 @@ public class CardUtils {
 	}
 	public static CardEntity convertToCard(Card cardList) {
 		 CardEntity card= new CardEntity();
-		 card.setId(cardList.getId());
+		 card.setID(cardList.getID());
 		 card.setCardName(cardList.getCardName());
 	     card.setCardNumber(cardList.getCardNumber());
 	     card.setExpiryDate(cardList.getCardExpiry());
@@ -33,7 +33,7 @@ public class CardUtils {
 	    } 
 	 public static Card convertToCard(CardEntity cardEntity) {
 	        Card card = new Card();
-	        card.setId(cardEntity.getId());
+	        card.setID(cardEntity.getID());
 	        card.setCardName(cardEntity.getCardName());
 	        card.setCardNumber(cardEntity.getCardNumber());
 	        card.setCardExpiry(cardEntity.getExpiryDate());

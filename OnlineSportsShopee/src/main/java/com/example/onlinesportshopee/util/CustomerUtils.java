@@ -20,7 +20,7 @@ public class CustomerUtils
 	
 	public static CustomerEntity convertToCustomerEntity(Customer customer) {
 		CustomerEntity customerEntity = new CustomerEntity();
-		customerEntity.setUserID(customer.getUserID());
+		customerEntity.setID(customer.getID());
 		customerEntity.setName(customer.getName());
 		customerEntity.setEmail(customer.getEmail());
 		customerEntity.setContactNo(customer.getContactNo());
@@ -32,7 +32,7 @@ public class CustomerUtils
 	
 	public static Customer convertToCustomer(CustomerEntity customerEntity) {
 		Customer customer = new Customer();
-		customer.setUserID(customerEntity.getUserID());
+		customer.setID(customerEntity.getID());
 		customer.setName(customerEntity.getName());
 		customer.setEmail(customerEntity.getEmail());
 		customer.setContactNo(customerEntity.getContactNo());

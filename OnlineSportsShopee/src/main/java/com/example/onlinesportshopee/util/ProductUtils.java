@@ -22,7 +22,7 @@ public class ProductUtils {
 	 
 	 public static ProductEntity convertToProduct(Product product) {
 	        ProductEntity productEntity = new ProductEntity();
-	        productEntity.setProductId(product.getProductId());
+	        productEntity.setID(product.getID());
 	        productEntity.setProductName(product.getProductName());
 	        productEntity.setCategory(product.getCategory());
 	        productEntity.setDescription(product.getDescription());
@@ -41,7 +41,7 @@ public class ProductUtils {
 	 
 	 public static Product convertToProduct(ProductEntity productEntity) {
 		 Product product = new Product();
-		 product.setProductId(productEntity.getProductId());
+		 product.setID(productEntity.getID());
 		 product.setProductName(productEntity.getProductName());
 		 product.setCategory(productEntity.getCategory());
 		 product.setDescription(productEntity.getDescription());

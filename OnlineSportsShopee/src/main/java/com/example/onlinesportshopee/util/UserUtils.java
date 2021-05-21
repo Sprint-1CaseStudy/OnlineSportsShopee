@@ -21,14 +21,14 @@ public class UserUtils {
     
     public static UserEntity convertToOrder(User dto) {
         UserEntity user = new UserEntity();
-        user.setUserid(dto.getUserId());
+        user.setID(dto.getID());
         user.setPassword(dto.getPassword());
         return user;
     }        
     
     public static User convertToOrder(UserEntity userEntity) {
         User dto = new User();
-        dto.setUserId(userEntity.getUserid());
+        dto.setID(userEntity.getID());
         dto.setPassword(userEntity.getPassword());
         return dto;
     }

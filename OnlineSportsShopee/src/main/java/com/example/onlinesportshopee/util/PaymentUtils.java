@@ -21,7 +21,7 @@ public class PaymentUtils {
 	}
 	 public static PaymentEntity convertToPayment(Payment paymentlist) {
 		 PaymentEntity payment= new PaymentEntity();
-		 payment.setPaymentId(paymentlist.getPaymentId());
+		 payment.setID(paymentlist.getID());
 		 payment.setType(paymentlist.getType());
 	     payment.setStatus(paymentlist.getStatus());
 	     payment.setCardEntity(paymentlist.getCardEntity());
@@ -30,7 +30,7 @@ public class PaymentUtils {
 	    
 	    public static Payment convertToPayment(PaymentEntity paymentEntity) {
 	        Payment payment = new Payment();
-	        payment.setPaymentId(paymentEntity.getPaymentId());
+	        payment.setID(paymentEntity.getID());
 	        payment.setType(paymentEntity.getType());
 	        payment.setStatus(paymentEntity.getStatus());
 	        payment.setCardEntity(paymentEntity.getCardEntity());

@@ -20,7 +20,7 @@ private OrderUtils() {
     
     public static OrderEntity convertToOrder(Order dto) {
         OrderEntity order = new OrderEntity();
-        order.setOrderID(dto.getOrderID());
+        order.setID(dto.getID());
         order.setAmount(dto.getAmount());
         order.setBillingDate(dto.getBillingDate());
         order.setCustomerEntity(dto.getCustomerEntity());
@@ -32,7 +32,7 @@ private OrderUtils() {
     
     public static Order convertToOrder(OrderEntity orderEntity) {
         Order dto = new Order();
-        dto.setOrderID(orderEntity.getOrderID());
+        dto.setID(orderEntity.getID());
         dto.setAmount(orderEntity.getAmount());
         dto.setBillingDate(orderEntity.getBillingDate());
         dto.setCustomerEntity(orderEntity.getCustomerEntity());
