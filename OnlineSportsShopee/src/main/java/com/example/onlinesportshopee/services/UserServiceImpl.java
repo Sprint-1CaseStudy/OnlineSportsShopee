@@ -26,17 +26,17 @@ public class UserServiceImpl implements IUserService {
     @Override
     public UserEntity signIn(UserEntity user) throws UserException {
     	LOGGER.info("signin() service is initiated");
-        String userid = user.getUserid();
+        Long id = user.getID();
         String password = user.getPassword();
-        UserEntity useridrepo = Userrepo.findById(Long.parseLong(userid)).orElse(null);
+        UserEntity useridrepo = Userrepo.findById(id).orElse(null);
         if (useridrepo == null)
         {
-            String usernotfound = "No user found by the userid "+userid;
+            String usernotfound = "No user found by the userid "+id;
             throw new UserException(usernotfound);
         }
         else 
         {
-            if(userid.equals(useridrepo.getUserid()) && password.equals(useridrepo.getPassword())) 
+            if(id.equals(useridrepo.getID()) && password.equals(useridrepo.getPassword())) 
             {
             	LOGGER.info("signin() service has Executed");
                 return useridrepo;
