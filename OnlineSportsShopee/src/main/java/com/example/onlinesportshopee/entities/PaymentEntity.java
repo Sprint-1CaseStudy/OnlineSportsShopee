@@ -12,8 +12,12 @@ public class PaymentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	//@Column(name = "paymentId")
 	private Long id;
+	@Column(name = "paymentId")
+	private Long paymentId;
+
 	@Column(name = "type")
 	private String type;
 	@Column(name = "status")

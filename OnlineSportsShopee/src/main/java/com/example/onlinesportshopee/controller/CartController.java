@@ -15,7 +15,7 @@ import com.example.onlinesportshopee.model.Cart;
 import com.example.onlinesportshopee.services.ICartService;
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("onlinesportshopee/cart")
 public class CartController {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(CartController.class);

@@ -19,7 +19,7 @@ import com.example.onlinesportshopee.services.IUserService;
 import com.example.onlinesportshopee.services.UserServiceImpl;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("onlinesportshopee/login")
 public class UserController {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -28,11 +28,11 @@ public class UserController {
 	private IUserService iUserService;
 	
 	@GetMapping("/signin/{userId}/{password}")
-	public ResponseEntity<Object> signin(@PathVariable String userId,@PathVariable String Password) throws UserException
+	public ResponseEntity<Object> signin(@PathVariable Long id,@PathVariable String Password) throws UserException
 	{
 		LOGGER.info("sign-in URL is opened");
 		LOGGER.info("signin() is initiated");
-		UserEntity userdata = new UserEntity(userId,Password);
+		UserEntity userdata = new UserEntity(id,Password);
 		UserEntity user = iUserService.signIn(userdata);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
 		LOGGER.info("signin() has Executed");
@@ -52,11 +52,11 @@ public class UserController {
 	}
 	
 	@PutMapping("/changepassword/{userId}")
-	public ResponseEntity<Object> signin(@PathVariable long userId, @RequestBody UserEntity User) throws UserException
+	public ResponseEntity<Object> signin(@PathVariable Long id, @RequestBody UserEntity User) throws UserException
 	{
 		LOGGER.info("changepassword URL is opened");
 		LOGGER.info("changepassword() is initiated");
-		User user = iUserService.changePassword(userId, User);
+		User user = iUserService.changePassword(id, User);
 		ResponseEntity<Object> response = new ResponseEntity<>(user,HttpStatus.ACCEPTED);
 		LOGGER.info("changepassword() has Executed");
 		return response;

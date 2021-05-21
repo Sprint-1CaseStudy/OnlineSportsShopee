@@ -17,7 +17,7 @@ import com.example.onlinesportshopee.services.ICustomerService;
 
 //
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("onlinesportshopee/customers")
 public class CustomerController 
 {
 	static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);

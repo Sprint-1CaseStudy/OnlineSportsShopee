@@ -44,6 +44,7 @@ public class ProductEntity {
 	private LocalDate expectedDelivery;
 	@ManyToOne
 	@JoinColumn(name="id")
+	@JoinColumn(name="order_product")
 	private OrderEntity orderEntity;
 	@ManyToMany(fetch=FetchType.LAZY,mappedBy="productEntity")
 	private List<CartEntity> cartEntity;

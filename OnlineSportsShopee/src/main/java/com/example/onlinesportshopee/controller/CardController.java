@@ -25,7 +25,7 @@ import com.example.onlinesportshopee.model.Card;
 import com.example.onlinesportshopee.services.CardServiceImpl;
 
 @RestController
-@RequestMapping("/cards")
+@RequestMapping("onlinesportshopee/cards")
 public class CardController {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(CardController.class);
