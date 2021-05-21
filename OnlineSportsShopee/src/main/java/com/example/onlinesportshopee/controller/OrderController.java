@@ -41,37 +41,48 @@ public class OrderController {
 		ResponseEntity<Object> orderResponse = null;
 		orderDTO = iOrderService.addOrder(orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
+		LOGGER.info("addOrder() has executed");
 		return orderResponse;
 	}
 	@PutMapping("/update-order/{orderID}")
 	public ResponseEntity<Object> updateOrder(@PathVariable long orderID, @RequestBody OrderEntity orderEntity)throws OrderNotFoundException,InvalidOrderIdException{
-		
+		LOGGER.info("update-order URL is opened");
+		LOGGER.info("updateOrderEntity() is initiated");
 		Order orderDTO = null;
 		ResponseEntity<Object> orderResponse = null;
 		orderDTO = iOrderService.updateOrder(orderID,orderEntity);
 		orderResponse = new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
-		
+		LOGGER.info("updateOrder() has executed");//jh
 		return orderResponse;
 	}
 	@DeleteMapping("/remove-order/{orderID}")
 	public ResponseEntity<Object> deleteOrder(@PathVariable long orderID)throws InvalidOrderIdException{
-		
-		Order orderDTO = iOrderService.deleteOrder(orderID);
-		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
-
+		LOGGER.info("delete-order URL is opened");
+		LOGGER.info("deleteOrderEntity() is initiated");
+		Order orderDTO=null;
+		ResponseEntity<Object> orderResponse = null;
+		orderDTO = iOrderService.deleteOrder(orderID);
+		orderResponse= new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
+		LOGGER.info("deleteOrderEntity() has executed");
+		return orderResponse;
 	}
 	@GetMapping("/get-order/{orderID}")
 	public ResponseEntity<Object> getOrder(@PathVariable long orderID)throws InvalidOrderIdException{
 	
+		LOGGER.info("getById URL is opened");
+		LOGGER.info("getById() is initiated");
 		Order orderDTO = null;
 		orderDTO = iOrderService.getOrderDetails(orderID);
-		
+		LOGGER.info("getOrderById() has executed");
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
 	}
-	@GetMapping("/get-all-order/")
+	@GetMapping("/get-all-order")
 	public List<Order> getAllOrder(){
 	
+		LOGGER.info("getallorders URL is opened");
+		LOGGER.info("getAllOrder() is initiated");
+		LOGGER.info("getAllOrder() has executed");
 		return iOrderService.getAllOrders();
 
 	}
