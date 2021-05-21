@@ -199,6 +199,7 @@ public class ProductEntity {
 	public void setCartEntity(List<CartEntity> cartEntity) {
 		this.cartEntity = cartEntity;
 	}
+	
 
 
 	@Override

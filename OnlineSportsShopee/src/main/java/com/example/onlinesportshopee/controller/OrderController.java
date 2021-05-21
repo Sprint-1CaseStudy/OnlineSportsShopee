@@ -77,7 +77,7 @@ public class OrderController {
 		return new ResponseEntity<>(orderDTO, HttpStatus.ACCEPTED);
 		
 	}
-	@GetMapping("/get-all-order/")
+	@GetMapping("/get-all-order")
 	public List<Order> getAllOrder(){
 	
 		LOGGER.info("getallorders URL is opened");
