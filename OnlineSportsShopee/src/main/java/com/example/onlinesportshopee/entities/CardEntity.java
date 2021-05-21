@@ -23,7 +23,7 @@ public class CardEntity {
 	@Column(name = "bankName")
 	private String bankName;
 	@ManyToOne
-	@JoinColumn(name="paymentcard")
+	@JoinColumn(name="payment_card")
 	private PaymentEntity paymentEntity;
 	
 	public CardEntity() {

@@ -19,7 +19,7 @@ import com.example.onlinesportshopee.services.IUserService;
 import com.example.onlinesportshopee.services.UserServiceImpl;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("onlinesportshopee/login")
 public class UserController {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);

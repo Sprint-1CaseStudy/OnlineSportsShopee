@@ -17,7 +17,7 @@ import com.example.onlinesportshopee.services.IPaymentService;
 import com.example.onlinesportshopee.services.PaymentServiceImpl;
 
 @RestController
-@RequestMapping("/payments")
+@RequestMapping("onlinesportshopee/payments")
 
 public class PaymentController {
 	

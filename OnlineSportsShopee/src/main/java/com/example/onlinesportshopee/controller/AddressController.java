@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping("/address")
+@RequestMapping("onlinesportshopee/address")
 public class AddressController {
 	
 	static final Logger LOGGER = LoggerFactory.getLogger(AddressController.class);
